@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CorFiterapia | Corporación Actividad Física y Fisioterapia</title>
+<title>CorFiterapia | Academia Virtual</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,24 +14,23 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins', sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#f4f7fb;
+background:#f4f6fb;
 color:#333;
-line-height:1.6;
 }
 
+/* HEADER */
+
 header{
-background:white;
+background:#0c3c78;
 padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
-z-index:1000;
+color:white;
 }
 
 .logo{
@@ -45,83 +44,142 @@ height:60px;
 }
 
 .logo h1{
-font-size:22px;
-color:#0c3c78;
+font-size:18px;
+line-height:1.2;
+}
+
+.logo span{
+font-size:12px;
+font-weight:300;
 }
 
 nav a{
+color:white;
 text-decoration:none;
 margin-left:25px;
-color:#0c3c78;
-font-weight:500;
+font-weight:400;
 transition:0.3s;
 }
 
 nav a:hover{
-color:#d62828;
+color:#ffd60a;
 }
 
+/* HERO */
+
 .hero{
-background:linear-gradient(rgba(12,60,120,0.85),rgba(12,60,120,0.85)), url('https://images.unsplash.com/photo-1580281657527-47c1b26e26ab?auto=format&fit=crop&w=1500&q=80');
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
 color:white;
-padding:120px 8%;
+padding:150px 8%;
 text-align:center;
 }
 
 .hero h2{
-font-size:40px;
+font-family:'Playfair Display', serif;
+font-size:42px;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:18px;
-max-width:800px;
+max-width:750px;
 margin:auto;
 }
+
+.cta{
+margin-top:30px;
+display:inline-block;
+padding:14px 30px;
+background:#ffd60a;
+color:#000;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* SECCIONES */
 
 section{
 padding:80px 8%;
 }
 
-section h2{
+h2{
+text-align:center;
 color:#0c3c78;
-margin-bottom:30px;
-font-size:30px;
-border-left:6px solid #d62828;
-padding-left:15px;
+margin-bottom:40px;
+font-family:'Playfair Display', serif;
 }
 
-.card{
-background:white;
-padding:25px;
-margin-bottom:20px;
-border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
+/* CURSOS */
 
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-gap:20px;
+gap:30px;
 }
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.price{
+font-size:22px;
+font-weight:600;
+margin:15px 0;
+color:#0c3c78;
+}
+
+.card button{
+margin:5px;
+padding:10px 18px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+font-weight:500;
+}
+
+.pay{
+background:#0c3c78;
+color:white;
+}
+
+.info{
+background:#25D366;
+color:white;
+}
+
+/* FOOTER */
 
 footer{
 background:#0c3c78;
 color:white;
 text-align:center;
-padding:30px;
-margin-top:40px;
+padding:40px 20px;
 }
 
-footer p{
-font-size:14px;
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:15px 25px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
 }
 
 @media(max-width:768px){
@@ -137,129 +195,74 @@ font-size:28px;
 
 <header>
 <div class="logo">
-<img src="logo.png" alt="CorFiterapia Logo">
-<h1>CorFiterapia</h1>
+<img src="logo.png" alt="Logo CorFiterapia">
+<h1>CorFiterapia<br><span>Academia Virtual en Salud</span></h1>
 </div>
 <nav>
-<a href="#quienes">Quiénes Somos</a>
-<a href="#mision">Misión</a>
-<a href="#vision">Visión</a>
-<a href="#servicios">Servicios</a>
+<a href="#cursos">Cursos</a>
+<a href="#acceso">Acceso</a>
+<a href="#contacto">Contacto</a>
 </nav>
 </header>
 
 <section class="hero">
-<h2>Corporación Actividad Física y Fisioterapia</h2>
-<p>Entidad sin ánimo de lucro de carácter académico, científico y formativo orientada al desarrollo del conocimiento en fisioterapia, actividad física y Seguridad y Salud en el Trabajo.</p>
+<h2>Formación Profesional en Fisioterapia y Salud</h2>
+<p>Cursos virtuales especializados, actualizados y aplicados a la práctica clínica.</p>
+<a href="#cursos" class="cta">Ver Cursos</a>
 </section>
 
-<section id="quienes">
-<h2>¿Quiénes Somos?</h2>
-<div class="card">
-<p>
-La Corporación Actividad Física y Fisioterapia – CORFITERAPIAS es una entidad sin ánimo de lucro de carácter académico, científico y formativo, orientada al desarrollo, promoción y fortalecimiento del conocimiento en fisioterapia, actividad física, salud, Seguridad y Salud en el Trabajo (SST) y áreas afines.
-</p>
-<br>
-<p>
-La Corporación desarrolla procesos de educación, capacitación, investigación, divulgación científica, asesoría técnica y soporte institucional, contribuyendo al fortalecimiento del talento humano y las organizaciones.
-</p>
-</div>
-</section>
-
-<section id="mision">
-<h2>Misión</h2>
-<div class="card">
-<p>Contribuir al fortalecimiento del talento humano, las organizaciones y la comunidad mediante el desarrollo de procesos educativos, académicos, investigativos y de asesoría técnica en fisioterapia, actividad física y Seguridad y Salud en el Trabajo, promoviendo prácticas basadas en evidencia, ética profesional y sostenibilidad.</p>
-</div>
-</section>
-
-<section id="vision">
-<h2>Visión 2030</h2>
-<div class="card">
-<p>Para el año 2030, CORFITERAPIAS será reconocida a nivel nacional como una corporación referente en educación, capacitación, divulgación científica y soporte técnico en fisioterapia, actividad física y SST, destacándose por su rigor académico, claridad jurídica, innovación digital y aporte a la cultura de la prevención y el movimiento saludable.</p>
-</div>
-</section>
-
-<section>
-<h2>Valores Corporativos</h2>
-<div class="grid">
-<div class="card"><strong>Ética profesional</strong><br>Actuamos con integridad, transparencia y responsabilidad.</div>
-<div class="card"><strong>Rigor técnico y científico</strong><br>Promovemos conocimiento basado en evidencia y actualización permanente.</div>
-<div class="card"><strong>Claridad jurídica</strong><br>Desarrollamos nuestras actividades respetando los marcos legales.</div>
-<div class="card"><strong>Educación y transformación social</strong><br>Creemos en la educación como motor de cambio.</div>
-<div class="card"><strong>Innovación y adaptación</strong><br>Incorporamos herramientas digitales y metodologías innovadoras.</div>
-<div class="card"><strong>Compromiso con la prevención</strong><br>Fomentamos la cultura del movimiento y el bienestar integral.</div>
-</div>
-</section>
-
-<section id="servicios">
-<h2>Portafolio de Servicios</h2>
+<section id="cursos">
+<h2>Nuestros Cursos</h2>
 
 <div class="grid">
 
 <div class="card">
-<strong>Servicios Educativos y Académicos</strong>
-<ul>
-<li>Cursos, talleres, seminarios y diplomados</li>
-<li>Fisioterapia y movimiento humano</li>
-<li>Actividad física y salud</li>
-<li>Seguridad y Salud en el Trabajo</li>
-<li>Ergonomía y prevención del riesgo</li>
-</ul>
+<h3>Curso de Gases Arteriales</h3>
+<p>Interpretación clínica aplicada a fisioterapia.</p>
+<div class="price">$97.000 COP</div>
+<button class="pay" onclick="window.open('LINK_DE_PAGO_AQUI','_blank')">Pagar e inscribirme</button>
+<button class="info" onclick="infoCurso('Curso de Gases Arteriales')">Más información</button>
 </div>
 
 <div class="card">
-<strong>Investigación y Producción de Contenido</strong>
-<ul>
-<li>Proyectos de investigación aplicada</li>
-<li>Artículos, eBooks y guías técnicas</li>
-<li>Infografías y videos educativos</li>
-</ul>
-</div>
-
-<div class="card">
-<strong>Asesoría y Soporte Técnico</strong>
-<ul>
-<li>Acompañamiento conceptual en SG-SST</li>
-<li>Capacitación para empresas</li>
-<li>Soporte técnico especializado</li>
-</ul>
-</div>
-
-<div class="card">
-<strong>Consultoría Académica y Organizacional</strong>
-<ul>
-<li>Diseño de programas formativos</li>
-<li>Apoyo a instituciones educativas</li>
-<li>Cultura de prevención y autocuidado</li>
-</ul>
-</div>
-
-<div class="card">
-<strong>Servicios Digitales</strong>
-<ul>
-<li>Gestión de plataformas educativas</li>
-<li>Desarrollo de contenido digital</li>
-<li>Recursos interactivos de formación</li>
-</ul>
-</div>
-
-<div class="card">
-<strong>Alianzas y Proyectos Especiales</strong>
-<ul>
-<li>Convenios con entidades públicas y privadas</li>
-<li>Proyectos comunitarios y académicos</li>
-<li>Eventos institucionales</li>
-</ul>
+<h3>Rehabilitación Cardiopulmonar</h3>
+<p>Actualización basada en evidencia científica.</p>
+<div class="price">$127.000 COP</div>
+<button class="pay" onclick="window.open('LINK_DE_PAGO_AQUI','_blank')">Pagar e inscribirme</button>
+<button class="info" onclick="infoCurso('Rehabilitación Cardiopulmonar')">Más información</button>
 </div>
 
 </div>
+</section>
+
+<section id="acceso">
+<h2>Acceso Estudiantes</h2>
+<p style="text-align:center;">
+Si ya realizaste tu pago, solicita el acceso a tu curso escribiendo a nuestro WhatsApp o revisando tu correo registrado.
+</p>
+</section>
+
+<section id="contacto">
+<h2>Contacto</h2>
+<p style="text-align:center;">
+WhatsApp: 3145613371<br>
+Correo: corfiterapiasredes@gmail.com
+</p>
 </section>
 
 <footer>
-<p>© 2026 CorFiterapia - Corporación Actividad Física y Fisioterapia</p>
-<p>Entidad académica y científica</p>
+<p>© 2026 CorFiterapia | Academia Virtual</p>
 </footer>
+
+<a class="whatsapp" href="https://wa.me/573145613371?text=Hola quiero información sobre los cursos de CorFiterapia" target="_blank">
+Escríbenos
+</a>
+
+<script>
+function infoCurso(curso){
+window.open(`https://wa.me/573145613371?text=Hola quiero más información sobre el ${curso}`,'_blank');
+}
+</script>
 
 </body>
 </html>
