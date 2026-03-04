@@ -7,190 +7,212 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:#f4f6f9;
-color:#222;
-}
+    :root {
+        --azul-oscuro: #0b2c5f;
+        --azul-claro: #0070c0;
+        --rojo: #e21f1d;
+        --naranja: #ff6b00;
+    }
 
-header{
-background:#0b2c5f;
-color:white;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f6f9; color: #222; }
 
-header img{
-height:60px;
-}
+    header {
+        background: white;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 4px solid var(--azul-oscuro);
+    }
 
-nav a{
-color:white;
-text-decoration:none;
-margin:0 15px;
-font-weight:500;
-}
+    header img { height: 70px; }
 
-.hero{
-background:url('https://images.unsplash.com/photo-1581093458791-9d1f0b9c1b2e') no-repeat center center/cover;
-color:white;
-text-align:center;
-padding:120px 20px;
-}
+    .hero {
+        background: linear-gradient(rgba(11, 44, 95, 0.85), rgba(11, 44, 95, 0.85)), url('https://images.unsplash.com/photo-1581093458791-9d1f0b9c1b2e') no-repeat center center/cover;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+    }
 
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size:48px;
-margin-bottom:20px;
-}
+    .section { padding: 40px 20px; text-align: center; }
 
-.hero button{
-background:#d4af37;
-border:none;
-padding:15px 30px;
-font-size:18px;
-cursor:pointer;
-border-radius:6px;
-}
+    .form-container {
+        max-width: 500px;
+        margin: 0 auto 30px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        border-top: 5px solid var(--rojo);
+    }
 
-.section{
-padding:70px 20px;
-text-align:center;
-}
+    input, select {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
 
-.section h2{
-font-family:'Playfair Display',serif;
-font-size:36px;
-margin-bottom:40px;
-color:#0b2c5f;
-}
+    .cursos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: auto;
+    }
 
-.cursos{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-max-width:1200px;
-margin:auto;
-}
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        border-top: 5px solid var(--azul-claro);
+        position: relative;
+    }
 
-.card{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-transition:0.3s;
-}
+    /* Badge de Cupos */
+    .cupos-badge {
+        background: var(--naranja);
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-bottom: 10px;
+        animation: pulse 2s infinite;
+    }
 
-.card:hover{
-transform:translateY(-10px);
-}
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    
+    .precio { font-size: 24px; color: var(--rojo); margin: 10px 0; font-weight: 700; }
 
-.precio{
-font-size:22px;
-color:#0b2c5f;
-margin:15px 0;
-font-weight:600;
-}
+    .btn-pago {
+        display: block;
+        background: var(--azul-oscuro);
+        color: white;
+        padding: 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        font-size: 16px;
+        transition: 0.3s;
+    }
 
-.card a{
-display:block;
-margin-top:15px;
-background:#0b2c5f;
-color:white;
-padding:12px;
-border-radius:6px;
-text-decoration:none;
-}
+    .btn-pago:hover { background: var(--azul-claro); }
 
-footer{
-background:#0b2c5f;
-color:white;
-padding:40px;
-text-align:center;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25d366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
+    footer { background: var(--azul-oscuro); color: white; padding: 40px; text-align: center; }
+    .firma-img { height: 70px; filter: brightness(0) invert(1); margin-bottom: 10px; }
 </style>
 </head>
 
 <body>
 
 <header>
-<div>
-<img src="logo.png" alt="CorFiterapia Logo">
-</div>
-<nav>
-<a href="#cursos">Cursos</a>
-<a href="#contacto">Contacto</a>
-</nav>
+    <img src="Logo CorFiterapia _Trasparente.png" alt="CorFiterapia Logo">
 </header>
 
 <section class="hero">
-<h1>Academia Virtual CorFiterapia</h1>
-<p>Formación avanzada para fisioterapeutas en modalidad 100% virtual</p>
-<button onclick="document.getElementById('cursos').scrollIntoView()">Agenda tu asesoría</button>
+    <h1>¡Últimos Cupos Disponibles!</h1>
+    <p>Certificación académica con validez institucional para el 2026</p>
 </section>
 
-<section id="cursos" class="section">
-<h2>Nuestros Programas Académicos</h2>
+<section class="section">
+    <div class="form-container">
+        <h3>Paso 1: Registro de Estudiante</h3>
+        <form id="formInscripcion" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
+            <input type="text" name="Nombre" id="nombre" placeholder="Nombre Completo" required>
+            <input type="text" name="Documento" id="documento" placeholder="Cédula de Ciudadanía" required>
+            <select name="Perfil" id="perfil" required>
+                <option value="">Seleccione su perfil...</option>
+                <option value="Fisioterapeuta">Fisioterapeuta</option>
+                <option value="Estudiante">Estudiante de Fisioterapia</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <input type="hidden" name="Curso_Seleccionado" id="curso_hidden">
+        </form>
+    </div>
 
-<div class="cursos">
+    <div class="cursos">
+        <div class="card">
+            <div class="cupos-badge">🔥 Solo quedan 5 cupos</div>
+            <h3>Diplomado Farmacología</h3>
+            <div class="precio">$1.500.000 COP</div>
+            <button class="btn-pago" onclick="procesarInscripcion('https://mpago.li/2YNW5Ay', 'Farmacología')">Inscribirme y Pagar</button>
+        </div>
 
-<div class="card">
-<h3>Diplomado en Farmacología Aplicada a la Fisioterapia</h3>
-<p>Formación avanzada en farmacología clínica aplicada al ejercicio terapéutico.</p>
-<div class="precio">$1.500.000 COP</div>
-<a href="https://link.mercadopago.com.co/cursocorfiterapia" target="_blank">Pagar e Inscribirme</a>
-</div>
+        <div class="card">
+            <div class="cupos-badge">⏳ Solo quedan 3 cupos</div>
+            <h3>Rehabilitación Cardiopulmonar</h3>
+            <div class="precio">$450.000 COP</div>
+            <button class="btn-pago" onclick="procesarInscripcion('https://mpago.li/23fNZDp', 'Cardiopulmonar')">Inscribirme y Pagar</button>
+        </div>
 
-<div class="card">
-<h3>Curso de Rehabilitación Cardiopulmonar</h3>
-<p>Protocolos actualizados en intervención cardiaca y respiratoria.</p>
-<div class="precio">$450.000 COP</div>
-<a href="https://link.mercadopago.com.co/cursocorfiterapia" target="_blank">Pagar e Inscribirme</a>
-</div>
+        <div class="card">
+            <div class="cupos-badge">Últimos cupos</div>
+            <h3>Gases Arteriales</h3>
+            <div class="precio">$250.000 COP</div>
+            <button class="btn-pago" onclick="procesarInscripcion('https://mpago.li/2FQAbTv', 'Gases Arteriales')">Inscribirme y Pagar</button>
+        </div>
 
-<div class="card">
-<h3>Curso de Interpretación de Gases Arteriales</h3>
-<p>Análisis clínico aplicado a pacientes críticos y hospitalarios.</p>
-<div class="precio">$250.000 COP</div>
-<a href="https://link.mercadopago.com.co/cursocorfiterapia" target="_blank">Pagar e Inscribirme</a>
-</div>
-
-<div class="card">
-<h3>Curso de Aplicación de la CIF</h3>
-<p>Uso práctico de la Clasificación Internacional del Funcionamiento en fisioterapia.</p>
-<div class="precio">$380.000 COP</div>
-<a href="https://link.mercadopago.com.co/cursocorfiterapia" target="_blank">Pagar e Inscribirme</a>
-</div>
-
-</div>
-</section>
-
-<section id="contacto" class="section">
-<h2>Contacto</h2>
-<p>WhatsApp: 3145613371</p>
-<p>Email: corfiterapiasredes@gmail.com</p>
+        <div class="card">
+            <div class="cupos-badge">🔥 Cupos limitados</div>
+            <h3>Aplicación de la CIF</h3>
+            <div class="precio">$480.000 COP</div>
+            <button class="btn-pago" onclick="procesarInscripcion('https://mpago.li/11GiaS8', 'CIF')">Inscribirme y Pagar</button>
+        </div>
+    </div>
 </section>
 
 <footer>
-<p>© 2026 CorFiterapia - Academia Virtual | Todos los derechos reservados</p>
+    <img src="fima digital.png" alt="Firma Directora" class="firma-img">
+    <p><strong>MERCEDES MENDOZA HINESTROZA</strong><br>Directora General - CorFiterapia</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/573145613371" target="_blank">WhatsApp</a>
+<script>
+    async function procesarInscripcion(urlPago, curso) {
+        const n = document.getElementById('nombre').value;
+        const d = document.getElementById('documento').value;
+        const p = document.getElementById('perfil').value;
+        const form = document.getElementById('formInscripcion');
+
+        if (!n || !d || !p) {
+            alert("⚠️ Por favor, llena tus datos arriba para poder inscribirte.");
+            window.scrollTo({top: 100, behavior: 'smooth'});
+            return;
+        }
+
+        document.getElementById('curso_hidden').value = curso;
+        
+        // Efecto visual en el botón
+        const btn = event.target;
+        btn.innerText = "Registrando...";
+        btn.style.opacity = "0.7";
+
+        const formData = new FormData(form);
+        
+        try {
+            // Envío silencioso al correo
+            await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+            // Redirección a Mercado Pago
+            window.location.href = urlPago;
+        } catch (e) {
+            window.location.href = urlPago; // Paga incluso si el correo falla
+        }
+    }
+</script>
 
 </body>
 </html>
