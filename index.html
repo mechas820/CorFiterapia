@@ -4,265 +4,193 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CorFiterapia | Academia Virtual</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins', sans-serif;
-scroll-behavior:smooth;
-}
-
 body{
-background:#f4f6fb;
-color:#333;
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f4f6f9;
+color:#222;
 }
-
-/* HEADER */
 
 header{
-background:#0c3c78;
-padding:20px 8%;
+background:#0b2c5f;
+color:white;
+padding:20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-color:white;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo img{
+header img{
 height:60px;
-}
-
-.logo h1{
-font-size:18px;
-line-height:1.2;
-}
-
-.logo span{
-font-size:12px;
-font-weight:300;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-margin-left:25px;
-font-weight:400;
-transition:0.3s;
+margin:0 15px;
+font-weight:500;
 }
-
-nav a:hover{
-color:#ffd60a;
-}
-
-/* HERO */
 
 .hero{
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
+background:url('https://images.unsplash.com/photo-1581093458791-9d1f0b9c1b2e') no-repeat center center/cover;
 color:white;
-padding:150px 8%;
 text-align:center;
+padding:120px 20px;
 }
 
-.hero h2{
-font-family:'Playfair Display', serif;
-font-size:42px;
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:48px;
 margin-bottom:20px;
 }
 
-.hero p{
+.hero button{
+background:#d4af37;
+border:none;
+padding:15px 30px;
 font-size:18px;
-max-width:750px;
-margin:auto;
+cursor:pointer;
+border-radius:6px;
 }
 
-.cta{
-margin-top:30px;
-display:inline-block;
-padding:14px 30px;
-background:#ffd60a;
-color:#000;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-}
-
-/* SECCIONES */
-
-section{
-padding:80px 8%;
-}
-
-h2{
+.section{
+padding:70px 20px;
 text-align:center;
-color:#0c3c78;
-margin-bottom:40px;
-font-family:'Playfair Display', serif;
 }
 
-/* CURSOS */
+.section h2{
+font-family:'Playfair Display',serif;
+font-size:36px;
+margin-bottom:40px;
+color:#0b2c5f;
+}
 
-.grid{
+.cursos{
 display:grid;
-grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
+max-width:1200px;
+margin:auto;
 }
 
 .card{
 background:white;
 padding:30px;
-border-radius:12px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-text-align:center;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-10px);
 }
 
-.price{
+.precio{
 font-size:22px;
-font-weight:600;
+color:#0b2c5f;
 margin:15px 0;
-color:#0c3c78;
+font-weight:600;
 }
 
-.card button{
-margin:5px;
-padding:10px 18px;
-border:none;
-border-radius:20px;
-cursor:pointer;
-font-weight:500;
-}
-
-.pay{
-background:#0c3c78;
+.card a{
+display:block;
+margin-top:15px;
+background:#0b2c5f;
 color:white;
+padding:12px;
+border-radius:6px;
+text-decoration:none;
 }
-
-.info{
-background:#25D366;
-color:white;
-}
-
-/* FOOTER */
 
 footer{
-background:#0c3c78;
+background:#0b2c5f;
 color:white;
+padding:40px;
 text-align:center;
-padding:40px 20px;
 }
 
 .whatsapp{
 position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
+bottom:20px;
+right:20px;
+background:#25d366;
 color:white;
-padding:15px 25px;
-border-radius:30px;
+padding:15px 20px;
+border-radius:50px;
 text-decoration:none;
-font-weight:600;
-box-shadow:0 6px 20px rgba(0,0,0,0.3);
+font-weight:bold;
 }
-
-@media(max-width:768px){
-.hero h2{
-font-size:28px;
-}
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">
-<img src="logo.png" alt="Logo CorFiterapia">
-<h1>CorFiterapia<br><span>Academia Virtual en Salud</span></h1>
+<div>
+<img src="logo.png" alt="CorFiterapia Logo">
 </div>
 <nav>
 <a href="#cursos">Cursos</a>
-<a href="#acceso">Acceso</a>
 <a href="#contacto">Contacto</a>
 </nav>
 </header>
 
 <section class="hero">
-<h2>Formación Profesional en Fisioterapia y Salud</h2>
-<p>Cursos virtuales especializados, actualizados y aplicados a la práctica clínica.</p>
-<a href="#cursos" class="cta">Ver Cursos</a>
+<h1>Academia Virtual CorFiterapia</h1>
+<p>Formación avanzada para fisioterapeutas en modalidad 100% virtual</p>
+<button onclick="document.getElementById('cursos').scrollIntoView()">Agenda tu asesoría</button>
 </section>
 
-<section id="cursos">
-<h2>Nuestros Cursos</h2>
+<section id="cursos" class="section">
+<h2>Nuestros Programas Académicos</h2>
 
-<div class="grid">
+<div class="cursos">
 
 <div class="card">
-<h3>Curso de Gases Arteriales</h3>
-<p>Interpretación clínica aplicada a fisioterapia.</p>
-<div class="price">$97.000 COP</div>
-<button class="pay" onclick="window.open('LINK_DE_PAGO_AQUI','_blank')">Pagar e inscribirme</button>
-<button class="info" onclick="infoCurso('Curso de Gases Arteriales')">Más información</button>
+<h3>Diplomado en Farmacología Aplicada a la Fisioterapia</h3>
+<p>Formación avanzada en farmacología clínica aplicada al ejercicio terapéutico.</p>
+<div class="precio">$1.500.000 COP</div>
+<a href="https://link.mercadopago.com.co/cursocorfiterapia" target="_blank">Pagar e Inscribirme</a>
 </div>
 
 <div class="card">
-<h3>Rehabilitación Cardiopulmonar</h3>
-<p>Actualización basada en evidencia científica.</p>
-<div class="price">$127.000 COP</div>
-<button class="pay" onclick="window.open('LINK_DE_PAGO_AQUI','_blank')">Pagar e inscribirme</button>
-<button class="info" onclick="infoCurso('Rehabilitación Cardiopulmonar')">Más información</button>
+<h3>Curso de Rehabilitación Cardiopulmonar</h3>
+<p>Protocolos actualizados en intervención cardiaca y respiratoria.</p>
+<div class="precio">$450.000 COP</div>
+<a href="https://link.mercadopago.com.co/cursocorfiterapia" target="_blank">Pagar e Inscribirme</a>
+</div>
+
+<div class="card">
+<h3>Curso de Interpretación de Gases Arteriales</h3>
+<p>Análisis clínico aplicado a pacientes críticos y hospitalarios.</p>
+<div class="precio">$250.000 COP</div>
+<a href="https://link.mercadopago.com.co/cursocorfiterapia" target="_blank">Pagar e Inscribirme</a>
+</div>
+
+<div class="card">
+<h3>Curso de Aplicación de la CIF</h3>
+<p>Uso práctico de la Clasificación Internacional del Funcionamiento en fisioterapia.</p>
+<div class="precio">$380.000 COP</div>
+<a href="https://link.mercadopago.com.co/cursocorfiterapia" target="_blank">Pagar e Inscribirme</a>
 </div>
 
 </div>
 </section>
 
-<section id="acceso">
-<h2>Acceso Estudiantes</h2>
-<p style="text-align:center;">
-Si ya realizaste tu pago, solicita el acceso a tu curso escribiendo a nuestro WhatsApp o revisando tu correo registrado.
-</p>
-</section>
-
-<section id="contacto">
+<section id="contacto" class="section">
 <h2>Contacto</h2>
-<p style="text-align:center;">
-WhatsApp: 3145613371<br>
-Correo: corfiterapiasredes@gmail.com
-</p>
+<p>WhatsApp: 3145613371</p>
+<p>Email: corfiterapiasredes@gmail.com</p>
 </section>
 
 <footer>
-<p>© 2026 CorFiterapia | Academia Virtual</p>
+<p>© 2026 CorFiterapia - Academia Virtual | Todos los derechos reservados</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/573145613371?text=Hola quiero información sobre los cursos de CorFiterapia" target="_blank">
-Escríbenos
-</a>
-
-<script>
-function infoCurso(curso){
-window.open(`https://wa.me/573145613371?text=Hola quiero más información sobre el ${curso}`,'_blank');
-}
-</script>
+<a class="whatsapp" href="https://wa.me/573145613371" target="_blank">WhatsApp</a>
 
 </body>
 </html>
