@@ -1,3 +1,8 @@
+He unificado el código realizando el cambio solicitado en el encabezado (bajo el nombre de la marca) y asegurando que el formulario incluya el campo de correo electrónico y el script de validación completo que habíamos trabajado.
+
+Aquí tienes el código actualizado:
+
+HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -60,7 +65,7 @@
         .c-card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
         .c-img { width: 100%; height: 230px; object-fit: cover; }
         .c-info { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
-        .c-info h4 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 20px; margin-bottom: 15px; height: 60px; overflow: hidden; line-height: 1.3; text-transform: capitalize; }
+        .c-info h4 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 20px; margin-bottom: 15px; height: 60px; overflow: hidden; line-height: 1.3; }
         .c-info p { font-size: 14px; color: #555; margin-bottom: 25px; flex-grow: 1; }
         .c-price { color: var(--rojo); font-weight: 800; font-size: 26px; margin-bottom: 20px; display: block; }
         .c-btn { background: var(--azul); color: white; border: none; padding: 18px; border-radius: 12px; cursor: pointer; font-weight: 700; text-transform: uppercase; transition: 0.3s; width: 100%; letter-spacing: 1px; }
@@ -95,7 +100,7 @@
         <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="CorFiterapia" class="nav-logo-img">
         <div class="logo-text-nav" style="line-height:1.2;">
             <span style="font-weight:800; color:var(--azul); font-size:16px;">CORFITERAPIA</span><br>
-            <span style="font-size:8px; color:var(--rojo); font-weight:600; letter-spacing:1px;">FORMACIÓN SUPERIOR</span>
+            <span style="font-size:8px; color:var(--rojo); font-weight:600; letter-spacing:1px;">MOVIMIENTO QUE TRANSFORMA SALUD</span>
         </div>
     </div>
     <nav>
@@ -113,11 +118,12 @@
 
 <div class="registration-box">
     <h3>Inscripción 2026</h3>
-    <p style="text-align:center; font-size:14px; color:#555; margin-bottom:25px; font-weight: 600;">Llena estos campos para continuar con tu inscripción y habilitar el acceso al pago:</p>
+    <p style="text-align:center; font-size:14px; color:#555; margin-bottom:25px; font-weight: 600;">Llena tus datos para recibir tu orden de matrícula y habilitar el acceso al pago:</p>
     <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
         <div class="form-grid">
             <input type="text" name="Estudiante" id="nombre_est" placeholder="Nombres y Apellidos" required>
             <input type="text" name="ID_Documento" id="doc_est" placeholder="Documento de Identidad" required>
+            <input type="email" name="Email" id="email_est" placeholder="Correo Electrónico" required>
             <select name="Perfil_Academico" id="perfil_est" required>
                 <option value="">¿Cuál es tu perfil actual?</option>
                 <option value="Fisioterapeuta">Fisioterapeuta Profesional</option>
@@ -127,6 +133,7 @@
             </select>
         </div>
         <input type="hidden" name="Curso_Seleccionado" id="hidden_curso">
+        <input type="hidden" name="_replyto" id="replyto_hidden">
     </form>
 </div>
 
@@ -222,15 +229,17 @@
     async function procesoInscripcion(urlMercadoPago, nombreCurso) {
         const nombre = document.getElementById('nombre_est').value;
         const doc = document.getElementById('doc_est').value;
+        const email = document.getElementById('email_est').value;
         const perfil = document.getElementById('perfil_est').value;
         
-        if(!nombre || !doc || !perfil) { 
-            alert("⚠️ Por favor, llena los campos de la sección 'Inscripción' antes de elegir un curso."); 
+        if(!nombre || !doc || !email || !perfil) { 
+            alert("⚠️ Por favor, completa todos los datos de la sección 'Inscripción' antes de elegir un curso."); 
             window.scrollTo({top: 550, behavior: 'smooth'}); 
             return; 
         }
 
         document.getElementById('hidden_curso').value = nombreCurso;
+        document.getElementById('replyto_hidden').value = email;
         const form = document.getElementById('mainForm');
         
         try {
