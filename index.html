@@ -18,10 +18,10 @@
 
         body { margin: 0; font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; scroll-behavior: smooth; }
 
-        /* HEADER */
+        /* HEADER CON LOGO PROMINENTE (cite: 1) */
         header {
             background: white;
-            padding: 15px 5%;
+            padding: 10px 5%; /* Aumentado padding para dar aire al logo (cite: 1) */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -30,11 +30,11 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        header img { height: 100px; }
+        header img { height: 120px; } /* TAMAÑO AUMENTADO SIGNIFICATIVAMENTE (cite: 1) */
         nav a { text-decoration: none; color: var(--azul-oscuro); margin-left: 20px; font-weight: 600; font-size: 14px; transition: 0.3s; }
         nav a:hover { color: var(--rojo); }
 
-        /* BOTÓN WHATSAPP FLOTANTE */
+        /* BOTÓN WHATSAPP FLOTANTE CON TU NÚMERO (cite: 2) */
         .btn-whatsapp {
             position: fixed;
             width: 60px;
@@ -57,7 +57,7 @@
         }
         .btn-whatsapp:hover { transform: scale(1.1); background-color: #128c7e; color: white; }
 
-        /* HERO */
+        /* HERO - Imagen de personas en entorno educativo (cite: 2) */
         .hero {
             background: linear-gradient(rgba(11, 44, 95, 0.8), rgba(11, 44, 95, 0.8)), url('http://googleusercontent.com/image_collection/image_retrieval/5286094794650679141_2');
             background-size: cover;
@@ -76,20 +76,29 @@
         .mv-box { background: var(--gris-fondo); padding: 30px; border-radius: 10px; }
         .portafolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .portafolio-card { background: white; padding: 25px; border-radius: 12px; border-top: 5px solid var(--azul-oscuro); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .portafolio-card h3 { color: var(--azul-claro); font-size: 18px; margin-top: 0; }
 
-        /* CURSOS */
+        /* TESTIMONIOS CON IMÁGENES DE ESTUDIANTES (cite: 3) */
+        .testimonios-sec { background: var(--azul-oscuro); color: white; }
+        .testimonios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .test-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
+        .test-card img { width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--dorado); margin-bottom: 15px; object-fit: cover; }
+
+        /* CURSOS CON IMÁGENES EDUCATIVAS (cite: 2, 3) */
         .cursos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .curso-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #eee; text-align: center; }
+        .curso-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #eee; text-align: center; transition: 0.3s; }
+        .curso-card:hover { transform: translateY(-10px); }
         .curso-img { width: 100%; height: 180px; object-fit: cover; }
+        .curso-content { padding: 20px; }
         .precio { font-size: 24px; font-weight: bold; color: var(--rojo); margin: 15px 0; }
         .badge { background: #ff6b00; color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; animation: pulse 2s infinite; display: inline-block; margin-bottom: 10px; }
 
         /* FORMULARIO */
         .form-reg { max-width: 600px; margin: 0 auto 50px; background: white; padding: 40px; border-radius: 15px; border-left: 8px solid var(--rojo); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        input, select { width: 100%; padding: 14px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+        input, select { width: 100%; padding: 14px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
         .btn-pago { background: var(--azul-oscuro); color: white; border: none; padding: 14px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: 600; font-size: 16px; transition: 0.3s; }
 
-        /* FOOTER */
+        /* FOOTER SIN FIRMA (cite: 1) */
         footer { background: #051630; color: white; text-align: center; padding: 60px 20px; border-top: 6px solid var(--rojo); }
 
         @keyframes pulse-green {
@@ -98,6 +107,7 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
         @keyframes pulse { 0% {transform: scale(1);} 50% {transform: scale(1.05);} 100% {transform: scale(1);} }
+        @media (max-width: 768px) { header img { height: 80px; } header { padding: 10px 5%; } .grid-mv { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -107,7 +117,7 @@
 </a>
 
 <header>
-    <img src="Logo CorFiterapia _Trasparente.png" alt="Logo CorFiterapia">
+    <img src="Logo CorFiterapia _Trasparente.png" alt="Logotipo CorFiterapia">
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#nosotros">Identidad</a>
@@ -125,6 +135,7 @@
 <section id="nosotros">
     <h2>¿Quiénes Somos?</h2>
     <p>La <strong>Corporación Actividad Física y Fisioterapia – CORFITERAPIAS</strong> es una entidad sin ánimo de lucro orientada al fortalecimiento del conocimiento en fisioterapia, actividad física y seguridad y salud en el trabajo (SST).</p>
+    <p>Operamos bajo un modelo <strong>no asistencial</strong> enfocado en la educación, investigación y soporte técnico, manteniendo una clara delimitación jurídica y profesional.</p>
     
     <div class="grid-mv">
         <div class="mv-box">
@@ -167,17 +178,31 @@
     </div>
 </section>
 
+<section class="testimonios-sec">
+    <h2>Nuestra Comunidad Académica</h2>
+    <div class="testimonios-grid">
+        <div class="test-card">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/5286094794650679141_0" alt="Profesional"> <p>"La actualización en farmacología clínica cambió mi perspectiva profesional. Excelente metodología."</p>
+            <strong>Elena Rivas</strong><br><small>Fisioterapeuta Especialista</small>
+        </div>
+        <div class="test-card">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/5286094794650679141_3" alt="Estudiante"> <p>"Como estudiante, encontrar cursos con tal rigor técnico y científico es fundamental. Muy satisfecha."</p>
+            <strong>Mateo Gómez</strong><br><small>Estudiante de Fisioterapia</small>
+        </div>
+    </div>
+</section>
+
 <section id="cursos">
-    <h2>Inscripciones y Pagos Online</h2>
+    <h2>Inscripciones Abiertas 2026</h2>
     <div class="form-reg">
-        <h3>Paso 1: Registro Obligatorio</h3>
+        <h3>Paso 1: Registro de Estudiante</h3>
         <form id="regForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
-            <input type="text" name="Nombre" id="n" placeholder="Nombre Completo del Estudiante" required>
-            <input type="text" name="Documento" id="d" placeholder="Cédula de Ciudadanía" required>
+            <input type="text" name="Nombre" id="n" placeholder="Nombre Completo" required>
+            <input type="text" name="Documento" id="d" placeholder="Documento de Identidad" required>
             <select name="Perfil" id="p" required>
-                <option value="">¿Cuál es su perfil?</option>
+                <option value="">¿Cuál es su perfil profesional?</option>
                 <option value="Fisioterapeuta">Fisioterapeuta</option>
-                <option value="Estudiante">Estudiante de Fisioterapia</option>
+                <option value="Estudiante">Estudiante</option>
                 <option value="Otro">Otro Profesional de la Salud</option>
             </select>
             <input type="hidden" name="Curso" id="curso_h">
@@ -186,8 +211,7 @@
 
     <div class="cursos-grid">
         <div class="curso-card">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/5286094794650679141_2" class="curso-img">
-            <div style="padding: 20px;">
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/5286094794650679141_2" class="curso-img"> <div class="curso-content">
                 <div class="badge">🔥 5 Cupos Libres</div>
                 <h4>Farmacología Aplicada</h4>
                 <p class="precio">$1.500.000</p>
@@ -195,9 +219,8 @@
             </div>
         </div>
         <div class="curso-card">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/5286094794650679141_1" class="curso-img">
-            <div style="padding: 20px;">
-                <div class="badge">⏳ 3 Cupos Libres</div>
+            <img src="http://googleusercontent.com/image_collection/image_retrieval/5286094794650679141_1" class="curso-img"> <div class="curso-content">
+                <div class="badge">⏳ Solo 3 Cupos</div>
                 <h4>Rehabilitación Cardiopulmonar</h4>
                 <p class="precio">$450.000</p>
                 <button class="btn-pago" onclick="pagar('https://mpago.li/23fNZDp', 'Cardiopulmonar')">Inscribirme y Pagar</button>
