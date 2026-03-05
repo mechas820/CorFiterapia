@@ -50,48 +50,45 @@
         input, select { padding: 18px; border: 1px solid #e2e8f0; border-radius: 14px; font-family: 'Montserrat'; font-size: 15px; width: 100%; transition: 0.3s; }
         input:focus { border-color: var(--azul); box-shadow: 0 0 0 4px rgba(10,61,98,0.1); }
 
+        /* ESTILO DEL BOTÓN CON PULSO */
+        .btn-pulse {
+            background: var(--rojo) !important;
+            animation: pulse-red 2s infinite;
+            box-shadow: 0 0 0 0 rgba(183, 28, 28, 0.7);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            color: white;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        @keyframes pulse-red {
+            0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(183, 28, 28, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(183, 28, 28, 0); }
+            100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(183, 28, 28, 0); }
+        }
+        .btn-pulse:hover { background: var(--azul) !important; animation: none; }
+
         section { padding: 80px 8%; }
         .st-title { text-align: center; margin-bottom: 70px; }
         .st-title h2 { font-family: 'Playfair Display', serif; font-size: 45px; color: var(--azul); position: relative; padding-bottom: 20px; }
         .st-title h2::after { content: ''; width: 60px; height: 5px; background: var(--rojo); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        /* ORGANIZACIÓN DE CURSOS SIN APIÑAMIENTO */
-        .courses-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 40px; 
-        }
-        .c-card { 
-            background: white; 
-            border-radius: 20px; 
-            overflow: hidden; 
-            border: 1px solid #f0f0f0; 
-            transition: 0.4s; 
-            display: flex; 
-            flex-direction: column; 
-            height: 100%; 
-        }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .c-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #f0f0f0; transition: 0.4s; display: flex; flex-direction: column; height: 100%; }
         .c-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .c-img { width: 100%; height: 230px; object-fit: cover; }
-        
-        .c-info { 
-            padding: 30px; 
-            flex-grow: 1; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-        }
-
-        /* NOMBRES COMPLETOS Y VISIBLES */
-        .c-info h4 { 
-            font-family: 'Playfair Display', serif; 
-            color: var(--azul); 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            line-height: 1.3;
-            min-height: 3em; /* Asegura espacio para títulos largos */
-        }
-        
+        .c-info { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .c-info h4 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 22px; margin-bottom: 15px; line-height: 1.3; min-height: 3em; }
         .c-info p { font-size: 15px; color: #555; margin-bottom: 25px; }
         .c-price { color: var(--rojo); font-weight: 800; font-size: 26px; margin-bottom: 20px; display: block; }
         .c-btn { background: var(--azul); color: white; border: none; padding: 18px; border-radius: 12px; cursor: pointer; font-weight: 700; text-transform: uppercase; transition: 0.3s; width: 100%; letter-spacing: 1px; }
@@ -102,8 +99,13 @@
         .i-card { background: white; padding: 50px 35px; border-radius: 30px; text-align: center; border: 1px solid #eef2f6; }
         .i-card i { font-size: 50px; color: var(--rojo); margin-bottom: 25px; }
 
-        .testimonial-sec { background: white; text-align: center; }
-        .t-card { max-width: 900px; margin: 0 auto; padding: 40px; border-radius: 20px; background: var(--gris-claro); border-left: 10px solid var(--azul); }
+        /* TESTIMONIOS V2 */
+        .seccion-testimonios-v2 { background: white; }
+        .testimonios-header { text-align: center; margin-bottom: 50px; }
+        .grid-testimonios-v2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card-testimonio-v2 { background: var(--gris-claro); padding: 30px; border-radius: 15px; border-left: 5px solid var(--rojo); }
+        .quote-body { font-style: italic; margin-bottom: 20px; }
+        .nombre-autor { color: var(--azul); font-weight: 700; }
 
         .wa-float { position: fixed; bottom: 35px; right: 35px; background: #25d366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 2000; box-shadow: 0 15px 30px rgba(0,0,0,0.2); text-decoration: none; }
         footer { background: var(--oscuro); color: white; text-align: center; padding: 80px 10%; }
@@ -120,7 +122,7 @@
 </head>
 <body>
 
-<a href="https://wa.me/573054513754" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/573145613371" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <header>
     <div class="logo-box" style="display:flex; align-items:center; gap:10px;">
@@ -145,7 +147,8 @@
 
 <div class="registration-box">
     <h3>Inscripción 2026</h3>
-    <p style="text-align:center; font-size:14px; color:#555; margin-bottom:25px; font-weight: 600;">Llena tus datos para habilitar el acceso a la incripcion y el pago:</p>
+    <p style="text-align:center; font-size:14px; color:#555; margin-bottom:25px; font-weight: 600;">Llena tus datos para habilitar el acceso a la inscripción y el pago:</p>
+    
     <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
         <div class="form-grid">
             <input type="text" name="Estudiante" id="nombre_est" placeholder="Nombres y Apellidos" required>
@@ -156,10 +159,20 @@
                 <option value="Fisioterapeuta">Fisioterapeuta</option>
                 <option value="Estudiante">Estudiante de Último Año de Fisioterapia</option>
                 <option value="SST">Profesional en SST</option>
-                <option value="SST"> Otro</option>
-                <option value="Especialista">Otro profesional area de la salud</option>
+                <option value="Otro_Salud">Otro profesional área de la salud</option>
+                <option value="Otro">Otro</option>
             </select>
         </div>
+
+        <div style="text-align: center; margin-top: 10px;">
+            <button type="button" class="btn-pulse" style="max-width: 450px;" onclick="validarFormularioSolo()">
+                <i class="fas fa-user-check"></i> REGISTRAR MIS DATOS Y ELEGIR CURSO
+            </button>
+            <p style="font-size: 13px; color: #666; margin-top: 15px; font-weight: 500;">
+                <i class="fas fa-info-circle"></i> Al hacer clic, tus datos se validarán y podrás elegir tu curso abajo.
+            </p>
+        </div>
+
         <input type="hidden" name="Curso_Seleccionado" id="hidden_curso">
         <input type="hidden" name="_replyto" id="replyto_hidden">
     </form>
@@ -175,7 +188,7 @@
             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800" class="c-img">
             <div class="c-info">
                 <div>
-                    <h4> Curso Prevención de lesiones musculoesqueléticas y riesgo biomecánico</h4>
+                    <h4>Curso Prevención de lesiones musculoesqueléticas y riesgo biomecánico</h4>
                     <p>Gestión de riesgos ergonómicos y protocolos de intervención.</p>
                 </div>
                 <div>
@@ -189,8 +202,8 @@
             <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800" class="c-img">
             <div class="c-info">
                 <div>
-                    <h4>Diplomado en Farmacología aplicada  a la Fisioterapia</h4>
-                    <p>Análisis de interacciones medicamentosas su impacto en la recuperación funcional y como influye en las tecnicas de fisioterapia.</p>
+                    <h4>Farmacología aplicada de la fisioterapia</h4>
+                    <p>Análisis de interacciones medicamentosas su impacto en la recuperación funcional.</p>
                 </div>
                 <div>
                     <span class="c-price">$1.500.000 COP</span>
@@ -237,214 +250,41 @@
         <div class="i-card">
             <i class="fas fa-bullseye"></i>
             <h3>Misión</h3>
-            <p>Transformar la salud mediante formación continua de alta calidad, dotando a los profesionales de herramientas científicas para una práctica de excelencia.</p>
+            <p>Transformar la salud mediante formación continua de alta calidad, dotando a los profesionales de herramientas científicas.</p>
         </div>
         <div class="i-card">
             <i class="fas fa-eye"></i>
             <h3>Visión</h3>
-            <p>Consolidarnos para el 2030 como la institución líder en Latinoamérica en formación continua para profesionales de la rehabilitación.</p>
+            <p>Consolidarnos para el 2030 como la institución líder en Latinoamérica en formación para rehabilitación.</p>
         </div>
         <div class="i-card">
             <i class="fas fa-gem"></i>
             <h3>Valores</h3>
-            <p>Nuestra ética se basa en el <strong>Rigor Científico</strong>, la <strong>Excelencia Académica</strong> y el <strong>Compromiso</strong> social.</p>
+            <p>Nuestra ética se basa en el <strong>Rigor Científico</strong>, la <strong>Excelencia Académica</strong> y el <strong>Compromiso</strong>.</p>
         </div>
     </div>
-<style>
-.seccion-testimonios-premium {
-background-color: #f4f7f9;
-padding: 120px 10%;
-font-family: 'Montserrat', sans-serif;
-position: relative;
-overflow: hidden;
-}
+</section>
 
-/* Decoración de fondo para credibilidad */
-.seccion-testimonios-premium::after {
-content: 'TESTIMONIALS';
-position: absolute;
-top: 50px;
-right: -50px;
-font-size: 150px;
-font-weight: 900;
-color: rgba(10, 61, 98, 0.03);
-z-index: 0;
-pointer-events: none;
-}
-
-.testimonios-header {
-text-align: left;
-margin-bottom: 80px;
-position: relative;
-z-index: 1;
-}
-
-.testimonios-header span {
-color: #b71c1c;
-text-transform: uppercase;
-font-weight: 700;
-letter-spacing: 3px;
-font-size: 14px;
-display: block;
-margin-bottom: 10px;
-}
-
-.testimonios-header h2 {
-font-family: 'Playfair Display', serif;
-color: #0a3d62;
-font-size: 48px;
-font-weight: 800;
-line-height: 1.2;
-}
-
-.grid-testimonios-premium {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-gap: 30px;
-position: relative;
-z-index: 1;
-}
-
-.card-testimonio-premium {
-background: #ffffff;
-padding: 60px 45px;
-border-radius: 4px; /* Bordes más rectos para look corporativo serio */
-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-border-left: 6px solid #b71c1c;
-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-}
-
-.card-testimonio-premium:hover {
-transform: translateY(-10px);
-box-shadow: 0 40px 80px rgba(10, 61, 98, 0.1);
-}
-
-.quote-icon {
-font-size: 40px;
-color: #0a3d62;
-margin-bottom: 25px;
-opacity: 0.2;
-}
-
-.quote-content {
-color: #334155;
-font-size: 18px;
-line-height: 1.8;
-margin-bottom: 40px;
-font-weight: 400;
-}
-
-.author-block {
-display: flex;
-align-items: center;
-border-top: 1px solid #f1f5f9;
-padding-top: 30px;
-}
-
-/* Placeholder para iniciales en lugar de fotos, se ve muy profesional */
-.author-avatar-initials {
-width: 50px;
-height: 50px;
-background: #0a3d62;
-color: white;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: 700;
-margin-right: 15px;
-font-size: 18px;
-}
-
-.author-data h5 {
-color: #0a3d62;
-font-weight: 700;
-font-size: 19px;
-margin: 0;
-}
-
-.author-data p {
-color: #64748b;
-font-size: 14px;
-margin: 3px 0 0;
-font-weight: 500;
-}
-
-@media (max-width: 768px) {
-.testimonios-header h2 { font-size: 36px; }
-.seccion-testimonios-premium { padding: 60px 5%; }
-}
-</style>
-
-<!-- 2. HTML: Estructura mejorada -->
-
-<section class="seccion-testimonios-premium" id="testimonios">
-<div class="testimonios-header">
-<span>Opiniones Reales</span>
-<h2>El impacto de CorFiterapia en
-
-
-
-el mundo profesional</h2>
-</div>
-
-<div class="grid-testimonios-premium">
-    <!-- Testimonio 1 -->
-    <div class="card-testimonio-premium">
-        <div>
-            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <div class="quote-content">
-                "La profundidad académica de los módulos de farmacología clínica me permitió optimizar mis planes de tratamiento. La evidencia científica que manejan es, sencillamente, de otro nivel."
-            </div>
-        </div>
-        <div class="author-block">
-            <div class="author-avatar-initials">EM</div>
-            <div class="author-data">
-                <h5>Dra. Elena Martínez</h5>
-                <p>Fisioterapeuta Especialista</p>
-            </div>
-        </div>
+<section class="seccion-testimonios-v2" id="testimonios">
+    <div class="testimonios-header">
+        <div class="st-title"><h2>Lo que dicen nuestros alumnos</h2></div>
     </div>
-
-    <!-- Testimonio 2 -->
-    <div class="card-testimonio-premium">
-        <div>
-            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <div class="quote-content">
-                "Implementé las estrategias de gestión del riesgo biomecánico en mi organización y logramos reducir la incidencia de lesiones en un 30%. CorFiterapia es garantía de resultados."
+    <div class="grid-testimonios-v2">
+        <article class="card-testimonio-v2">
+            <div class="quote-body">"La formación académica superó mis expectativas. Ahora aplico protocolos basados en evidencia científica."</div>
+            <div class="footer-autor">
+                <h5 class="nombre-autor">Dra. Elena Martínez</h5>
+                <span class="cargo-autor">Fisioterapeuta Especialista</span>
             </div>
-        </div>
-        <div class="author-block">
-            <div class="author-avatar-initials">RG</div>
-            <div class="author-data">
-                <h5>Ing. Ricardo Gómez</h5>
-                <p>Director SST Regional</p>
+        </article>
+        <article class="card-testimonio-v2">
+            <div class="quote-body">"El curso de Riesgo Biomecánico es fundamental para mi labor en SST. Metodología 100% práctica."</div>
+            <div class="footer-autor">
+                <h5 class="nombre-autor">Ing. Ricardo Gómez</h5>
+                <span class="cargo-autor">Especialista en SST</span>
             </div>
-        </div>
+        </article>
     </div>
-
-    <!-- Testimonio 3 -->
-    <div class="card-testimonio-premium">
-        <div>
-            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-            <div class="quote-content">
-                "Como profesional en formación, buscaba algo más que teoría. Aquí encontré mentores que te enseñan el 'cómo' clínico basado en la realidad del paciente actual."
-            </div>
-        </div>
-        <div class="author-block">
-            <div class="author-avatar-initials">AR</div>
-            <div class="author-data">
-                <h5>Ana Lucía Ríos</h5>
-                <p>Fisioterapeuta en Formación</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 </section>
 
 <footer>
@@ -455,6 +295,24 @@ el mundo profesional</h2>
 </footer>
 
 <script>
+    // Función para validar datos y guiar al usuario a los cursos
+    function validarFormularioSolo() {
+        const nombre = document.getElementById('nombre_est').value;
+        const doc = document.getElementById('doc_est').value;
+        const email = document.getElementById('email_est').value;
+        const perfil = document.getElementById('perfil_est').value;
+
+        if(!nombre || !doc || !email || !perfil) {
+            alert("⚠️ Por favor, completa todos los campos del formulario antes de continuar.");
+            document.getElementById('nombre_est').focus();
+            return;
+        }
+        
+        alert("✅ Datos validados con éxito. Ahora elige el curso que deseas realizar abajo.");
+        document.getElementById('cursos').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Función principal de envío y redirección a pago
     async function procesoInscripcion(urlMercadoPago, nombreCurso) {
         const nombre = document.getElementById('nombre_est').value;
         const doc = document.getElementById('doc_est').value;
@@ -462,7 +320,7 @@ el mundo profesional</h2>
         const perfil = document.getElementById('perfil_est').value;
         
         if(!nombre || !doc || !email || !perfil) { 
-            alert("⚠️ Por favor, completa tus datos en el formulario de inscripción antes de elegir un curso."); 
+            alert("⚠️ Por favor, completa tus datos en el formulario de inscripción superior antes de proceder al pago."); 
             window.scrollTo({top: 550, behavior: 'smooth'}); 
             return; 
         }
@@ -471,6 +329,12 @@ el mundo profesional</h2>
         document.getElementById('replyto_hidden').value = email;
         const form = document.getElementById('mainForm');
         
+        // Efecto visual de carga
+        const btnOriginal = event.target;
+        const textoOriginal = btnOriginal.innerText;
+        btnOriginal.innerText = "Procesando...";
+        btnOriginal.style.opacity = "0.7";
+
         try {
             await fetch(form.action, { 
                 method: 'POST', 
@@ -479,113 +343,11 @@ el mundo profesional</h2>
             });
             window.location.href = urlMercadoPago;
         } catch (e) { 
+            // Si falla Formspree, igual enviamos al pago para no perder la venta
             window.location.href = urlMercadoPago; 
         }
     }
 </script>
-<section style="background:#0f4c81;color:white;padding:80px 20px;text-align:center;">
-  <h1 style="font-size:42px;margin-bottom:10px;">
-    Corfiterapias
-  </h1>
 
-  <h2 style="font-weight:300;">
-    Instituto de Educación Continua en Fisioterapia y Rehabilitación
-  </h2>
-
-  <p style="max-width:700px;margin:auto;margin-top:20px;font-size:18px;">
-    Formación especializada para fisioterapeutas que desean fortalecer su
-    criterio clínico y actualizar sus conocimientos en rehabilitación.
-  </p>
-
-  <a href="#diplomado"
-     style="display:inline-block;margin-top:30px;padding:15px 30px;
-     background:#00b894;color:white;text-decoration:none;
-     font-size:18px;border-radius:6px;">
-     VER DIPLOMADO
-  </a>
-</section>
-
-
-<!-- SOBRE CORFITERAPIAS -->
-<section style="padding:60px 20px;text-align:center;max-width:900px;margin:auto;">
-  <h2>Sobre Corfiterapias</h2>
-
-  <p style="font-size:18px;line-height:1.6;">
-    Corfiterapias es un espacio académico orientado al desarrollo de programas
-    de educación continua en fisioterapia, rehabilitación y ciencias del
-    movimiento. Nuestro objetivo es fortalecer la formación clínica de los
-    profesionales de la salud mediante cursos y diplomados basados en
-    evidencia científica.
-  </p>
-</section>
-
-
-<!-- DIPLOMADO -->
-<section id="diplomado" style="background:#f5f5f5;padding:60px 20px;">
-  <div style="max-width:900px;margin:auto;text-align:center;">
-
-    <h2>Diplomado en Farmacología Aplicada a la Fisioterapia</h2>
-
-    <p style="font-size:18px;">
-      Comprende cómo los medicamentos influyen en la respuesta al ejercicio
-      terapéutico, la rehabilitación y la seguridad del paciente.
-    </p>
-
-    <h3>Aprenderás:</h3>
-
-    <ul style="list-style:none;font-size:18px;padding:0;">
-      <li>✔ Principios de farmacología clínica</li>
-      <li>✔ Interacción entre medicamentos y ejercicio terapéutico</li>
-      <li>✔ Farmacología cardiovascular y respiratoria</li>
-      <li>✔ Farmacología en enfermedades metabólicas</li>
-      <li>✔ Seguridad del paciente en rehabilitación</li>
-    </ul>
-
-    <p style="margin-top:20px;font-size:18px;">
-      <strong>Duración:</strong> 120 horas | Modalidad virtual
-    </p>
-
-    <a href="https://corfiterapia.github.io/CorFiterapia/#inicio"
-       style="display:inline-block;margin-top:25px;padding:15px 30px;
-       background:#e63946;color:white;text-decoration:none;
-       font-size:18px;border-radius:6px;">
-       INSCRIBIRME AHORA
-    </a>
-
-  </div>
-</section>
-
-
-<!-- BENEFICIOS -->
-<section style="padding:60px 20px;text-align:center;">
-  <h2>¿Por qué tomar este diplomado?</h2>
-
-  <div style="max-width:900px;margin:auto;font-size:18px;line-height:1.7;">
-
-    <p>✔ Fortalece tu criterio clínico como fisioterapeuta.</p>
-    <p>✔ Comprende la relación entre farmacología y rehabilitación.</p>
-    <p>✔ Mejora la seguridad del paciente durante el ejercicio terapéutico.</p>
-    <p>✔ Obtén certificado de educación continua.</p>
-
-  </div>
-</section>
-
-
-<!-- LLAMADO FINAL -->
-<section style="background:#0f4c81;color:white;text-align:center;padding:60px 20px;">
-  <h2>Inscripciones abiertas</h2>
-
-  <p style="font-size:18px;">
-    Asegura tu cupo en el Diplomado en Farmacología Aplicada a la Fisioterapia.
-  </p>
-
-  <a href="https://corfiterapia.github.io/CorFiterapia/#inicio"
-     style="display:inline-block;margin-top:20px;padding:15px 30px;
-     background:#00b894;color:white;text-decoration:none;
-     font-size:18px;border-radius:6px;">
-     INSCRIBIRME
-  </a>
-</section>
 </body>
 </html>
-
