@@ -22,7 +22,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; color: #333; scroll-behavior: smooth; line-height: 1.6; background: #fff; }
 
-        /* HEADER */
         header {
             background: rgba(255, 255, 255, 0.98);
             padding: 12px 5%;
@@ -33,7 +32,6 @@
         .nav-logo-img { height: 55px; width: auto; }
         nav a { text-decoration: none; color: var(--azul); font-weight: 700; margin-left: 20px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
 
-        /* HERO */
         .hero {
             height: 90vh;
             background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80');
@@ -43,7 +41,6 @@
         .hero-logo-main { max-width: 550px; width: 85%; margin-bottom: 30px; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); }
         .hero h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 5vw, 40px); color: var(--azul); font-weight: 700; }
 
-        /* REGISTRO */
         .registration-box {
             max-width: 1000px; margin: -100px auto 60px; background: white; padding: 45px;
             border-radius: 24px; box-shadow: var(--shadow); position: relative; z-index: 10;
@@ -68,7 +65,6 @@
             100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(183, 28, 28, 0); }
         }
 
-        /* CURSOS CON BARRAS DE CUPOS */
         section { padding: 80px 8%; }
         .st-title { text-align: center; margin-bottom: 70px; }
         .st-title h2 { font-family: 'Playfair Display', serif; font-size: 45px; color: var(--azul); }
@@ -78,7 +74,6 @@
         .c-img { width: 100%; height: 230px; object-fit: cover; }
         .c-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         
-        /* DISEÑO DE BARRAS DE DISPONIBILIDAD */
         .disponibilidad-wrapper {
             background: #f9f9f9;
             padding: 15px;
@@ -100,16 +95,13 @@
             height: 10px;
             border-radius: 5px;
             overflow: hidden;
-            position: relative;
         }
         .progreso-cupos {
             height: 100%;
             border-radius: 5px;
-            transition: width 1s ease-in-out;
+            background: var(--alerta);
+            animation: blinker 2s linear infinite;
         }
-        /* Colores de las barras */
-        .color-alerta { background: var(--alerta); animation: blinker 2s linear infinite; }
-        .color-critico { background: var(--rojo); animation: blinker 1s linear infinite; }
 
         @keyframes blinker { 50% { opacity: 0.7; } }
 
@@ -117,10 +109,6 @@
         .c-btn { background: var(--azul); color: white; border: none; padding: 18px; border-radius: 12px; cursor: pointer; font-weight: 700; width: 100%; text-transform: uppercase; }
         .c-btn:hover { background: var(--rojo); }
 
-        /* TESTIMONIOS */
-        .grid-testimonios-v2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card-testimonio-v2 { background: var(--gris-claro); padding: 30px; border-radius: 15px; border-left: 5px solid var(--azul); }
-        
         .wa-float { position: fixed; bottom: 35px; right: 35px; background: #25d366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 2000; text-decoration: none; }
         footer { background: var(--oscuro); color: white; text-align: center; padding: 80px 10%; }
         .footer-logo { height: 100px; filter: brightness(0) invert(1); margin-bottom: 30px; }
@@ -138,11 +126,7 @@
             <span style="font-size:8px; color:var(--rojo); font-weight:600;">MOVIMIENTO QUE TRANSFORMA SALUD</span>
         </div>
     </div>
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#cursos">Cursos</a>
-        <a href="#testimonios">Testimonios</a>
-    </nav>
+    <nav><a href="#inicio">Inicio</a><a href="#cursos">Cursos</a><a href="#testimonios">Testimonios</a></nav>
 </header>
 
 <section class="hero" id="inicio">
@@ -178,15 +162,10 @@
         <div class="c-card">
             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800" class="c-img">
             <div class="c-info">
-                <h4>Prevención de lesiones y riesgo biomecánico</h4>
+                <h4>Curso Prevención de lesiones y riesgo biomecánico</h4>
                 <div class="disponibilidad-wrapper">
-                    <div class="disponibilidad-label">
-                        <span>Disponibilidad</span>
-                        <span style="color:var(--alerta);">Cupos limitados <i class="fas fa-bolt"></i></span>
-                    </div>
-                    <div class="barra-cupos">
-                        <div class="progreso-cupos color-alerta" style="width: 85%;"></div>
-                    </div>
+                    <div class="disponibilidad-label"><span>Estado del Cupo</span><span style="color:var(--alerta);">CUPOS LIMITADOS <i class="fas fa-bolt"></i></span></div>
+                    <div class="barra-cupos"><div class="progreso-cupos" style="width: 82%;"></div></div>
                 </div>
                 <span class="c-price">$650.000 COP</span>
                 <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2FQAbTv', 'Prevención Lesiones')">Inscribirme</button>
@@ -196,15 +175,10 @@
         <div class="c-card">
             <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800" class="c-img">
             <div class="c-info">
-                <h4>Diplomado Farmacología aplicada a la fisioterapia</h4>
+                <h4>en Diplomado Farmacología aplicada a la fisioterapia</h4>
                 <div class="disponibilidad-wrapper">
-                    <div class="disponibilidad-label">
-                        <span>Disponibilidad</span>
-                        <span style="color:var(--rojo);">Últimos cupos <i class="fas fa-fire"></i></span>
-                    </div>
-                    <div class="barra-cupos">
-                        <div class="progreso-cupos color-critico" style="width: 92%;"></div>
-                    </div>
+                    <div class="disponibilidad-label"><span>Estado del Cupo</span><span style="color:var(--alerta);">CUPOS LIMITADOS <i class="fas fa-bolt"></i></span></div>
+                    <div class="barra-cupos"><div class="progreso-cupos" style="width: 88%;"></div></div>
                 </div>
                 <span class="c-price">$1.500.000 COP</span>
                 <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2YNW5Ay', 'Farmacología')">Inscribirme</button>
@@ -216,13 +190,8 @@
             <div class="c-info">
                 <h4>Diplomado Prescripción del Ejercicio</h4>
                 <div class="disponibilidad-wrapper">
-                    <div class="disponibilidad-label">
-                        <span>Disponibilidad</span>
-                        <span style="color:var(--alerta);">Cupos limitados <i class="fas fa-bolt"></i></span>
-                    </div>
-                    <div class="barra-cupos">
-                        <div class="progreso-cupos color-alerta" style="width: 75%;"></div>
-                    </div>
+                    <div class="disponibilidad-label"><span>Estado del Cupo</span><span style="color:var(--alerta);">CUPOS LIMITADOS <i class="fas fa-bolt"></i></span></div>
+                    <div class="barra-cupos"><div class="progreso-cupos" style="width: 78%;"></div></div>
                 </div>
                 <span class="c-price">$1.200.000 COP</span>
                 <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/11GiaS8', 'Diplomado Prescripción')">Inscribirme</button>
@@ -234,13 +203,8 @@
             <div class="c-info">
                 <h4>Rehabilitación Cardiopulmonar Adulto Mayor</h4>
                 <div class="disponibilidad-wrapper">
-                    <div class="disponibilidad-label">
-                        <span>Disponibilidad</span>
-                        <span style="color:var(--rojo);">Cierre inminente <i class="fas fa-exclamation-triangle"></i></span>
-                    </div>
-                    <div class="barra-cupos">
-                        <div class="progreso-cupos color-critico" style="width: 96%;"></div>
-                    </div>
+                    <div class="disponibilidad-label"><span>Estado del Cupo</span><span style="color:var(--alerta);">CUPOS LIMITADOS <i class="fas fa-bolt"></i></span></div>
+                    <div class="barra-cupos"><div class="progreso-cupos" style="width: 91%;"></div></div>
                 </div>
                 <span class="c-price">$450.000 COP</span>
                 <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/23fNZDp', 'Cardiopulmonar')">Inscribirme</button>
@@ -257,12 +221,8 @@
             <h5 style="color:var(--azul); font-weight:700;">Dra. Elena Martínez</h5><span style="font-size:12px; color:var(--rojo);">Fisioterapeuta Especialista</span>
         </article>
         <article class="card-testimonio-v2">
-            <p style="font-style:italic; color:#555; margin-bottom:15px;">"Como estudiante, CorFiterapia me dio la confianza clínica que necesitaba. ¡Excelente!"</p>
+            <p style="font-style:italic; color:#555; margin-bottom:15px;">"Como estudiante, CorFiterapia me dio la confianza clínica que necesitaba."</p>
             <h5 style="color:var(--azul); font-weight:700;">Camilo Andrés Pineda</h5><span style="font-size:12px; color:var(--rojo);">Estudiante de Fisioterapia</span>
-        </article>
-        <article class="card-testimonio-v2">
-            <p style="font-style:italic; color:#555; margin-bottom:15px;">"Excelente nivel académico en el curso de Riesgo Biomecánico."</p>
-            <h5 style="color:var(--azul); font-weight:700;">Ing. Ricardo Gómez</h5><span style="font-size:12px; color:var(--rojo);">Especialista en SST</span>
         </article>
     </div>
 </section>
