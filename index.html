@@ -58,7 +58,42 @@
             70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(183, 28, 28, 0); }
             100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(183, 28, 28, 0); }
         }
+<style>
+    .identity-section { padding: 80px 8%; background-color: #f4f7f9; }
+    .about-text { max-width: 900px; margin: 0 auto 50px; text-align: center; font-size: 18px; color: #555; }
+    .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .i-card { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    .i-card i { font-size: 40px; color: #b71c1c; margin-bottom: 20px; }
+    .i-card h3 { color: #0a3d62; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
+</style>
 
+<section id="identidad" class="identity-section">
+    <div class="st-title" style="text-align: center; margin-bottom: 40px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; color: #0a3d62;">Quiénes Somos</h2>
+    </div>
+    
+    <div class="about-text">
+        <p>En <strong>CorFiterapia</strong>, somos una institución dedicada a la excelencia en la formación de profesionales de la salud, enfocada en transformar la práctica clínica a través del movimiento y la evidencia científica.</p>
+    </div>
+
+    <div class="identity-grid">
+        <div class="i-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Misión</h3>
+            <p>Transformar la salud mediante formación continua de alta calidad, dotando a los profesionales de herramientas científicas para una práctica de excelencia.</p>
+        </div>
+        <div class="i-card">
+            <i class="fas fa-eye"></i>
+            <h3>Visión</h3>
+            <p>Consolidarnos para el 2030 como la institución líder en Latinoamérica en formación continua para profesionales de la rehabilitación.</p>
+        </div>
+        <div class="i-card">
+            <i class="fas fa-heart"></i>
+            <h3>Valores</h3>
+            <p>Nuestra ética se basa en el <strong>Rigor Científico</strong>, la <strong>Excelencia Académica</strong> y el <strong>Compromiso</strong> social.</p>
+        </div>
+    </div>
+</section>
         /* CURSOS GRID */
         section { padding: 80px 8%; }
         .st-title { text-align: center; margin-bottom: 60px; }
