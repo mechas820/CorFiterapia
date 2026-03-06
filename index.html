@@ -4,149 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CorFiterapia | Movimiento que Transforma Salud</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* VARIABLES DE MARCA - COLORES DE TU LOGO */
         :root {
-            --azul-corp: #0a3d62; /* Azul profesional */
-            --rojo-corp: #b71c1c; /* Rojo académico */
-            --naranja-corp: #e67e22; /* Naranja para urgencia */
-            --gris-fondo: #f4f7f9;
-            --blanco: #ffffff;
-            --shadow: 0 10px 40px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease-in-out;
+            --primary: #0a3d62;
+            --accent: #b71c1c;
+            --bg: #f8fafc;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; color: #334155; line-height: 1.6; background-color: var(--blanco); scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: #333; overflow-x: hidden; scroll-behavior: smooth; }
 
-        /* 1. HEADER (SOLUCIONADO: LOGO VISIBLE SOBRE FONDO BLANCO) */
+        /* HEADER - Logo siempre visible arriba */
         header {
-            background: rgba(255, 255, 255, 0.98); padding: 15px 8%;
+            background: #fff;
+            padding: 10px 8%;
             display: flex; justify-content: space-between; align-items: center;
-            position: fixed; width: 100%; top: 0; z-index: 2000; border-bottom: 1px solid #f0f0f0;
-            backdrop-filter: blur(10px);
+            position: fixed; width: 100%; top: 0; z-index: 2000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
         }
-        .logo-nav { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-nav img { height: 45px; width: auto; }
-        .logo-nav b { color: var(--azul-corp); font-size: 20px; font-weight: 800; }
+        .logo-box { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-box img { height: 45px; } /* Ajusta según el tamaño de tu imagen */
+        .logo-box span { font-weight: 900; color: var(--primary); font-size: 1.2rem; }
 
-        nav a { text-decoration: none; color: #555; font-weight: 700; margin-left: 25px; font-size: 11px; text-transform: uppercase; transition: var(--transition); letter-spacing: 0.5px;}
-        nav a:hover { color: var(--rojo-corp); }
+        nav a { text-decoration: none; color: var(--primary); font-weight: 700; margin-left: 20px; font-size: 0.75rem; text-transform: uppercase; }
 
-        /* 2. HERO SECTION (SOLUCIONADO: ESLOGAN EQUILIBRADO Y PROPORCIONADO) */
+        /* HERO - Texto proporcionado y sin logo central */
         .hero {
-            height: 70vh;
-            background: linear-gradient(rgba(10, 61, 98, 0.7), rgba(255, 255, 255, 0)), 
-                        url('https://images.unsplash.com/photo-1597762117709-328639e4e6f4?auto=format&fit=crop&w=1920&q=80');
+            height: 65vh;
+            background: linear-gradient(rgba(10, 61, 98, 0.7), rgba(10, 61, 98, 0.6)), 
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center;
-            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 5% 100px 5%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; color: white; padding-top: 60px;
         }
+
         .hero h1 { 
-            color: var(--blanco); 
-            font-size: clamp(26px, 5vw, 42px); /* TAMAÑO EQUILIBRADO */
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 1.5px; 
-            margin-bottom: 10px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            font-size: clamp(1.5rem, 4vw, 2.5rem); /* Tamaño de letra corregido */
+            font-weight: 900; text-transform: uppercase; line-height: 1.2; max-width: 800px; padding: 0 20px; 
         }
-        .hero p { color: rgba(255,255,255,0.9); font-size: 16px; font-weight: 300;}
+        .hero p { font-size: 1rem; margin-top: 10px; opacity: 0.9; letter-spacing: 1px; }
 
-        /* 3. REGISTRO MEJORADO (DISEÑO LIMPIO Y PROFESIONAL) */
-        .reg-container { margin-top: -100px; padding: 0 8%; z-index: 100; position: relative; }
-        .reg-box {
-            max-width: 950px; margin: 0 auto; background: white; padding: 40px;
-            border-radius: 25px; box-shadow: var(--shadow); border: 1px solid #f1f5f9;
+        /* FORMULARIO - Posición perfecta */
+        .main-card {
+            max-width: 950px; margin: -70px auto 40px;
+            background: #fff; padding: 35px; border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15); position: relative; z-index: 100;
         }
-        .reg-box h3 { text-align: center; margin-bottom: 25px; color: var(--azul-corp); font-weight: 700; }
+        .main-card h2 { text-align: center; color: var(--primary); margin-bottom: 25px; font-weight: 800; font-size: 1.4rem; }
         
-        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
-        .input-group { position: relative; }
-        .input-group i { position: absolute; left: 18px; top: 18px; color: #a1a1a1; font-size: 16px; }
-        
-        input, select { padding: 18px 18px 18px 50px; border: 2px solid #e2e8f0; border-radius: 12px; font-family: 'Montserrat'; width: 100%; outline: none; transition: 0.3s; font-size: 14px; }
-        input:focus { border-color: var(--azul-corp); }
-
-        .btn-reg {
-            background: var(--rojo-corp); color: white; border: none; padding: 18px; border-radius: 12px;
-            font-weight: 800; text-transform: uppercase; width: 100%; margin-top: 20px;
-            cursor: pointer; animation: pulse 2s infinite; letter-spacing: 1px; transition: var(--transition); font-size: 15px;
+        .grid-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
+        input, select { 
+            width: 100%; padding: 16px; border: 2px solid #edf2f7; border-radius: 12px; 
+            font-family: inherit; font-weight: 600; outline: none; font-size: 14px;
         }
-        .btn-reg:hover { background: #961717; transform: translateY(-2px); }
+        input:focus { border-color: var(--primary); }
 
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        .btn-main {
+            width: 100%; padding: 18px; margin-top: 20px;
+            background: var(--accent); color: white; border: none;
+            border-radius: 12px; font-weight: 900; font-size: 1rem;
+            cursor: pointer; text-transform: uppercase; transition: 0.3s;
+        }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(183, 28, 28, 0.3); }
 
-        /* SECCIONES TÍTULOS */
-        section { padding: 80px 8%; }
-        .st-title { text-align: center; margin-bottom: 50px; }
-        .st-title h2 { font-size: 34px; color: var(--azul-corp); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-        .divider { width: 60px; height: 5px; background: var(--rojo-corp); margin: 0 auto; border-radius: 3px; }
+        /* SECCIONES TITULOS */
+        .section-padding { padding: 80px 8%; }
+        .title-center { text-align: center; margin-bottom: 40px; }
+        .title-center h2 { font-size: 2rem; font-weight: 900; color: var(--primary); text-transform: uppercase; }
+        .line { width: 50px; height: 5px; background: var(--accent); margin: 15px auto; border-radius: 10px; }
 
-        /* NOSOTROS (INTEGRADO: MISIÓN, VISIÓN, VALORES) */
-        .id-section { background-color: var(--gris-fondo); }
-        .id-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .id-card { background: white; padding: 45px 30px; border-radius: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.02); transition: var(--transition); border: 1px solid #eee; }
-        .id-card:hover { transform: translateY(-5px); }
-        .id-card i { font-size: 45px; color: var(--rojo-corp); margin-bottom: 20px; display: block; }
-        .id-card h3 { color: var(--azul-corp); margin-bottom: 15px; font-size: 22px; font-weight: 700; }
-        .id-card p { color: #555; font-size: 15px; }
-
-        /* CURSOS CON BARRAS DINÁMICAS (INTEGRADO: LOS 5 DIPLOMADOS) */
+        /* CURSOS GRID */
         .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .c-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #f1f5f9; display: flex; flex-direction: column; transition: var(--transition); }
-        .c-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .c-img { width: 100%; height: 210px; object-fit: cover; }
-        .c-info { padding: 25px; text-align: center; flex-grow: 1; }
-        .c-info h4 { font-weight: 700; color: #333; margin-bottom: 10px; height: 48px; overflow: hidden; line-height: 1.2; }
-        .c-price { color: var(--azul-corp); font-weight: 800; font-size: 24px; margin: 10px 0; display: block; }
+        .c-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #eee; display: flex; flex-direction: column; }
+        .c-img { width: 100%; height: 200px; object-fit: cover; }
+        .c-body { padding: 25px; text-align: center; flex-grow: 1; }
+        .c-price { font-size: 1.5rem; font-weight: 900; color: var(--primary); margin-bottom: 15px; display: block; }
+        .btn-buy { width: 100%; padding: 14px; border-radius: 10px; border: none; background: var(--primary); color: white; font-weight: 800; cursor: pointer; text-transform: uppercase; }
 
-        .bar-container { margin: 15px 0 20px; text-align: left; }
-        .bar-text { font-size: 11px; font-weight: 800; color: var(--naranja-corp); display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .bar-bg { background: #eee; height: 8px; border-radius: 10px; width: 100%; overflow: hidden; }
-        .bar-fill { background: linear-gradient(90deg, var(--naranja-corp), var(--rojo-corp)); height: 100%; border-radius: 10px; }
+        /* WHATSAPP */
+        .wa-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 5000; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-decoration: none; }
 
-        .btn-buy { background: var(--azul-corp); color: white; border: none; padding: 14px; border-radius: 10px; font-weight: 700; width: 100%; cursor: pointer; text-transform: uppercase; transition: 0.3s; font-size: 14px; }
-        .btn-buy:hover { background: var(--rojo-corp); }
+        footer { background: var(--primary); color: white; padding: 40px 8%; text-align: center; }
 
-        /* TESTIMONIOS (INTEGRADO: PRUEBA SOCIAL) */
-        .testimonios { background-color: var(--gris-fondo); }
-        .t-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .t-card { background: white; padding: 30px; border-radius: 15px; border-left: 5px solid var(--azul-corp); box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-right: 1px solid #eee; border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
-        .t-card p { font-style: italic; font-size: 14px; margin-bottom: 15px; color: #555; }
-        .t-card b { color: var(--azul-corp); display: block; font-size: 16px; }
-        .t-card span { color: var(--rojo-corp); font-size: 11px; font-weight: 700; text-transform: uppercase; }
-
-        /* WHATSAPP FLOTANTE (INTEGRADO: MENSAJE CON ORTOGRAFÍA MEJORADA) */
-        .wa-float { 
-            position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
-            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; 
-            justify-content: center; font-size: 30px; z-index: 9999; box-shadow: 0 10px 25px rgba(37,211,102,0.3);
-            text-decoration: none; transition: 0.3s;
-        }
-        .wa-float:hover { transform: scale(1.1); background-color: #128c7e; }
-
-        /* FOOTER (INTEGRADO) */
-        footer { background: #0a192f; color: white; text-align: center; padding: 60px 10%; }
-        .logo-footer { height: 60px; filter: brightness(0) invert(1); margin-bottom: 20px; }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) { nav { display: none; } .hero { height: 60vh; } }
+        @media (max-width: 768px) { nav { display: none; } .hero h1 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/573054513754?text=Hola,%20CorFiterapia.%20Deseo%20conocer%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20cursos%20y%20diplomados." class="wa-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
     <header>
-        <a href="#inicio" class="logo-nav">
-            <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="CorFiterapia">
-            <b>CORFITERAPIA</b>
+        <a href="#" class="logo-box">
+            <img src="Logo CorFiterapia _Trasparente.png" alt="CorFiterapia">
+            <span>CORFITERAPIA</span>
         </a>
         <nav>
             <a href="#nosotros">Nosotros</a>
@@ -155,185 +106,67 @@
         </nav>
     </header>
 
-    <section class="hero" id="inicio">
-        <h1>MOVIMIENTO QUE<br><span style="color: var(--azul-corp);">TRANSFORMA SALUD</span></h1>
-        <p>Corporación de Fisioterapia & Actividad Física Colombia</p>
+    <section class="hero">
+        <h1>Movimiento que<br><span style="color: #fff; background: var(--accent); padding: 0 10px;">Transforma Salud</span></h1>
+        <p>Corporación de Fisioterapia & Actividad Física</p>
     </section>
 
-    <div class="reg-container">
-        <div class="reg-box">
-            <h3>Registro de Inscripción 2026</h3>
-            <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
-                <div class="form-grid">
-                    <div class="input-group">
-                        <i class="fas fa-user"></i>
-                        <input type="text" name="Nombre" id="nombre_est" placeholder="Nombre completo" required>
-                    </div>
-                    <div class="input-group">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" name="Email" id="email_est" placeholder="Correo electrónico" required>
-                    </div>
-                    <div class="input-group">
-                        <i class="fas fa-briefcase"></i>
-                        <select name="Perfil" id="perfil_est" required>
-                            <option value="">¿Cuál es tu perfil?</option>
-                            <option value="Fisioterapeuta">Fisioterapeuta</option>
-                            <option value="Estudiante">Estudiante de Fisioterapia</option>
-                            <option value="SST">Profesional SST / Otros</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="button" class="btn-reg" onclick="irCursos()">VER PROGRAMAS Y DISPONIBILIDAD</button>
-                <input type="hidden" name="Diplomado_Interes" id="hidden_curso">
-            </form>
-        </div>
+    <div class="main-card">
+        <h2>Registro de Inscripción 2026</h2>
+        <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
+            <div class="grid-inputs">
+                <input type="text" name="Nombre" id="nombre_est" placeholder="Nombre completo" required>
+                <input type="email" name="Email" id="email_est" placeholder="Correo electrónico" required>
+                <select name="Perfil" id="perfil_est" required>
+                    <option value="">Tu Perfil Profesional</option>
+                    <option value="Fisioterapeuta">Fisioterapeuta</option>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="SST">Especialista SST</option>
+                </select>
+            </div>
+            <button type="button" class="btn-main" onclick="irCursos()">VER CUPOS Y DISPONIBILIDAD</button>
+            <input type="hidden" name="Diplomado_Interes" id="hidden_curso">
+        </form>
     </div>
 
-    <section id="nosotros" class="id-section">
-        <div class="st-title">
-            <h2>Nuestra Identidad</h2>
-            <div class="divider"></div>
-        </div>
-        <div class="id-grid">
-            <div class="id-card">
-                <i class="fas fa-bullseye"></i>
-                <h3>Misión</h3>
-                <p>Brindar formación continua de alta calidad basada en evidencia científica para transformar la práctica clínica profesional.</p>
-            </div>
-            <div class="id-card">
-                <i class="fas fa-eye"></i>
-                <h3>Visión</h3>
-                <p>Ser la institución de referencia en Latinoamérica para la especialización en rehabilitación y movimiento humano para el 2030.</p>
-            </div>
-            <div class="id-card">
-                <i class="fas fa-hand-holding-heart"></i>
-                <h3>Valores</h3>
-                <p>Integridad académica, rigor científico y compromiso ético con la salud de nuestra comunidad.</p>
-            </div>
-        </div>
+    <section id="nosotros" class="section-padding" style="background: white;">
+        <div class="title-center"><h2>Nuestra Identidad</h2><div class="line"></div></div>
+        <p style="max-width: 800px; margin: 0 auto; text-align: center; color: #666;">
+            Lideramos la formación continua en salud física, combinando la evidencia científica con la práctica clínica avanzada.
+        </p>
     </section>
 
-    <section id="cursos">
-        <div class="st-title">
-            <h2>Diplomados Disponibles</h2>
-            <p style="color:var(--rojo-corp); font-weight:700;">⚠️ Inscripciones abiertas - Cupos limitados</p>
-        </div>
+    <section id="cursos" class="section-padding">
+        <div class="title-center"><h2>Diplomados</h2><div class="line"></div></div>
         <div class="courses-grid">
-            
-            <div class="c-card">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500" class="c-img">
-                <div class="c-info">
-                    <h4>Prevención de lesiones y riesgo biomecánico</h4>
-                    <span class="c-price">$650.000 COP</span>
-                    <div class="bar-container">
-                        <span class="bar-text">Cupos Limitados</span>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 82%;"></div></div>
-                    </div>
-                    <button class="btn-buy" onclick="inscribir('https://mpago.li/2FQAbTv', 'Prevención')">Asegurar mi cupo</button>
-                </div>
-            </div>
-
             <div class="c-card">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500" class="c-img">
-                <div class="c-info">
-                    <h4>Farmacología aplicada a la fisioterapia</h4>
+                <div class="c-body">
+                    <h4>Farmacología en Fisioterapia</h4>
                     <span class="c-price">$1.500.000 COP</span>
-                    <div class="bar-container">
-                        <span class="bar-text">Últimos Cupos</span>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 94%;"></div></div>
-                    </div>
-                    <button class="btn-buy" onclick="inscribir('https://mpago.li/2YNW5Ay', 'Farmacología')">Asegurar mi cupo</button>
+                    <button class="btn-buy" onclick="inscribir('https://mpago.li/2YNW5Ay', 'Farmacología')">Asegurar Cupo</button>
                 </div>
             </div>
-
-            <div class="c-card">
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500" class="c-img">
-                <div class="c-info">
-                    <h4>Diplomado Prescripción del Ejercicio</h4>
-                    <span class="c-price">$1.200.000 COP</span>
-                    <div class="bar-container">
-                        <span class="bar-text">Disponibilidad Limitada</span>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
-                    </div>
-                    <button class="btn-buy" onclick="inscribir('https://mpago.li/11GiaS8', 'Prescripción')">Asegurar mi cupo</button>
-                </div>
             </div>
-
-            <div class="c-card">
-                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=500" class="c-img">
-                <div class="c-info">
-                    <h4>Diplomado Rehabilitación Cardíaca Integral</h4>
-                    <span class="c-price">$1.350.000 COP</span>
-                    <div class="bar-container">
-                        <span class="bar-text">Inscripciones por Cerrar</span>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 98%;"></div></div>
-                    </div>
-                    <button class="btn-buy" onclick="inscribir('https://mpago.li/1LJUg1c', 'Cardíaca')">Asegurar mi cupo</button>
-                </div>
-            </div>
-
-            <div class="c-card">
-                <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img">
-                <div class="c-info">
-                    <h4>Rehabilitación Cardiopulmonar Adulto Mayor</h4>
-                    <span class="c-price">$450.000 COP</span>
-                    <div class="bar-container">
-                        <span class="bar-text">Cupos Disponibles</span>
-                        <div class="bar-bg"><div class="bar-fill" style="width: 60%;"></div></div>
-                    </div>
-                    <button class="btn-buy" onclick="inscribir('https://mpago.li/23fNZDp', 'Adulto Mayor')">Asegurar mi cupo</button>
-                </div>
-            </div>
-
-        </div>
     </section>
 
-    <section id="testimonios" class="testimonios">
-        <div class="st-title">
-            <h2>Testimonios Reales</h2>
-            <div class="divider"></div>
-        </div>
-        <div class="t-grid">
-            <div class="t-card">
-                <p>"La mejor inversión académica que he realizado. Docentes de altísimo nivel y contenido muy práctico."</p>
-                <b>Dra. Elena Martínez</b><span>Fisioterapeuta Especialista</span>
-            </div>
-            <div class="t-card">
-                <p>"Contenido basado en evidencia científica. Me dio la seguridad clínica que necesitaba."</p>
-                <b>Camilo Pineda</b><span>Fisioterapeuta en Formación</span>
-            </div>
-            <div class="t-card">
-                <p>"Un programa fundamental para mi actualización en el área de seguridad y salud en el trabajo."</p>
-                <b>Ing. Ricardo Gómez</b><span>Especialista SST</span>
-            </div>
-        </div>
-    </section>
+    <a href="https://wa.me/573054513754" class="wa-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <footer>
-        <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="CorFiterapia" class="logo-footer">
-        <p><b>CORFITERAPIA</b></p>
-        <p>Movimiento que transforma salud</p>
-        <p>© 2026 Colombia - Educación Continua de Alto Nivel</p>
+        <p><b>CORFITERAPIA COLOMBIA</b></p>
+        <p>© 2026 - Educación de Élite en Salud</p>
     </footer>
 
     <script>
         function irCursos() {
-            if(!document.getElementById('nombre_est').value) { alert("⚠️ Por favor completa tus datos para continuar."); return; }
+            if(!document.getElementById('nombre_est').value) { alert("Por favor completa tus datos."); return; }
             document.getElementById('cursos').scrollIntoView({ behavior: 'smooth' });
         }
-
-        async function inscribir(url, curso) {
-            if(!document.getElementById('nombre_est').value) { 
-                alert("⚠️ Debes registrar tu interés arriba antes de asegurar tu cupo."); 
-                window.scrollTo({top: 500, behavior: 'smooth'});
-                return; 
-            }
+        function inscribir(url, curso) {
+            if(!document.getElementById('nombre_est').value) { alert("Regístrate primero arriba."); return; }
             document.getElementById('hidden_curso').value = curso;
-            const form = document.getElementById('mainForm');
-            try {
-                await fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'} });
-                window.location.href = url;
-            } catch(e) { window.location.href = url; }
+            document.getElementById('mainForm').submit();
+            setTimeout(() => { window.location.href = url; }, 500);
         }
     </script>
 </body>
