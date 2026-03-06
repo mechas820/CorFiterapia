@@ -47,9 +47,20 @@
             border-radius: 24px; box-shadow: var(--shadow); position: relative; z-index: 10;
         }
         .registration-box h3 { text-align: center; color: var(--azul); font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px; }
-        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
         input, select { padding: 18px; border: 1px solid #e2e8f0; border-radius: 14px; font-family: 'Montserrat'; font-size: 15px; width: 100%; transition: 0.3s; outline: none; }
         input:focus { border-color: var(--azul); box-shadow: 0 0 0 4px rgba(10,61,98,0.1); }
+
+        /* Botón de Registro en el Formulario */
+        .reg-submit-btn {
+            display: block; width: fit-content; margin: 0 auto;
+            background: var(--rojo); color: white; border: none; 
+            padding: 15px 40px; border-radius: 50px; cursor: pointer;
+            font-weight: 800; text-transform: uppercase; font-size: 13px;
+            letter-spacing: 2px; transition: 0.4s; box-shadow: 0 10px 20px rgba(183, 28, 28, 0.2);
+        }
+        .reg-submit-btn:hover { background: var(--azul); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(10, 61, 98, 0.3); }
 
         section { padding: 80px 8%; }
         .st-title { text-align: center; margin-bottom: 70px; }
@@ -74,30 +85,26 @@
 
         .c-price { color: var(--rojo); font-weight: 800; font-size: 26px; margin-bottom: 20px; display: block; }
         .c-btn { background: var(--azul); color: white; border: none; padding: 18px; border-radius: 12px; cursor: pointer; font-weight: 700; text-transform: uppercase; transition: 0.3s; width: 100%; letter-spacing: 1px; }
-        .c-btn:hover { background: var(--rojo); transform: scale(1.02); }
+        .c-btn:hover { background: var(--rojo); }
 
         .identity-section { background-color: var(--gris-claro); }
         .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .i-card { background: white; padding: 50px 35px; border-radius: 30px; text-align: center; border: 1px solid #eef2f6; transition: 0.3s; }
-        .i-card:hover { border-color: var(--rojo); }
         .i-card i { font-size: 50px; color: var(--rojo); margin-bottom: 25px; }
 
-        .testimonios-v2 { background: white; }
         .grid-testimonios-v2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card-testimonio-v2 { background: var(--gris-claro); padding: 40px 30px; border-radius: 20px; border-left: 6px solid var(--azul); position: relative; }
+        .card-testimonio-v2 { background: var(--gris-claro); padding: 40px 30px; border-radius: 20px; border-left: 6px solid var(--azul); }
         .quote-body { font-style: italic; color: #444; margin-bottom: 20px; font-size: 15px; }
         .footer-autor h5 { color: var(--azul); font-weight: 800; font-size: 16px; }
         .cargo-autor { color: var(--rojo); font-size: 12px; font-weight: 600; text-transform: uppercase; }
 
-        .wa-float { position: fixed; bottom: 35px; right: 35px; background: #25d366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 2000; box-shadow: 0 15px 30px rgba(0,0,0,0.2); text-decoration: none; transition: 0.3s; }
-        .wa-float:hover { transform: scale(1.1); }
+        .wa-float { position: fixed; bottom: 35px; right: 35px; background: #25d366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 2000; box-shadow: 0 15px 30px rgba(0,0,0,0.2); text-decoration: none; }
 
         footer { background: var(--oscuro); color: white; text-align: center; padding: 60px 10%; }
         .footer-logo { height: 100px; filter: brightness(0) invert(1); margin-bottom: 20px; }
 
         @media (max-width: 768px) {
             header { padding: 10px 4%; }
-            .hero { height: 70vh; }
             .registration-box { margin: -50px 5% 40px; padding: 30px; }
             nav { display: none; }
             .courses-grid { grid-template-columns: 1fr; }
@@ -131,7 +138,7 @@
 
 <div class="registration-box">
     <h3>Inscripción 2026</h3>
-    <p style="text-align:center; font-size:14px; color:#555; margin-bottom:25px; font-weight: 600;">Llena tus datos para habilitar el acceso a la inscripción y el pago:</p>
+    <p style="text-align:center; font-size:14px; color:#555; margin-bottom:25px; font-weight: 600;">Regístrate primero para habilitar tu cupo en los cursos:</p>
     <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
         <div class="form-grid">
             <input type="text" name="Estudiante" id="nombre_est" placeholder="Nombres y Apellidos" required>
@@ -142,9 +149,10 @@
                 <option value="Fisioterapeuta">Fisioterapeuta</option>
                 <option value="Estudiante">Estudiante de Último Año de Fisioterapia</option>
                 <option value="SST">Profesional en SST</option>
-                <option value="Otro">Otro profesional area de la salud</option>
+                <option value="Especialista">Otro profesional area de la salud</option>
             </select>
         </div>
+        <button type="button" class="reg-submit-btn" onclick="validarRegistro()">Registrar mis datos</button>
         <input type="hidden" name="Curso_Seleccionado" id="hidden_curso">
         <input type="hidden" name="_replyto" id="replyto_hidden">
     </form>
@@ -166,7 +174,7 @@
                 <div>
                     <div class="cupo-container">
                         <div class="cupo-text"><span>Cupos limitados</span><span>¡Últimos lugares!</span></div>
-                        <div class="cupo-bar"><div class="cupo-fill" style="width: 90%;"></div></div>
+                        <div class="cupo-bar"><div class="cupo-fill" style="width: 88%;"></div></div>
                     </div>
                     <span class="c-price">$650.000 COP</span>
                     <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2FQAbTv', 'Prevención de Lesiones')">Inscribirme</button>
@@ -179,12 +187,12 @@
             <div class="c-info">
                 <div>
                     <h4>Diplomado Farmacología aplicada de la fisioterapia</h4>
-                    <p>Análisis de interacciones medicamentosas y su impacto en la recuperación funcional.</p>
+                    <p>Análisis de interacciones medicamentosas y su impacto funcional.</p>
                 </div>
                 <div>
                     <div class="cupo-container">
-                        <div class="cupo-text"><span>Estado de inscripción</span><span>Cupos agotándose</span></div>
-                        <div class="cupo-bar"><div class="cupo-fill" style="width: 75%;"></div></div>
+                        <div class="cupo-text"><span>Demanda alta</span><span>Casi lleno</span></div>
+                        <div class="cupo-bar"><div class="cupo-fill" style="width: 70%;"></div></div>
                     </div>
                     <span class="c-price">$1.500.000 COP</span>
                     <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2YNW5Ay', 'Farmacología Aplicada')">Inscribirme</button>
@@ -197,12 +205,12 @@
             <div class="c-info">
                 <div>
                     <h4>Diplomado en Prescripción del Ejercicio Terapéutico</h4>
-                    <p>Metodología científica para la dosificación del ejercicio en patologías crónicas.</p>
+                    <p>Metodología científica para la dosificación del ejercicio clínico.</p>
                 </div>
                 <div>
                     <div class="cupo-container">
-                        <div class="cupo-text"><span>Alta demanda</span><span>Último cupo</span></div>
-                        <div class="cupo-bar"><div class="cupo-fill" style="width: 95%;"></div></div>
+                        <div class="cupo-text"><span>Atención</span><span>Último cupo disponible</span></div>
+                        <div class="cupo-bar"><div class="cupo-fill" style="width: 96%;"></div></div>
                     </div>
                     <span class="c-price">$1.200.000 COP</span>
                     <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/11GiaS8', 'Diplomado Prescripción')">Inscribirme</button>
@@ -215,12 +223,12 @@
             <div class="c-info">
                 <div>
                     <h4>Curso Básico de Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
-                    <p>Protocolos para el manejo de pacientes con compromiso cardiopulmonar.</p>
+                    <p>Protocolos para el manejo de pacientes geriátricos con compromiso cardiopulmonar.</p>
                 </div>
                 <div>
                     <div class="cupo-container">
-                        <div class="cupo-text"><span>Inscripciones abiertas</span><span>Pocos cupos</span></div>
-                        <div class="cupo-bar"><div class="cupo-fill" style="width: 60%;"></div></div>
+                        <div class="cupo-text"><span>Inscripciones</span><span>Pocos cupos</span></div>
+                        <div class="cupo-bar"><div class="cupo-fill" style="width: 65%;"></div></div>
                     </div>
                     <span class="c-price">$450.000 COP</span>
                     <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/23fNZDp', 'Curso Rehabilitación')">Inscribirme</button>
@@ -235,69 +243,42 @@
         <h2>Identidad Corporativa</h2>
     </div>
     <div class="identity-grid">
-        <div class="i-card">
-            <i class="fas fa-bullseye"></i>
-            <h3>Misión</h3>
-            <p>Transformar la salud mediante formación continua de alta calidad, dotando a los profesionales de herramientas científicas para una práctica de excelencia.</p>
-        </div>
-        <div class="i-card">
-            <i class="fas fa-eye"></i>
-            <h3>Visión</h3>
-            <p>Consolidarnos para el 2030 como la institución líder en Latinoamérica en formación continua para profesionales de la rehabilitación.</p>
-        </div>
-        <div class="i-card">
-            <i class="fas fa-gem"></i>
-            <h3>Valores</h3>
-            <p>Nuestra ética se basa en el <strong>Rigor Científico</strong>, la <strong>Excelencia Académica</strong> y el <strong>Compromiso</strong> social.</p>
-        </div>
+        <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Transformar la salud mediante formación continua de alta calidad y rigor científico.</p></div>
+        <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser referentes en Latinoamérica para el 2030 en educación para la rehabilitación.</p></div>
+        <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia académica, integridad y compromiso con la salud funcional.</p></div>
     </div>
 </section>
 
 <section class="testimonios-v2" id="testimonios">
-    <div class="st-title">
-        <h2>Lo que dicen nuestros alumnos</h2>
-    </div>
+    <div class="st-title"><h2>Lo que dicen nuestros alumnos</h2></div>
     <div class="grid-testimonios-v2">
-        <article class="card-testimonio-v2">
-            <div class="quote-body">
-                "La formación académica superó mis expectativas. Ahora aplico protocolos basados en evidencia científica que han mejorado notablemente los resultados de mis pacientes."
-            </div>
-            <div class="footer-autor">
-                <h5 class="nombre-autor">Dra. Elena Martínez</h5>
-                <span class="cargo-autor">Fisioterapeuta Especialista</span>
-            </div>
-        </article>
-
-        <article class="card-testimonio-v2">
-            <div class="quote-body">
-                "El curso de Riesgo Biomecánico es fundamental para mi labor en SST. Los docentes tienen un dominio excepcional de los temas y la metodología es 100% práctica."
-            </div>
-            <div class="footer-autor">
-                <h5 class="nombre-autor">Ing. Ricardo Gómez</h5>
-                <span class="cargo-autor">Especialista en SST</span>
-            </div>
-        </article>
-
-        <article class="card-testimonio-v2">
-            <div class="quote-body">
-                "Inicié como estudiante y la corporación me brindó las herramientas necesarias para destacar en mi práctica profesional. El enfoque clínico es de un nivel superior."
-            </div>
-            <div class="footer-autor">
-                <h5 class="nombre-autor">Ana Lucía Ríos</h5>
-                <span class="cargo-autor">Fisioterapeuta en Formación</span>
-            </div>
-        </article>
+        <article class="card-testimonio-v2"><div class="quote-body">"La formación académica superó mis expectativas. Ahora aplico protocolos basados en evidencia científica."</div><div class="footer-autor"><h5>Dra. Elena Martínez</h5><span class="cargo-autor">Fisioterapeuta Especialista</span></div></article>
+        <article class="card-testimonio-v2"><div class="quote-body">"El curso de Riesgo Biomecánico es fundamental para mi labor en SST. Metodología práctica y actual."</div><div class="footer-autor"><h5>Ing. Ricardo Gómez</h5><span class="cargo-autor">Especialista en SST</span></div></article>
+        <article class="card-testimonio-v2"><div class="quote-body">"La corporación me brindó las herramientas necesarias para destacar. El enfoque clínico es de nivel superior."</div><div class="footer-autor"><h5>Ana Lucía Ríos</h5><span class="cargo-autor">Fisioterapeuta en Formación</span></div></article>
     </div>
 </section>
 
 <footer>
     <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="Logo Blanco" class="footer-logo">
-    <p style="font-size: 22px; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px;">CORFITERAPIA</p>
-    <p style="margin-bottom: 20px; opacity: 0.8;">Movimiento que transforma salud</p>
-    <p style="font-size: 12px; opacity: 0.6;">© 2026 Corporación Actividad Física y Fisioterapia | Sede Colombia</p>
+    <p style="font-size: 20px; font-weight: 800; margin-bottom: 10px; letter-spacing: 1px;">CORFITERAPIA</p>
+    <p>© 2026 Corporación Actividad Física y Fisioterapia</p>
 </footer>
 
 <script>
+    function validarRegistro() {
+        const nombre = document.getElementById('nombre_est').value;
+        const doc = document.getElementById('doc_est').value;
+        const email = document.getElementById('email_est').value;
+        const perfil = document.getElementById('perfil_est').value;
+
+        if(!nombre || !doc || !email || !perfil) {
+            alert("⚠️ Por favor completa todos tus datos antes de registrarte.");
+        } else {
+            alert("✅ Datos registrados correctamente. Ahora puedes elegir tu curso abajo.");
+            window.scrollTo({top: document.getElementById('cursos').offsetTop - 100, behavior: 'smooth'});
+        }
+    }
+
     async function procesoInscripcion(urlMercadoPago, nombreCurso) {
         const nombre = document.getElementById('nombre_est').value;
         const doc = document.getElementById('doc_est').value;
