@@ -457,5 +457,65 @@
     }
 </script>
 
+   <div id="sticky-offer" style="position: fixed; bottom: -200px; left: 30px; z-index: 3000; transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 350px;">
+    
+    <button onclick="document.getElementById('sticky-offer').style.display='none'" style="position: absolute; top: -10px; right: -10px; background: #333; color: white; border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; z-index: 3001; font-size: 12px;">✕</button>
+
+    <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.2); border: 2px solid #b71c1c; display: flex; flex-direction: column;">
+        
+        <div style="background: #b71c1c; color: white; padding: 10px; text-align: center; font-size: 11px; font-weight: 800; letter-spacing: 1px;">
+            <i class="fas fa-fire"></i> ¡BECA ACTIVADA POR 24H!
+        </div>
+
+        <div style="padding: 15px; display: flex; align-items: center; gap: 15px;">
+            <div style="background: #f8fafc; border-radius: 12px; padding: 10px; text-align: center; min-width: 80px;">
+                <span style="display: block; font-size: 10px; color: #666; text-decoration: line-through;">$1.450k</span>
+                <span style="display: block; font-size: 16px; font-weight: 800; color: #b71c1c;">$725k</span>
+            </div>
+            
+            <div style="flex: 1;">
+                <h4 style="font-size: 13px; color: #0a3d62; margin: 0; line-height: 1.2;">Diplomado Rehabilitación Cardiopulmonar</h4>
+                <p style="font-size: 10px; color: #27ae60; font-weight: 700; margin-top: 4px;">Cupón <b>BECA50</b> aplicado ✅</p>
+            </div>
+        </div>
+
+        <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
+           target="_blank"
+           style="background: #27ae60; color: white; text-align: center; padding: 12px; text-decoration: none; font-weight: 800; font-size: 13px; transition: 0.3s; display: block;"
+           onmouseover="this.style.background='#219150'"
+           onmouseout="this.style.background='#27ae60'">
+            ASEGURAR MI CUPO AHORA
+        </a>
+    </div>
+</div>
+
+<style>
+    /* Animación de entrada tras 3 segundos */
+    @keyframes slideUp {
+        from { bottom: -200px; }
+        to { bottom: 30px; }
+    }
+
+    /* Adaptación para móviles */
+    @media (max-width: 600px) {
+        #sticky-offer {
+            left: 10px;
+            right: 10px;
+            max-width: none;
+            bottom: -200px;
+        }
+        /* En móvil se pega más abajo para no tapar contenido central */
+        #sticky-offer.show {
+            bottom: 20px !important;
+        }
+    }
+</style>
+
+<script>
+    // Mostrar la oferta después de 4 segundos de que el usuario entre
+    setTimeout(function() {
+        document.getElementById('sticky-offer').style.bottom = '30px';
+    }, 4000);
+</script> 
 </body>
 </html>
