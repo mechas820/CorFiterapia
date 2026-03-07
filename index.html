@@ -368,5 +368,79 @@
     }
 </script>
 
+    <div id="sticky-offer" style="position: fixed; bottom: -250px; left: 20px; z-index: 5000; transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 380px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
+    
+    <button onclick="document.getElementById('sticky-offer').style.opacity='0'; setTimeout(()=>document.getElementById('sticky-offer').style.display='none', 500)" style="position: absolute; top: -10px; right: -10px; background: #333; color: white; border: 2px solid white; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; z-index: 5001; font-size: 14px; font-weight: bold;">✕</button>
+
+    <div style="background: #ffffff; background-image: radial-gradient(#f1f1f1 1.5px, transparent 1.5px); background-size: 15px 15px; border: 3px dashed #b71c1c; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
+        
+        <div style="position: absolute; width: 30px; height: 30px; background: #f4f7f9; border-radius: 50%; left: -18px; top: 50%; transform: translateY(-50%); border: 3px dashed #b71c1c;"></div>
+        <div style="position: absolute; width: 30px; height: 30px; background: #f4f7f9; border-radius: 50%; right: -18px; top: 50%; transform: translateY(-50%); border: 3px dashed #b71c1c;"></div>
+
+        <div style="background: #b71c1c; color: white; padding: 12px; text-align: center;">
+            <p style="margin: 0; font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">Ticket de Beca Académica</p>
+        </div>
+
+        <div style="padding: 20px 30px; text-align: center; display: flex; align-items: center; justify-content: space-between; gap: 15px;">
+            <div style="border-right: 2px dashed #ccc; padding-right: 15px;">
+                <span style="display: block; font-size: 12px; color: #b71c1c; font-weight: 700; text-transform: uppercase; margin-bottom: -5px;">Vale por</span>
+                <span style="font-size: 55px; font-weight: 900; color: #0a3d62; line-height: 1;">50%</span>
+                <span style="display: block; font-size: 18px; font-weight: 800; color: #0a3d62; margin-top: -5px;">DCTO</span>
+            </div>
+
+            <div style="flex: 1; text-align: left;">
+                <h4 style="font-size: 14px; color: #0a3d62; margin: 0; line-height: 1.2; font-family: 'Playfair Display', serif;">Diplomado Rehabilitación Cardiopulmonar</h4>
+                <div style="margin-top: 10px; display: inline-block; background: #fff3cd; color: #856404; padding: 4px 8px; border-radius: 5px; font-size: 11px; font-weight: 700; border: 1px solid #ffeeba;">
+                    CÓDIGO: <span style="color: #b71c1c;">BECA50</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
+           target="_blank"
+           style="background: #27ae60; color: white; text-align: center; padding: 18px; text-decoration: none; font-weight: 800; font-size: 15px; transition: 0.3s; display: block; text-transform: uppercase; letter-spacing: 1px; margin: 0 20px 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(39,174,96,0.3); animation: vibrate 2s infinite;"
+           onmouseover="this.style.background='#1e8449'"
+           onmouseout="this.style.background='#27ae60'">
+            ¡COMPRAR AHORA CON EL 50%!
+        </a>
+
+        <div style="padding-bottom: 10px; text-align: center;">
+            <small style="font-size: 9px; color: #999; text-transform: uppercase;">*Válido solo por las próximas 24 horas</small>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Animación de Vibración para llamar la atención */
+    @keyframes vibrate {
+        0% { transform: scale(1); }
+        5% { transform: scale(1.02) rotate(1deg); }
+        10% { transform: scale(1.02) rotate(-1deg); }
+        15% { transform: scale(1.02) rotate(1deg); }
+        20% { transform: scale(1); }
+        100% { transform: scale(1); }
+    }
+
+    /* Adaptación para móviles */
+    @media (max-width: 600px) {
+        #sticky-offer {
+            left: 10px;
+            right: 10px;
+            max-width: none;
+            bottom: -300px;
+        }
+        #sticky-offer.show {
+            bottom: 20px !important;
+        }
+    }
+</style>
+
+<script>
+    // Aparece suavemente después de 4 segundos
+    setTimeout(function() {
+        document.getElementById('sticky-offer').style.bottom = '30px';
+    }, 4000);
+</script>
+    
 </body>
 </html>
