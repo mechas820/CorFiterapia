@@ -52,7 +52,6 @@
         input, select { padding: 18px; border: 1px solid #e2e8f0; border-radius: 14px; font-family: 'Montserrat'; font-size: 15px; width: 100%; transition: 0.3s; outline: none; }
         input:focus { border-color: var(--azul); box-shadow: 0 0 0 4px rgba(10,61,98,0.1); }
 
-        /* Botón de Registro en el Formulario */
         .reg-submit-btn {
             display: block; width: fit-content; margin: 0 auto;
             background: var(--rojo); color: white; border: none; 
@@ -73,9 +72,7 @@
         .c-img { width: 100%; height: 230px; object-fit: cover; }
         .c-info { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .c-info h4 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 22px; margin-bottom: 15px; line-height: 1.3; min-height: 3em; }
-        .c-info p { font-size: 15px; color: #555; margin-bottom: 25px; }
         
-        /* BARRA DE ÚLTIMO CUPO */
         .cupo-container { margin-bottom: 15px; }
         .cupo-text { font-size: 11px; font-weight: 800; color: var(--rojo); text-transform: uppercase; display: flex; justify-content: space-between; margin-bottom: 5px; }
         .cupo-bar { width: 100%; height: 8px; background: #eee; border-radius: 10px; overflow: hidden; }
@@ -103,6 +100,12 @@
         footer { background: var(--oscuro); color: white; text-align: center; padding: 60px 10%; }
         .footer-logo { height: 100px; filter: brightness(0) invert(1); margin-bottom: 20px; }
 
+        @keyframes pulse-beca {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(39,174,96,0.4); }
+            100% { transform: scale(1); }
+        }
+
         @media (max-width: 768px) {
             header { padding: 10px 4%; }
             .registration-box { margin: -50px 5% 40px; padding: 30px; }
@@ -114,8 +117,8 @@
 <body>
 
 <a href="https://wa.me/573054513754?text=Hola,%20CorFiterapia.%20Deseo%20conocer%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20cursos%20y%20diplomados." class="wa-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 <header>
     <div class="logo-box" style="display:flex; align-items:center; gap:10px;">
@@ -232,7 +235,7 @@
                         <div class="cupo-text"><span>Inscripciones</span><span>Pocos cupos</span></div>
                         <div class="cupo-bar"><div class="cupo-fill" style="width: 65%;"></div></div>
                     </div>
-                    <span class="c-price">$1.450.000 COP</span>
+                    <span class="c-price">$1.539.000 COP</span>
                     <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/23fNZDp', 'Curso Rehabilitación')">Inscribirme</button>
                 </div>
             </div>
@@ -240,74 +243,7 @@
     </div>
 </section>
 
-   <div id="timer-container" style="max-width: 1000px; margin: 0 auto -40px; position: relative; z-index: 100; font-family: 'Montserrat', sans-serif;">
-    <div style="background: #1a202c; color: white; padding: 15px 30px; border-radius: 15px 15px 0 0; display: flex; align-items: center; justify-content: center; gap: 20px; border-bottom: 3px solid #b71c1c; box-shadow: 0 -10px 20px rgba(0,0,0,0.1);">
-        
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <i class="fas fa-hourglass-half" style="color: #ffeb3b; animation: flip 2s infinite;"></i>
-            <span style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">La oferta de la BECA50 expira en:</span>
-        </div>
-
-        <div style="display: flex; gap: 10px; font-family: 'Courier New', Courier, monospace;">
-            <div style="text-align: center;">
-                <span id="hours" style="background: #b71c1c; padding: 5px 8px; border-radius: 5px; font-size: 20px; font-weight: 800; min-width: 35px; display: inline-block;">24</span>
-                <p style="font-size: 8px; margin-top: 3px; text-transform: uppercase; opacity: 0.7;">Horas</p>
-            </div>
-            <span style="font-size: 20px; font-weight: 800; color: #b71c1c;">:</span>
-            <div style="text-align: center;">
-                <span id="minutes" style="background: #b71c1c; padding: 5px 8px; border-radius: 5px; font-size: 20px; font-weight: 800; min-width: 35px; display: inline-block;">00</span>
-                <p style="font-size: 8px; margin-top: 3px; text-transform: uppercase; opacity: 0.7;">Min</p>
-            </div>
-            <span style="font-size: 20px; font-weight: 800; color: #b71c1c;">:</span>
-            <div style="text-align: center;">
-                <span id="seconds" style="background: #b71c1c; padding: 5px 8px; border-radius: 5px; font-size: 20px; font-weight: 800; min-width: 35px; display: inline-block;">00</span>
-                <p style="font-size: 8px; margin-top: 3px; text-transform: uppercase; opacity: 0.7;">Seg</p>
-            </div>
-        </div>
-
-        <div style="background: rgba(255,235,59,0.1); padding: 5px 12px; border-radius: 20px; border: 1px solid #ffeb3b;">
-            <span style="color: #ffeb3b; font-size: 11px; font-weight: 800;">¡QUEDAN 4 BECAS!</span>
-        </div>
-    </div>
-</div>
-
-<script>
-    function startTimer(duration, display) {
-        var timer = duration, hours, minutes, seconds;
-        setInterval(function () {
-            hours = parseInt(timer / 3600, 10);
-            minutes = parseInt((timer % 3600) / 60, 10);
-            seconds = parseInt(timer % 60, 10);
-
-            document.getElementById('hours').textContent = hours < 10 ? "0" + hours : hours;
-            document.getElementById('minutes').textContent = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById('seconds').textContent = seconds < 10 ? "0" + seconds : seconds;
-
-            if (--timer < 0) {
-                timer = duration; // Reinicia a 24h cuando llega a cero
-            }
-        }, 1000);
-    }
-
-    window.onload = function () {
-        var twentyFourHours = 24 * 60 * 60;
-        startTimer(twentyFourHours);
-    };
-</script>
-
-<style>
-    @keyframes flip {
-        0% { transform: rotate(0deg); }
-        50% { transform: rotate(180deg); }
-        100% { transform: rotate(360deg); }
-    }
-    
-    @media (max-width: 600px) {
-        #timer-container div { flex-direction: column; gap: 10px; padding: 20px; }
-        #timer-container { margin-bottom: -20px; }
-    }
-</style> 
-    <div id="oferta-cardio" style="max-width: 1000px; margin: 60px auto; padding: 0 20px; font-family: 'Montserrat', sans-serif;">
+<div id="oferta-cardio" style="max-width: 1000px; margin: 60px auto; padding: 0 20px; font-family: 'Montserrat', sans-serif;">
     <div style="background: #ffffff; border-radius: 28px; display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); border: 2px solid #b71c1c; overflow: hidden;">
         
         <div style="flex: 1; min-width: 300px; background: #0a3d62; padding: 50px; color: white; display: flex; flex-direction: column; justify-content: center; position: relative;">
@@ -322,19 +258,18 @@
             </h3>
             
             <p style="font-size: 15px; opacity: 0.8; margin-bottom: 30px; position: relative; z-index: 1;">
-                Especialízate con CorFiterapia. Acceso vitalicio, certificación incluida y protocolos de última generación.
+                Especialízate con CorFiterapia. Certificación incluida y protocolos de última generación.
             </p>
             
             <div style="position: relative; z-index: 1;">
-                <span style="font-size: 16px; opacity: 0.6; text-decoration: line-through;">Precio Regular: $1.450.000 COP</span>
                 <div style="display: flex; align-items: center; gap: 15px; margin-top: 5px;">
-                    <span style="font-size: 42px; font-weight: 800; color: #ffffff;">$725.000 <small style="font-size: 18px;">COP</small></span>
+                    <span style="font-size: 42px; font-weight: 800; color: #ffffff;">50% <small style="font-size: 18px;">DESCUENTO</small></span>
                     <div style="background: #27ae60; color: white; padding: 5px 12px; border-radius: 8px; font-size: 16px; font-weight: 800; animation: pulse-beca 2s infinite;">
                         CUPÓN: BECA50
                     </div>
                 </div>
                 <p style="color: #ffeb3b; font-weight: 700; font-size: 13px; margin-top: 15px;">
-                    <i class="fas fa-check-circle"></i> ¡Ahorras $725.000 hoy mismo!
+                    <i class="fas fa-check-circle"></i> ¡Aplica el cupón en la siguiente pantalla!
                 </p>
             </div>
         </div>
@@ -346,47 +281,23 @@
                 <p style="font-size: 13px; color: #64748b; margin-top: 5px;">Al hacer clic, el descuento <b>BECA50</b> se aplicará automáticamente en la pasarela segura.</p>
             </div>
 
-            <div style="width: 100%;">
-                <script type="text/javascript">
-                    function importHotmart(){ 
-                        var imported = document.createElement('script'); 
-                        imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
-                        document.head.appendChild(imported);
-                        var link = document.createElement('link'); 
-                        link.rel = 'stylesheet'; 
-                        link.type = 'text/css'; 
-                        link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css'; 
-                        document.head.appendChild(link); 
-                    } 
-                    importHotmart(); 
-                </script> 
-                
-                <a onclick="return false;" 
-                   href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
-                   class="hotmart-fb hotmart__button-checkout">
-                    <img src='https://static.hotmart.com/img/btn-comprar-agora-es.png' 
-     style="width: 100%; max-width: 280px; transition: transform 0.3s; filter: drop-shadow(0 10px 20px rgba(39,174,96,0.3));"
-                         onmouseover="this.style.transform='scale(1.05)'" 
-                         onmouseout="this.style.transform='scale(1)'">
-                </a>
-            </div>
+            <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
+               target="_blank"
+               style="display: inline-block; width: 100%; max-width: 280px; background: #27ae60; color: white; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 10px 20px rgba(39,174,96,0.3); border: none; cursor: pointer; text-align: center;"
+               onmouseover="this.style.transform='scale(1.05)'; this.style.background='#219150';" 
+               onmouseout="this.style.transform='scale(1)'; this.style.background='#27ae60';">
+                COMPRAR AHORA
+            </a>
 
-            <div style="margin-top: 30px; border-top: 1px solid #e2e8f0; pt: 20px; width: 100%; padding-top: 20px;">
+            <div style="margin-top: 30px; border-top: 1px solid #e2e8f0; width: 100%; padding-top: 20px;">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" style="height: 12px; margin: 0 5px; opacity: 0.6;">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" style="height: 18px; margin: 0 5px; opacity: 0.6;">
-                <p style="font-size: 11px; color: #94a3b8; margin-top: 10px;"><i class="fas fa-lock"></i> Pasarela de pago encriptada y segura</p>
+                <p style="font-size: 11px; color: #94a3b8; margin-top: 10px;"><i class="fas fa-lock"></i> Pasarela de pago segura</p>
             </div>
         </div>
     </div>
 </div>
 
-<style>
-    @keyframes pulse-beca {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.05); opacity: 0.9; box-shadow: 0 0 15px rgba(39,174,96,0.4); }
-        100% { transform: scale(1); opacity: 1; }
-    }
-</style>
 <section id="identidad" class="identity-section">
     <div class="st-title">
         <h2>Identidad Corporativa</h2>
@@ -457,65 +368,5 @@
     }
 </script>
 
-   <div id="sticky-offer" style="position: fixed; bottom: -200px; left: 30px; z-index: 3000; transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 350px;">
-    
-    <button onclick="document.getElementById('sticky-offer').style.display='none'" style="position: absolute; top: -10px; right: -10px; background: #333; color: white; border: none; width: 25px; height: 25px; border-radius: 50%; cursor: pointer; z-index: 3001; font-size: 12px;">✕</button>
-
-    <div style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 50px rgba(0,0,0,0.2); border: 2px solid #b71c1c; display: flex; flex-direction: column;">
-        
-        <div style="background: #b71c1c; color: white; padding: 10px; text-align: center; font-size: 11px; font-weight: 800; letter-spacing: 1px;">
-            <i class="fas fa-fire"></i> ¡BECA ACTIVADA POR 24H!
-        </div>
-
-        <div style="padding: 15px; display: flex; align-items: center; gap: 15px;">
-            <div style="background: #f8fafc; border-radius: 12px; padding: 10px; text-align: center; min-width: 80px;">
-                <span style="display: block; font-size: 10px; color: #666; text-decoration: line-through;">$1.450k</span>
-                <span style="display: block; font-size: 16px; font-weight: 800; color: #b71c1c;">$725k</span>
-            </div>
-            
-            <div style="flex: 1;">
-                <h4 style="font-size: 13px; color: #0a3d62; margin: 0; line-height: 1.2;">Diplomado Rehabilitación Cardiopulmonar</h4>
-                <p style="font-size: 10px; color: #27ae60; font-weight: 700; margin-top: 4px;">Cupón <b>BECA50</b> aplicado ✅</p>
-            </div>
-        </div>
-
-        <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
-           target="_blank"
-           style="background: #27ae60; color: white; text-align: center; padding: 12px; text-decoration: none; font-weight: 800; font-size: 13px; transition: 0.3s; display: block;"
-           onmouseover="this.style.background='#219150'"
-           onmouseout="this.style.background='#27ae60'">
-            ASEGURAR MI CUPO AHORA
-        </a>
-    </div>
-</div>
-
-<style>
-    /* Animación de entrada tras 3 segundos */
-    @keyframes slideUp {
-        from { bottom: -200px; }
-        to { bottom: 30px; }
-    }
-
-    /* Adaptación para móviles */
-    @media (max-width: 600px) {
-        #sticky-offer {
-            left: 10px;
-            right: 10px;
-            max-width: none;
-            bottom: -200px;
-        }
-        /* En móvil se pega más abajo para no tapar contenido central */
-        #sticky-offer.show {
-            bottom: 20px !important;
-        }
-    }
-</style>
-
-<script>
-    // Mostrar la oferta después de 4 segundos de que el usuario ahora entre
-    setTimeout(function() {
-        document.getElementById('sticky-offer').style.bottom = '30px';
-    }, 4000);
-</script> 
 </body>
 </html>
