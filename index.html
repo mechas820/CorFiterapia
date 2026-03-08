@@ -77,7 +77,7 @@
         .c-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #f0f0f0; transition: 0.4s; display: flex; flex-direction: column; height: 100%; position: relative; }
         .c-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
         .c-tag { position: absolute; top: 15px; right: 15px; background: var(--rojo); color: white; padding: 5px 15px; border-radius: 50px; font-size: 10px; font-weight: 800; text-transform: uppercase; z-index: 10; }
-        .c-img { width: 100%; height: 200px; object-fit: cover; }
+        .c-img { width: 100%; height: 220px; object-fit: cover; }
         .c-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .c-info h4 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 18px; margin-bottom: 15px; min-height: 3em; }
         .c-price { color: var(--rojo); font-weight: 800; font-size: 22px; margin-bottom: 15px; display: block; }
@@ -87,9 +87,6 @@
         .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .i-card { background: white; padding: 40px 30px; border-radius: 25px; text-align: center; border: 1px solid #eef2f6; }
         .i-card i { font-size: 45px; color: var(--rojo); margin-bottom: 20px; }
-
-        .grid-testimonios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card-testimonio { background: white; padding: 35px; border-radius: 20px; border-left: 5px solid var(--azul); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
         .registration-box { max-width: 850px; margin: 0 auto; background: white; padding: 40px; border-radius: 24px; box-shadow: var(--shadow); }
         .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
@@ -112,7 +109,7 @@
 
     <div class="promo-bar">
         <i class="fas fa-university"></i> 
-        <span>Formación de Excelencia: Inscripciones abiertas 2026.</span>
+        <span>Formación Médica: Inscripciones abiertas 2026.</span>
         <a href="#cursos">Ver Programas</a>
     </div>
 
@@ -138,7 +135,7 @@
 
     <section class="hero" id="inicio">
         <img src="Logo CorFiterapia _Trasparente.png" class="hero-logo-main">
-        <h2>Excelencia en Formación Clínica</h2>
+        <h2>Formación Clínica de Calidad</h2>
         <p>Movimiento que transforma salud</p>
     </section>
 
@@ -147,11 +144,31 @@
         <div class="courses-grid">
             
             <div class="c-card">
+                <div class="c-tag">Nuevo</div>
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" class="c-img" alt="Farmacología Aplicada">
+                <div class="c-info">
+                    <h4>Diplomado en Farmacología Aplicada a la Fisioterapia</h4>
+                    <span class="c-price">$1.850.000 COP</span>
+                    <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2YNW5Ay', 'Farmacología')">Inscribirme</button>
+                </div>
+            </div>
+
+            <div class="c-card">
+                <div class="c-tag">Beca disponible</div>
+                <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img">
+                <div class="c-info">
+                    <h4>Diplomado Rehabilitación Cardiopulmonar</h4>
+                    <span class="c-price">$1.539.500 COP</span>
+                    <button class="c-btn" onclick="procesoInscripcion('https://go.hotmart.com/P104788227O?dp=1', 'Rehab Cardiopulmonar')">Inscribirme</button>
+                </div>
+            </div>
+
+            <div class="c-card">
                 <div class="c-tag">Últimos cupos</div>
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
-                    <h4>Curso Prevención de lesiones y riesgo biomecánico</h4>
-                    <span class="c-price">$650.000 COP</span>
+                    <h4>Curso de prevención de lesiones musculoesqueléticas y riesgo ergonómico</h4>
+                    <span class="c-price">$250.000 COP</span>
                     <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2FQAbTv', 'Prevención Lesiones')">Inscribirme</button>
                 </div>
             </div>
@@ -160,29 +177,9 @@
                 <div class="c-tag">Alta demanda</div>
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
-                    <h4>Diplomado Prescripción del Ejercicio Terapéutico</h4>
-                    <span class="c-price">$1.200.000 COP</span>
+                    <h4>Diplomado de prescripción del ejercicio físico</h4>
+                    <span class="c-price">$480.000 COP</span>
                     <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/11GiaS8', 'Prescripción Ejercicio')">Inscribirme</button>
-                </div>
-            </div>
-
-            <div class="c-card">
-                <div class="c-tag">Beca disponible</div>
-                <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img">
-                <div class="c-info">
-                    <h4>Diplomado Rehabilitación Cardíaca en el Adulto Mayor</h4>
-                    <span class="c-price">$1.539.500 COP</span>
-                    <button class="c-btn" onclick="procesoInscripcion('https://go.hotmart.com/P104788227O?dp=1', 'Rehab Cardíaca')">Inscribirme</button>
-                </div>
-            </div>
-
-            <div class="c-card">
-                <div class="c-tag">Nuevo</div>
-                <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?auto=format&fit=crop&w=500" class="c-img" alt="Farmacología">
-                <div class="c-info">
-                    <h4>Diplomado en Farmacología Aplicada a la Fisioterapia</h4>
-                    <span class="c-price">$1.100.000 COP</span>
-                    <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2YNW5Ay', 'Farmacología')">Inscribirme</button>
                 </div>
             </div>
 
