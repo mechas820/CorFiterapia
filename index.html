@@ -84,6 +84,18 @@
         .c-btn { background: var(--azul); color: white; border: none; padding: 18px; border-radius: 12px; cursor: pointer; font-weight: 700; text-transform: uppercase; transition: 0.3s; width: 100%; letter-spacing: 1px; }
         .c-btn:hover { background: var(--rojo); }
 
+        /* Estilos del Botón VIP y Animaciones */
+        .btn-vip-highlight { animation: pulse-vip 2s infinite; }
+        @keyframes pulse-vip { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+        
+        .btn-vip-shine {
+            position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            transform: skewX(-25deg); animation: move-shine 4s infinite;
+        }
+        @keyframes move-shine { 0% { left: -100%; } 25% { left: 150%; } 100% { left: 150%; } }
+        @keyframes fast-blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
         .identity-section { background-color: var(--gris-claro); }
         .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .i-card { background: white; padding: 50px 35px; border-radius: 30px; text-align: center; border: 1px solid #eef2f6; transition: 0.3s; }
@@ -99,12 +111,6 @@
 
         footer { background: var(--oscuro); color: white; text-align: center; padding: 60px 10%; }
         .footer-logo { height: 100px; filter: brightness(0) invert(1); margin-bottom: 20px; }
-
-        @keyframes pulse-beca {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(39,174,96,0.4); }
-            100% { transform: scale(1); }
-        }
 
         @media (max-width: 768px) {
             header { padding: 10px 4%; }
@@ -122,7 +128,7 @@
 
 <header>
     <div class="logo-box" style="display:flex; align-items:center; gap:10px;">
-        <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="CorFiterapia" class="nav-logo-img">
+        <img src="Logo CorFiterapia _Trasparente.png" alt="CorFiterapia" class="nav-logo-img">
         <div class="logo-text-nav" style="line-height:1.2;">
             <span style="font-weight:800; color:var(--azul); font-size:16px;">CORFITERAPIA</span><br>
             <span style="font-size:8px; color:var(--rojo); font-weight:600; letter-spacing:1px;">MOVIMIENTO QUE TRANSFORMA SALUD</span>
@@ -137,7 +143,7 @@
 </header>
 
 <section class="hero" id="inicio">
-    <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="CorFiterapia Logo" class="hero-logo-main">
+    <img src="Logo CorFiterapia _Trasparente.png" alt="CorFiterapia Logo" class="hero-logo-main">
     <h2>Movimiento que transforma salud</h2>
 </section>
 
@@ -243,188 +249,51 @@
     </div>
 </section>
 
-<div id="oferta-cardio" style="max-width: 1000px; margin: 60px auto; padding: 0 20px; font-family: 'Montserrat', sans-serif;">
-    <div style="background: #ffffff; border-radius: 28px; display: flex; flex-wrap: wrap; align-items: stretch; gap: 0; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); border: 2px solid #b71c1c; overflow: hidden;">
+<div id="oferta-cardio" style="max-width: 1000px; margin: 60px auto; padding: 0 20px;">
+    <div style="background: #ffffff; border-radius: 28px; display: flex; flex-wrap: wrap; border: 2px solid #b71c1c; overflow: hidden; box-shadow: var(--shadow);">
         
-        <div style="flex: 1; min-width: 300px; background: #0a3d62; padding: 50px; color: white; display: flex; flex-direction: column; justify-content: center; position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/cubes.png'); opacity: 0.1;"></div>
-            
-            <span style="background: #b71c1c; color: white; padding: 6px 15px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; width: fit-content; margin-bottom: 20px; letter-spacing: 1px; position: relative; z-index: 1;">
+        <div style="flex: 1; min-width: 300px; background: #0a3d62; padding: 50px; color: white; display: flex; flex-direction: column; justify-content: center;">
+            <span style="background: #b71c1c; color: white; padding: 6px 15px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; width: fit-content; margin-bottom: 20px;">
                 <i class="fas fa-star"></i> BECA ASIGNADA: 50% DCTO
             </span>
-            
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 15px; line-height: 1.1; position: relative; z-index: 1;">
-                Diplomado en Rehabilitación Cardiopulmonar del Adulto Mayor
-            </h3>
-            
-            <p style="font-size: 15px; opacity: 0.8; margin-bottom: 30px; position: relative; z-index: 1;">
-                Especialízate con CorFiterapia. Certificación incluida y protocolos de última generación.
-            </p>
-            
-            <div style="position: relative; z-index: 1;">
-                <div style="display: flex; align-items: center; gap: 15px; margin-top: 5px;">
-                    <span style="font-size: 42px; font-weight: 800; color: #ffffff;">50% <small style="font-size: 18px;">DESCUENTO</small></span>
-                    <div style="background: #27ae60; color: white; padding: 5px 12px; border-radius: 8px; font-size: 16px; font-weight: 800; animation: pulse-beca 2s infinite;">
-                        CUPÓN: BECA50
-                    </div>
-                </div>
-                <p style="color: #ffeb3b; font-weight: 700; font-size: 13px; margin-top: 15px;">
-                    <i class="fas fa-check-circle"></i> ¡Aplica el cupón en la siguiente pantalla!
-                </p>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 15px;">Diplomado en Rehabilitación Cardiopulmonar</h3>
+            <p style="font-size: 15px; opacity: 0.8; margin-bottom: 30px;">Especialízate con CorFiterapia. Certificación incluida y protocolos de última generación.</p>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <span style="font-size: 42px; font-weight: 800; color: #ffffff;">50% <small style="font-size: 18px;">DESCUENTO</small></span>
+                <div style="background: #27ae60; color: white; padding: 5px 12px; border-radius: 8px; font-size: 16px; font-weight: 800;">CUPÓN: BECA50</div>
             </div>
         </div>
 
-        <div style="flex: 0 1 380px; padding: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #f8fafc; text-align: center;">
-            <div style="margin-bottom: 25px;">
-                <i class="fas fa-heartbeat" style="font-size: 50px; color: #b71c1c; margin-bottom: 15px;"></i>
-                <h4 style="font-weight: 700; color: #0a3d62; font-size: 20px;">Finaliza tu Inscripción</h4>
-                <p style="font-size: 13px; color: #64748b; margin-top: 5px;">Al hacer clic, el descuento <b>BECA50</b> se aplicará automáticamente en la pasarela segura.</p>
+        <div style="flex: 1; min-width: 300px; padding: 40px; background: #f8fafc; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            
+            <div style="width: 100%; max-width: 320px; background: #fff3cd; padding: 15px; border-radius: 12px; border: 1px solid #ffeeba; margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 800; color: #856404; margin-bottom: 8px;">
+                    <span><i class="fas fa-clock"></i> TU BECA EXPIRA EN:</span>
+                    <span style="color: #b71c1c; animation: fast-blink 0.8s infinite;">¡QUEDAN POCAS!</span>
+                </div>
+                <div id="beca-timer" style="font-size: 28px; font-weight: 900; color: var(--azul);">15:00</div>
+                <div style="width: 100%; height: 6px; background: #ddd; border-radius: 10px; margin-top: 10px; overflow: hidden;">
+                    <div id="beca-progress-bar" style="width: 93%; height: 100%; background: var(--rojo); transition: width 1s linear;"></div>
+                </div>
             </div>
 
             <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
                target="_blank"
-               style="display: inline-block; width: 100%; max-width: 280px; background: #27ae60; color: white; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 10px 20px rgba(39,174,96,0.3); border: none; cursor: pointer; text-align: center;"
-               onmouseover="this.style.transform='scale(1.05)'; this.style.background='#219150';" 
-               onmouseout="this.style.transform='scale(1)'; this.style.background='#27ae60';">
-                <div style="margin: 20px 0; background: #fff3cd; padding: 20px; border-radius: 15px; border: 2px solid #b71c1c; text-align: left; box-shadow: 0 10px 25px rgba(183, 28, 28, 0.1); font-family: 'Montserrat', sans-serif;">
-    
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <span style="font-size: 11px; font-weight: 800; color: #856404; text-transform: uppercase; letter-spacing: 0.5px;">
-            <i class="fas fa-id-badge"></i> Reserva de tu Beca:
-        </span>
-        <span style="font-size: 12px; font-weight: 900; color: #b71c1c; animation: fast-blink 0.8s linear infinite; text-transform: uppercase;">
-            ¡QUEDAN POCAS!
-        </span>
-    </div>
-
-    <div style="text-align: center; margin-bottom: 15px; background: #0a3d62; color: white; padding: 10px; border-radius: 8px;">
-        <p style="font-size: 10px; font-weight: 600; margin-bottom: 5px; opacity: 0.9;">TU LUGAR ESTÁ RESERVADO POR:</p>
-        <div style="font-size: 24px; font-weight: 900; letter-spacing: 2px;" id="beca-timer">15:00</div>
-    </div>
-    
-    <div style="width: 100%; height: 12px; background: #e2e8f0; border-radius: 20px; overflow: hidden; border: 1px solid #ddd; position: relative; margin-bottom: 8px;">
-        <div id="beca-progress-bar" style="width: 93%; height: 100%; background: linear-gradient(90deg, #b71c1c, #ff4d4d); transition: width 1s ease;"></div>
-    </div>
-    
-    <p style="font-size: 10px; color: #64748b; text-align: center; font-style: italic; font-weight: 600;">
-        * Una vez el tiempo llegue a cero, el cupón <span style="color:#b71c1c">BECA50</span> se liberará para otro estudiante.
-    </p>
-</div>
-
-<style>
-    @keyframes fast-blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-</style>
-
-<script>
-    (function() {
-        // --- LÓGICA DEL TEMPORIZADOR (15 MINUTOS) ---
-        let timeInSeconds = 15 * 60; 
-        const timerDisplay = document.getElementById('beca-timer');
-        const progressBar = document.getElementById('beca-progress-bar');
-        let currentProgress = 93.4;
-
-        const countdown = setInterval(function() {
-            let minutes = Math.floor(timeInSeconds / 60);
-            let seconds = timeInSeconds % 60;
-
-            // Formato 00:00
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-
-            if(timerDisplay) timerDisplay.innerText = minutes + ':' + seconds;
-
-            if (timeInSeconds <= 0) {
-                clearInterval(countdown);
-                if(timerDisplay) timerDisplay.innerText = "EXPIRADO";
-            } else {
-                timeInSeconds--;
-                
-                // Mover la barra sutilmente cada 10 segundos para generar más estrés visual
-                if (timeInSeconds % 10 === 0 && currentProgress < 99.5) {
-                    currentProgress += 0.2;
-                    if(progressBar) progressBar.style.width = currentProgress + '%';
-                }
-            }
-        }, 1000);
-    })();
-</script>
-               <div style="text-align: center; margin: 30px 0;">
-    <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
-       target="_blank"
-       class="btn-highlight"
-       style="display: inline-block; width: 100%; max-width: 350px; padding: 25px; background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%); color: white; text-decoration: none; font-weight: 900; font-size: 20px; text-transform: uppercase; letter-spacing: 2px; border-radius: 15px; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(39,174,96,0.5); border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s ease; cursor: pointer; font-family: 'Montserrat', sans-serif;">
-        
-        <span class="btn-shine"></span>
-        
-        <i class="fas fa-shopping-cart" style="margin-right: 12px;"></i>
-        COMPRE AHORA
-    </a>
-
-<div style="text-align: center; margin-top: 15px;">
-    <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 8px;">
-        <img src="https://cdnjs.cloudflare.com/ajax/libs/payment-font/1.3.0/assets/flat/visa.svg" alt="Visa" style="height: 20px; width: auto;">
-        <img src="https://cdnjs.cloudflare.com/ajax/libs/payment-font/1.3.0/assets/flat/mastercard.svg" alt="Mastercard" style="height: 20px; width: auto;">
-    </div>
-    <div style="color: #64748b; font-size: 12px; font-weight: 600; text-transform: uppercase;">
-        <i class="fas fa-lock"></i> Pasarela de pago segura
-    </div>
-</div>
-
-<style>
-    /* Efecto de Respiración (Latido) */
-    .btn-highlight {
-        animation: pulse-animation 2s infinite;
-    }
-
-    @keyframes pulse-animation {
-        0% { transform: scale(1); box-shadow: 0 10px 40px rgba(39,174,96,0.5); }
-        50% { transform: scale(1.05); box-shadow: 0 15px 50px rgba(39,174,96,0.7); }
-        100% { transform: scale(1); box-shadow: 0 10px 40px rgba(39,174,96,0.5); }
-    }
-
-    /* Brillo Metálico que pasa solo */
-    .btn-shine {
-        position: absolute;
-        top: 0; left: -100%;
-        width: 60%; height: 100%;
-        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-        transition: all 0s;
-        animation: shine-logic 3.5s infinite;
-    }
-
-    @keyframes shine-logic {
-        0% { left: -100%; }
-        20% { left: 150%; }
-        100% { left: 150%; }
-    }
-
-    .btn-highlight:hover {
-        background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-        animation: none; /* Se detiene al poner el mouse para facilitar el clic */
-        transform: translateY(-3px);
-    }
-</style> COMPRAR AHORA
+               class="btn-vip-highlight"
+               style="display: block; width: 100%; max-width: 320px; padding: 22px; background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%); color: white; text-decoration: none; font-weight: 900; font-size: 18px; text-transform: uppercase; border-radius: 15px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(39,174,96,0.4); border: 2px solid rgba(255,255,255,0.3);">
+                <span class="btn-vip-shine"></span>
+                <i class="fas fa-shopping-cart" style="margin-right: 10px;"></i>
+                ASEGURAR MI BECA
             </a>
-<div class="secure-checkout-container" style="text-align: center; margin-top: 15px; font-family: 'Montserrat', sans-serif;">
-    
-    <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 8px;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Visa_2021.svg" 
-             alt="Visa" 
-             style="height: 18px; width: auto; object-fit: contain;">
-             
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" 
-             alt="Mastercard" 
-             style="height: 25px; width: auto; object-fit: contain;">
-    </div>
-    
-    <p style="font-size: 13px; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
-        <i class="fas fa-lock" style="margin-right: 5px;"></i> Pasarela de pago segura
-    </p>
-</div>
-            <div style="margin-top: 30px; border-top: 1px solid #e2e8f0; width: 100%; padding-top: 20px;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" style="height: 12px; margin: 0 5px; opacity: 0.6;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" style="height: 18px; margin: 0 5px; opacity: 0.6;">
-                <p style="font-size: 11px; color: #94a3b8; margin-top: 10px;"><i class="fas fa-lock"></i> Pasarela de pago segura</p>
+
+            <div style="margin-top: 20px;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 8px;">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/payment-font/1.3.0/assets/flat/visa.svg" alt="Visa" style="height: 20px; width: auto;">
+                    <img src="https://cdnjs.cloudflare.com/ajax/libs/payment-font/1.3.0/assets/flat/mastercard.svg" alt="Mastercard" style="height: 20px; width: auto;">
+                </div>
+                <p style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">
+                    <i class="fas fa-lock"></i> Pasarela de pago segura
+                </p>
             </div>
         </div>
     </div>
@@ -451,12 +320,25 @@
 </section>
 
 <footer>
-    <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="Logo Blanco" class="footer-logo">
+    <img src="Logo CorFiterapia _Trasparente.png" alt="Logo Blanco" class="footer-logo">
     <p style="font-size: 20px; font-weight: 800; margin-bottom: 10px; letter-spacing: 1px;">CORFITERAPIA</p>
     <p>© 2026 Corporación Actividad Física y Fisioterapia</p>
 </footer>
 
+<div id="sticky-offer" style="position: fixed; bottom: -250px; left: 20px; z-index: 5000; transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 380px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
+    <button onclick="document.getElementById('sticky-offer').style.opacity='0'; setTimeout(()=>document.getElementById('sticky-offer').style.display='none', 500)" style="position: absolute; top: -10px; right: -10px; background: #333; color: white; border: 2px solid white; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; z-index: 5001; font-size: 14px; font-weight: bold;">✕</button>
+    <div style="background: #ffffff; border: 3px dashed #b71c1c; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; position: relative; padding: 20px;">
+        <div style="text-align:center;">
+             <span style="font-size: 12px; color: #b71c1c; font-weight: 700; text-transform: uppercase;">Vale por</span>
+             <h2 style="font-size: 50px; font-weight: 900; color: #0a3d62; line-height: 1; margin: 5px 0;">50% DCTO</h2>
+             <p style="font-size: 13px; font-weight: 700; color: #0a3d62;">Diplomado Rehabilitación Cardiopulmonar</p>
+             <div style="background: #fff3cd; color: #856404; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 14px; font-weight: 800; border: 1px solid #ffeeba;">CÓDIGO: BECA50</div>
+        </div>
+    </div>
+</div>
+
 <script>
+    // --- LÓGICA DEL REGISTRO ---
     function validarRegistro() {
         const nombre = document.getElementById('nombre_est').value;
         const doc = document.getElementById('doc_est').value;
@@ -473,11 +355,9 @@
 
     async function procesoInscripcion(urlMercadoPago, nombreCurso) {
         const nombre = document.getElementById('nombre_est').value;
-        const doc = document.getElementById('doc_est').value;
         const email = document.getElementById('email_est').value;
-        const perfil = document.getElementById('perfil_est').value;
         
-        if(!nombre || !doc || !email || !perfil) { 
+        if(!nombre || !email) { 
             alert("⚠️ Por favor, completa tus datos en el formulario de inscripción antes de elegir un curso."); 
             window.scrollTo({top: 550, behavior: 'smooth'}); 
             return; 
@@ -488,131 +368,36 @@
         const form = document.getElementById('mainForm');
         
         try {
-            await fetch(form.action, { 
-                method: 'POST', 
-                body: new FormData(form), 
-                headers: { 'Accept': 'application/json' } 
-            });
+            await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
             window.location.href = urlMercadoPago;
         } catch (e) { 
             window.location.href = urlMercadoPago; 
         }
     }
-</script>
 
-    <div id="sticky-offer" style="position: fixed; bottom: -250px; left: 20px; z-index: 5000; transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 380px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
-    
-    <button onclick="document.getElementById('sticky-offer').style.opacity='0'; setTimeout(()=>document.getElementById('sticky-offer').style.display='none', 500)" style="position: absolute; top: -10px; right: -10px; background: #333; color: white; border: 2px solid white; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; z-index: 5001; font-size: 14px; font-weight: bold;">✕</button>
-
-    <div style="background: #ffffff; background-image: radial-gradient(#f1f1f1 1.5px, transparent 1.5px); background-size: 15px 15px; border: 3px dashed #b71c1c; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
-        
-        <div style="position: absolute; width: 30px; height: 30px; background: #f4f7f9; border-radius: 50%; left: -18px; top: 50%; transform: translateY(-50%); border: 3px dashed #b71c1c;"></div>
-        <div style="position: absolute; width: 30px; height: 30px; background: #f4f7f9; border-radius: 50%; right: -18px; top: 50%; transform: translateY(-50%); border: 3px dashed #b71c1c;"></div>
-
-        <div style="background: #b71c1c; color: white; padding: 12px; text-align: center;">
-            <p style="margin: 0; font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">Ticket de Beca Académica</p>
-        </div>
-
-        <div style="padding: 20px 30px; text-align: center; display: flex; align-items: center; justify-content: space-between; gap: 15px;">
-            <div style="border-right: 2px dashed #ccc; padding-right: 15px;">
-                <span style="display: block; font-size: 12px; color: #b71c1c; font-weight: 700; text-transform: uppercase; margin-bottom: -5px;">Vale por</span>
-                <span style="font-size: 55px; font-weight: 900; color: #0a3d62; line-height: 1;">50%</span>
-                <span style="display: block; font-size: 18px; font-weight: 800; color: #0a3d62; margin-top: -5px;">DCTO</span>
-            </div>
-
-            <div style="flex: 1; text-align: left;">
-                <h4 style="font-size: 14px; color: #0a3d62; margin: 0; line-height: 1.2; font-family: 'Playfair Display', serif;">Diplomado Rehabilitación Cardiopulmonar</h4>
-                <div style="margin-top: 10px; display: inline-block; background: #fff3cd; color: #856404; padding: 4px 8px; border-radius: 5px; font-size: 11px; font-weight: 700; border: 1px solid #ffeeba;">
-                    CÓDIGO: <span style="color: #b71c1c;">BECA50</span>
-                </div>
-            </div>
-        </div>
-
-        <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
-           target="_blank"
-           style="background: #27ae60; color: white; text-align: center; padding: 18px; text-decoration: none; font-weight: 800; font-size: 15px; transition: 0.3s; display: block; text-transform: uppercase; letter-spacing: 1px; margin: 0 20px 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(39,174,96,0.3); animation: vibrate 2s infinite;"
-           onmouseover="this.style.background='#1e8449'"
-           onmouseout="this.style.background='#27ae60'">
-           <div style="margin: 20px 0; background: #fff3cd; padding: 15px; border-radius: 12px; border: 1px solid #ffeeba; text-align: left;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-        <span style="font-size: 10px; font-weight: 800; color: #856404; text-transform: uppercase;">
-            <i class="fas fa-clock"></i> Validez de la Beca:
-        </span>
-        <span style="font-size: 11px; font-weight: 900; color: #b71c1c; animation: blinker 1s linear infinite;" id="beca-status">
-            92% AGOTADO
-        </span>
-    </div>
-    
-    <div style="width: 100%; height: 10px; background: #e2e8f0; border-radius: 10px; overflow: hidden; border: 1px solid #ddd;">
-        <div id="beca-bar" style="width: 92%; height: 100%; background: linear-gradient(90deg, #b71c1c, #ff4d4d); transition: width 1.5s ease;"></div>
-    </div>
-    
-    <p style="font-size: 9px; color: #777; margin-top: 7px; text-align: center; font-weight: 600;">
-        * El cupón <span style="color:#b71c1c">BECA50</span> expirará al completarse la barra.
-    </p>
-</div>
-
-<style>
-    @keyframes blinker { 50% { opacity: 0; } }
-</style> ¡COMPRAR AHORA CON EL 50%!
-        </a>
-
-        <div style="padding-bottom: 10px; text-align: center;">
-            <small style="font-size: 9px; color: #999; text-transform: uppercase;">*Válido solo por las próximas 24 horas</small>
-        </div>
-    </div>
-</div>
-
-<style>
-    /* Animación de Vibración para llamar la atención */
-    @keyframes vibrate {
-        0% { transform: scale(1); }
-        5% { transform: scale(1.02) rotate(1deg); }
-        10% { transform: scale(1.02) rotate(-1deg); }
-        15% { transform: scale(1.02) rotate(1deg); }
-        20% { transform: scale(1); }
-        100% { transform: scale(1); }
-    }
-
-    /* Adaptación para móviles */
-    @media (max-width: 600px) {
-        #sticky-offer {
-            left: 10px;
-            right: 10px;
-            max-width: none;
-            bottom: -300px;
-        }
-        #sticky-offer.show {
-            bottom: 20px !important;
-        }
-    }
-</style>
-
-<script>
-    // Aparece suavemente después de 4 segundos
-    setTimeout(function() {
-        document.getElementById('sticky-offer').style.bottom = '30px';
-    }, 4000);
-</script>
-
-    <script>
+    // --- LÓGICA DEL TEMPORIZADOR ---
     (function() {
-        let percent = 92.4;
-        const bar = document.getElementById('beca-bar');
-        const text = document.getElementById('beca-status');
-
-        function simulateSales() {
-            if (percent < 99.7) {
-                // Aumenta un poco el porcentaje simulando una "nueva inscripción"
-                percent += (Math.random() * 0.15) + 0.05;
-                if(bar) bar.style.width = percent + '%';
-                if(text) text.innerText = Math.floor(percent) + '% AGOTADO';
+        let time = 15 * 60;
+        const display = document.getElementById('beca-timer');
+        const bar = document.getElementById('beca-progress-bar');
+        
+        setInterval(() => {
+            let m = Math.floor(time / 60);
+            let s = time % 60;
+            if(display) display.innerText = `${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
+            if(time > 0) {
+                time--;
+                if(time % 10 === 0 && bar) bar.style.width = (time / (15*60) * 100) + '%';
             }
-        }
-        // Actualiza cada 35 segundos para generar tensión constante
-        setInterval(simulateSales, 35000);
+        }, 1000);
+
+        // Mostrar oferta flotante a los 5 segundos
+        setTimeout(() => {
+            const offer = document.getElementById('sticky-offer');
+            if(offer) offer.style.bottom = '20px';
+        }, 5000);
     })();
 </script>
-    
+
 </body>
 </html>
