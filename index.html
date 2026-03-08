@@ -174,8 +174,10 @@
 
     <footer><p>© 2026 CorFiterapia | Movimiento que transforma salud</p></footer>
 
-    <a href="https://wa.me/573054513754" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i> Más información</a>
-
+    <a href="https://wa.me/573054513754?text=Hola%20CorFiterapia,%20deseo%20conocer%20m%C3%A1s%20informaci%C3%B3n" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i> Más información
+    </a>
+    
     <script>
         let cursoActual = ""; let linkActual = ""; let esBeca = false;
 
@@ -209,5 +211,37 @@
             }, 1000);
         }
     </script>
+    function iniciarUrgencia() {
+    let segundos = 600; // 10 minutos
+    const display = document.getElementById('reloj-urgencia');
+    
+    const cuentaAtras = setInterval(() => {
+        let m = Math.floor(segundos / 60);
+        let s = segundos % 60;
+        
+        display.innerHTML = `${m}:${s < 10 ? '0' + s : s}`;
+        
+        if (segundos <= 0) {
+            clearInterval(cuentaAtras);
+            display.innerHTML = "¡ÚLTIMOS CUPOS!";
+        } else {
+            segundos--;
+        }
+    }, 1000);
+}
+
+// Ejecutar al cargar
+iniciarUrgencia();
 </body>
+    <div id="barra-urgencia" style="background: #b71c1c; color: white; padding: 12px; text-align: center; border-bottom: 3px solid #7f1616; font-family: 'Montserrat', sans-serif;">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        <span style="font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">
+            ⚠️ ¡ATENCIÓN! Cupos con Beca 50% agotándose
+        </span>
+        <div style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 5px; border: 1px solid white;">
+            <span style="font-size: 12px; text-transform: uppercase; font-weight: 400;">La oferta expira en:</span>
+            <span id="reloj-urgencia" style="font-size: 18px; font-weight: 900; margin-left: 8px; font-variant-numeric: tabular-nums;">10:00</span>
+        </div>
+    </div>
+</div>
 </html>
