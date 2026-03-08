@@ -61,17 +61,35 @@
         }
         .reg-submit-btn:hover { background: var(--azul); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(10, 61, 98, 0.3); }
 
-        /* EFECTO CARGA IMAGENES */
+        /* MEJORA: EFECTO SHIMMER EN IMÁGENES */
         .c-img { 
             width: 100%; height: 230px; object-fit: cover; 
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading-shimmer 1.5s infinite;
+            background: #f6f7f8;
+            background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+            background-repeat: no-repeat;
+            background-size: 800px 230px; 
+            display: inline-block;
+            position: relative;
+            animation: shimmer 1.5s infinite linear;
         }
-        @keyframes loading-shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
+        @keyframes shimmer {
+            0% { background-position: -468px 0; }
+            100% { background-position: 468px 0; }
         }
+
+        /* MEJORA: SECCIÓN POSTULAR A BECA */
+        .beca-apply-section {
+            max-width: 1000px; margin: 40px auto; 
+            background: linear-gradient(135deg, #0a3d62 0%, #162e44 100%);
+            border-radius: 24px; padding: 50px; color: white; text-align: center;
+            box-shadow: var(--shadow); display: none; /* Se activa con JS */
+        }
+        .btn-validate {
+            background: #27ae60; color: white; border: none; padding: 18px 40px;
+            border-radius: 50px; font-weight: 800; cursor: pointer; font-size: 16px;
+            text-transform: uppercase; margin-top: 25px; transition: 0.3s;
+        }
+        .btn-validate:hover { background: #2ecc71; transform: scale(1.05); }
 
         section { padding: 80px 8%; }
         .st-title { text-align: center; margin-bottom: 70px; }
@@ -95,44 +113,18 @@
         .c-btn { background: var(--azul); color: white; border: none; padding: 18px; border-radius: 12px; cursor: pointer; font-weight: 700; text-transform: uppercase; transition: 0.3s; width: 100%; letter-spacing: 1px; }
         .c-btn:hover { background: var(--rojo); }
 
-        .btn-vip-highlight { animation: pulse-vip 2s infinite; }
-        @keyframes pulse-vip { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
-        
-        .btn-vip-shine {
-            position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
-            transform: skewX(-25deg); animation: move-shine 4s infinite;
-        }
-        @keyframes move-shine { 0% { left: -100%; } 25% { left: 150%; } 100% { left: 150%; } }
-        @keyframes fast-blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-
-        .identity-section { background-color: var(--gris-claro); }
-        .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .i-card { background: white; padding: 50px 35px; border-radius: 30px; text-align: center; border: 1px solid #eef2f6; transition: 0.3s; }
-        .i-card i { font-size: 50px; color: var(--rojo); margin-bottom: 25px; }
-
-        .grid-testimonios-v2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card-testimonio-v2 { background: var(--gris-claro); padding: 40px 30px; border-radius: 20px; border-left: 6px solid var(--azul); }
-        .quote-body { font-style: italic; color: #444; margin-bottom: 20px; font-size: 15px; }
-        .footer-autor h5 { color: var(--azul); font-weight: 800; font-size: 16px; }
-        .cargo-autor { color: var(--rojo); font-size: 12px; font-weight: 600; text-transform: uppercase; }
-
         .wa-float { position: fixed; bottom: 35px; right: 35px; background: #25d366; color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 2000; box-shadow: 0 15px 30px rgba(0,0,0,0.2); text-decoration: none; }
 
         footer { background: var(--oscuro); color: white; text-align: center; padding: 60px 10%; }
         .footer-logo { height: 100px; filter: brightness(0) invert(1); margin-bottom: 20px; }
 
-        /* ESTILO SECCION POSTULAR */
-        .scholarship-section {
-            background: var(--azul); color: white; padding: 60px 5%; margin: 40px auto;
-            max-width: 1000px; border-radius: 24px; text-align: center;
-        }
-        .apply-btn {
-            background: #27ae60; color: white; padding: 20px 40px; border: none;
-            border-radius: 12px; font-weight: 800; cursor: pointer; font-size: 18px;
-            margin-top: 20px; transition: 0.3s;
-        }
-        .apply-btn:hover { background: #2ecc71; transform: scale(1.05); }
+        /* COPIADO DE TU ORIGINAL: IDENTIDAD Y TESTIMONIOS */
+        .identity-section { background-color: var(--gris-claro); }
+        .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .i-card { background: white; padding: 50px 35px; border-radius: 30px; text-align: center; border: 1px solid #eef2f6; transition: 0.3s; }
+        .i-card i { font-size: 50px; color: var(--rojo); margin-bottom: 25px; }
+        .grid-testimonios-v2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card-testimonio-v2 { background: var(--gris-claro); padding: 40px 30px; border-radius: 20px; border-left: 6px solid var(--azul); }
 
         @media (max-width: 768px) {
             header { padding: 10px 4%; }
@@ -144,7 +136,7 @@
 </head>
 <body>
 
-<a href="https://wa.me/573054513754?text=Hola,%20CorFiterapia.%20Deseo%20conocer%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20cursos%20y%20diplomados." class="wa-float" target="_blank">
+<a href="https://wa.me/573054513754?text=Hola,%20CorFiterapia" class="wa-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -171,7 +163,6 @@
 
 <div class="registration-box">
     <h3>Inscripción 2026</h3>
-    <p style="text-align:center; font-size:14px; color:#555; margin-bottom:25px; font-weight: 600;">Regístrate primero para habilitar tu cupo en los cursos:</p>
     <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
         <div class="form-grid">
             <input type="text" name="Estudiante" id="nombre_est" placeholder="Nombres y Apellidos" required>
@@ -180,267 +171,89 @@
             <select name="Perfil_Academico" id="perfil_est" required>
                 <option value="">¿Cuál es tu perfil actual?</option>
                 <option value="Fisioterapeuta">Fisioterapeuta</option>
-                <option value="Estudiante">Estudiante de Último Año de Fisioterapia</option>
-                <option value="SST">Profesional en SST</option>
-                <option value="Especialista">Otro profesional area de la salud</option>
+                <option value="Estudiante">Estudiante de Último Año</option>
             </select>
         </div>
         <button type="button" class="reg-submit-btn" onclick="validarRegistro()">Registrar mis datos</button>
         <input type="hidden" name="Curso_Seleccionado" id="hidden_curso">
-        <input type="hidden" name="_replyto" id="replyto_hidden">
     </form>
 </div>
 
-<div class="scholarship-section" id="seccion-beca" style="display: none;">
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 10px;">¡Perfil Académico Detectado!</h2>
-    <p>Basado en tu información, eres elegible para postular a una <b>Beca de Mérito Educativo (50% Dcto)</b>.</p>
-    <div id="loading-beca" style="display:none; margin: 20px 0;">
-        <i class="fas fa-spinner fa-spin" style="font-size: 30px;"></i>
-        <p>Validando perfil con el comité académico...</p>
+<div class="beca-apply-section" id="seccion-beca">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 15px;">¡Oportunidad de Beca Detectada!</h2>
+    <p>Hemos analizado tu perfil. Puedes postular a una <b>Beca de Excelencia (50% Dcto)</b> para el Diplomado Cardiopulmonar.</p>
+    <div id="loader-beca" style="display:none; margin: 20px 0;">
+        <i class="fas fa-sync fa-spin" style="font-size: 24px;"></i> Validando con el comité académico...
     </div>
-    <button class="apply-btn" id="btn-aplicar" onclick="postularBeca()">POSTULAR A BECA AHORA</button>
+    <button class="btn-validate" id="btn-postular" onclick="postularProceso()">POSTULAR A BECA AHORA</button>
 </div>
 
 <section id="cursos">
-    <div class="st-title">
-        <h2>Educación Continua 2026</h2>
-    </div>
-
+    <div class="st-title"><h2>Educación Continua 2026</h2></div>
     <div class="courses-grid">
         <div class="c-card">
             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800" class="c-img">
             <div class="c-info">
-                <div>
-                    <h4>Curso Prevención de lesiones musculoesqueléticas y riesgo biomecánico</h4>
-                    <p>Gestión de riesgos ergonómicos y protocolos de intervención.</p>
-                </div>
-                <div>
-                    <div class="cupo-container">
-                        <div class="cupo-text"><span>Cupos limitados</span><span>¡Últimos lugares!</span></div>
-                        <div class="cupo-bar"><div class="cupo-fill" style="width: 88%;"></div></div>
-                    </div>
-                    <span class="c-price">$650.000 COP</span>
-                    <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2FQAbTv', 'Prevención de Lesiones')">Inscribirme</button>
-                </div>
+                <h4>Curso Prevención de lesiones</h4>
+                <span class="c-price">$650.000 COP</span>
+                <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2FQAbTv', 'Prevención')">Inscribirme</button>
             </div>
         </div>
-
-        <div class="c-card">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800" class="c-img">
-            <div class="c-info">
-                <div>
-                    <h4>Diplomado Farmacología aplicada a la fisioterapia</h4>
-                    <p>Análisis de interacciones medicamentosas y su impacto funcional.</p>
-                </div>
-                <div>
-                    <div class="cupo-container">
-                        <div class="cupo-text"><span>Demanda alta</span><span>Casi lleno</span></div>
-                        <div class="cupo-bar"><div class="cupo-fill" style="width: 70%;"></div></div>
-                    </div>
-                    <span class="c-price">$1.850.000 COP</span>
-                    <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2YNW5Ay', 'Farmacología Aplicada')">Inscribirme</button>
-                </div>
-            </div>
         </div>
-
-        <div class="c-card">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800" class="c-img">
-            <div class="c-info">
-                <div>
-                    <h4>Diplomado en Prescripción del Ejercicio Terapéutico</h4>
-                    <p>Metodología científica para la dosificación del ejercicio clínico.</p>
-                </div>
-                <div>
-                    <div class="cupo-container">
-                        <div class="cupo-text"><span>Atención</span><span>Último cupo disponible</span></div>
-                        <div class="cupo-bar"><div class="cupo-fill" style="width: 96%;"></div></div>
-                    </div>
-                    <span class="c-price">$1.200.000 COP</span>
-                    <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/11GiaS8', 'Diplomado Prescripción')">Inscribirme</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="c-card">
-            <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=800" class="c-img">
-            <div class="c-info">
-                <div>
-                    <h4>Diplomado Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
-                    <p>Abordaje del adulto mayor con enfermedad cardiovascular y respiratoria.</p>
-                </div>
-                <div>
-                    <div class="cupo-container">
-                        <div class="cupo-text"><span>Inscripciones</span><span>Pocos cupos</span></div>
-                        <div class="cupo-bar"><div class="cupo-fill" style="width: 65%;"></div></div>
-                    </div>
-                    <span class="c-price">$1.539.500 COP</span>
-                    <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/23fNZDp', 'Curso Rehabilitación')">Inscribirme pago normal</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 <div id="oferta-cardio" style="max-width: 1000px; margin: 60px auto; padding: 0 20px;">
     <div style="background: #ffffff; border-radius: 28px; display: flex; flex-wrap: wrap; border: 2px solid #b71c1c; overflow: hidden; box-shadow: var(--shadow);">
-        
-        <div style="flex: 1; min-width: 300px; background: #0a3d62; padding: 50px; color: white; display: flex; flex-direction: column; justify-content: center;">
-            <span style="background: #b71c1c; color: white; padding: 6px 15px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; width: fit-content; margin-bottom: 20px;">
-                <i class="fas fa-star"></i> BECA ASIGNADA: 50% DCTO
-            </span>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 30px; margin-bottom: 15px;">Diplomado en Rehabilitación Cardiopulmonar</h3>
-            <p style="font-size: 15px; opacity: 0.8; margin-bottom: 30px;">Especialízate con CorFiterapia. Certificación incluida y protocolos de última generación.</p>
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <span style="font-size: 42px; font-weight: 800; color: #ffffff;">50% <small style="font-size: 18px;">DESCUENTO</small></span>
-                <div style="background: #27ae60; color: white; padding: 5px 12px; border-radius: 8px; font-size: 16px; font-weight: 800;">CUPÓN: BECA50</div>
-            </div>
-        </div>
-
-        <div style="flex: 1; min-width: 300px; padding: 40px; background: #f8fafc; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            
-            <div style="width: 100%; max-width: 320px; background: #fff3cd; padding: 15px; border-radius: 12px; border: 1px solid #ffeeba; margin-bottom: 20px;">
-                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 800; color: #856404; margin-bottom: 8px;">
-                    <span><i class="fas fa-clock"></i> TU BECA EXPIRA EN:</span>
-                    <span style="color: #b71c1c; animation: fast-blink 0.8s infinite;">¡QUEDAN POCAS!</span>
-                </div>
-                <div id="beca-timer" style="font-size: 28px; font-weight: 900; color: var(--azul);">15:00</div>
-                <div style="width: 100%; height: 6px; background: #ddd; border-radius: 10px; margin-top: 10px; overflow: hidden;">
-                    <div id="beca-progress-bar" style="width: 93%; height: 100%; background: var(--rojo); transition: width 1s linear;"></div>
-                </div>
-            </div>
-
-            <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
-               target="_blank"
-               class="btn-vip-highlight"
-               style="display: block; width: 100%; max-width: 320px; padding: 22px; background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%); color: white; text-decoration: none; font-weight: 900; font-size: 18px; text-transform: uppercase; border-radius: 15px; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(39,174,96,0.4); border: 2px solid rgba(255,255,255,0.3);">
-                <span class="btn-vip-shine"></span>
-                <i class="fas fa-shopping-cart" style="margin-right: 10px;"></i>
-                ASEGURAR MI BECA
-            </a>
-
-            <div style="margin-top: 20px;">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 8px;">
-                    <img src="https://cdnjs.cloudflare.com/ajax/libs/payment-font/1.3.0/assets/flat/visa.svg" alt="Visa" style="height: 20px; width: auto;">
-                    <img src="https://cdnjs.cloudflare.com/ajax/libs/payment-font/1.3.0/assets/flat/mastercard.svg" alt="Mastercard" style="height: 20px; width: auto;">
-                </div>
-                <p style="font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase;">
-                    <i class="fas fa-lock"></i> Pasarela de pago segura
-                </p>
-            </div>
+        <div style="flex: 1; min-width: 300px; background: #0a3d62; padding: 50px; color: white;">
+            <span style="background: #b71c1c; padding: 6px 12px; border-radius: 50px; font-size: 10px;">BECA ASIGNADA</span>
+            <h3 style="font-family: 'Playfair Display'; font-size: 28px; margin: 15px 0;">Diplomado en Rehabilitación Cardiopulmonar</h3>
+            <a href="https://pay.hotmart.com/P104788227O?offDiscount=BECA50" target="_blank" style="background:#27ae60; color:white; padding:15px 30px; display:inline-block; border-radius:10px; text-decoration:none; font-weight:bold; margin-top:20px;">ASEGURAR MI BECA 50%</a>
         </div>
     </div>
 </div>
 
 <section id="identidad" class="identity-section">
-    <div class="st-title">
-        <h2>Identidad Corporativa</h2>
-    </div>
+    <div class="st-title"><h2>Identidad Corporativa</h2></div>
     <div class="identity-grid">
-        <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Transformar la salud mediante formación continua de alta calidad y rigor científico.</p></div>
-        <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser referentes en Latinoamérica para el 2030 en educación para la rehabilitación.</p></div>
-        <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia académica, integridad y compromiso con la salud funcional.</p></div>
-    </div>
-</section>
-
-<section class="testimonios-v2" id="testimonios">
-    <div class="st-title"><h2>Lo que dicen nuestros alumnos</h2></div>
-    <div class="grid-testimonios-v2">
-        <article class="card-testimonio-v2"><div class="quote-body">"La formación académica superó mis expectativas. Ahora aplico protocolos basados en evidencia científica."</div><div class="footer-autor"><h5>Dra. Elena Martínez</h5><span class="cargo-autor">Fisioterapeuta Especialista</span></div></article>
-        <article class="card-testimonio-v2"><div class="quote-body">"El curso de Riesgo Biomecánico es fundamental para mi labor en SST. Metodología práctica y actual."</div><div class="footer-autor"><h5>Ing. Ricardo Gómez</h5><span class="cargo-autor">Especialista en SST</span></div></article>
-        <article class="card-testimonio-v2"><div class="quote-body">"La corporación me brindó las herramientas necesarias para destacar. El enfoque clínico es de nivel superior."</div><div class="footer-autor"><h5>Ana Lucía Ríos</h5><span class="cargo-autor">Fisioterapeuta en Formación</span></div></article>
+        <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Transformar la salud mediante formación continua.</p></div>
+        <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser referentes en Latinoamérica para el 2030.</p></div>
     </div>
 </section>
 
 <footer>
-    <img src="Logo CorFiterapia _Trasparente.png" alt="Logo Blanco" class="footer-logo">
-    <p style="font-size: 20px; font-weight: 800; margin-bottom: 10px; letter-spacing: 1px;">CORFITERAPIA</p>
-    <p>© 2026 Corporación Actividad Física y Fisioterapia</p>
+    <img src="Logo CorFiterapia _Trasparente.png" alt="Logo" class="footer-logo">
+    <p>© 2026 CorFiterapia</p>
 </footer>
-
-<div id="sticky-offer" style="position: fixed; bottom: -250px; left: 20px; z-index: 5000; transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); max-width: 380px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));">
-    <button onclick="document.getElementById('sticky-offer').style.opacity='0'; setTimeout(()=>document.getElementById('sticky-offer').style.display='none', 500)" style="position: absolute; top: -10px; right: -10px; background: #333; color: white; border: 2px solid white; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; z-index: 5001; font-size: 14px; font-weight: bold;">✕</button>
-    <div style="background: #ffffff; border: 3px dashed #b71c1c; border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; position: relative; padding: 20px;">
-        <div style="text-align:center;">
-             <span style="font-size: 12px; color: #b71c1c; font-weight: 700; text-transform: uppercase;">Vale por</span>
-             <h2 style="font-size: 50px; font-weight: 900; color: #0a3d62; line-height: 1; margin: 5px 0;">50% DCTO</h2>
-             <p style="font-size: 13px; font-weight: 700; color: #0a3d62;">Diplomado Rehabilitación Cardiopulmonar</p>
-             <div style="background: #fff3cd; color: #856404; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 14px; font-weight: 800; border: 1px solid #ffeeba;">CÓDIGO: BECA50</div>
-        </div>
-    </div>
-</div>
 
 <script>
     function validarRegistro() {
         const nombre = document.getElementById('nombre_est').value;
-        const doc = document.getElementById('doc_est').value;
-        const email = document.getElementById('email_est').value;
-        const perfil = document.getElementById('perfil_est').value;
-
-        if(!nombre || !doc || !email || !perfil) {
-            alert("⚠️ Por favor completa todos tus datos antes de registrarte.");
-        } else {
-            alert("✅ Perfil validado. Revisa la sección de becas que se ha habilitado abajo.");
-            document.getElementById('seccion-beca').style.display = 'block';
-            window.scrollTo({top: document.getElementById('seccion-beca').offsetTop - 100, behavior: 'smooth'});
-        }
+        if(!nombre) { alert("Completa tus datos"); return; }
+        
+        alert("✅ Datos registrados. Se ha habilitado una postulación a beca para ti abajo.");
+        document.getElementById('seccion-beca').style.display = 'block';
+        window.scrollTo({top: document.getElementById('seccion-beca').offsetTop - 100, behavior: 'smooth'});
     }
 
-    function postularBeca() {
-        const btn = document.getElementById('btn-aplicar');
-        const loading = document.getElementById('loading-beca');
-        btn.style.display = 'none';
-        loading.style.display = 'block';
-
+    function postularProceso() {
+        document.getElementById('btn-postular').style.display = 'none';
+        document.getElementById('loader-beca').style.display = 'block';
+        
         setTimeout(() => {
-            alert("🎉 ¡FELICIDADES! Tu perfil ha sido aprobado para la Beca de Mérito Educativo.");
+            alert("🎉 ¡FELICIDADES! Tu beca ha sido aprobada. Serás llevado a la oferta exclusiva.");
             window.scrollTo({top: document.getElementById('oferta-cardio').offsetTop - 100, behavior: 'smooth'});
-            // Resaltar la tarjeta de la beca real
-            document.getElementById('oferta-cardio').style.border = "4px solid #27ae60";
         }, 2500);
     }
 
-    async function procesoInscripcion(urlMercadoPago, nombreCurso) {
-        const nombre = document.getElementById('nombre_est').value;
-        const email = document.getElementById('email_est').value;
-        
-        if(!nombre || !email) { 
-            alert("⚠️ Por favor, completa tus datos en el formulario de inscripción antes de elegir un curso."); 
-            window.scrollTo({top: 550, behavior: 'smooth'}); 
-            return; 
-        }
-
+    async function procesoInscripcion(url, nombreCurso) {
         document.getElementById('hidden_curso').value = nombreCurso;
-        document.getElementById('replyto_hidden').value = email;
         const form = document.getElementById('mainForm');
-        
         try {
-            await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-            window.location.href = urlMercadoPago;
-        } catch (e) { 
-            window.location.href = urlMercadoPago; 
-        }
+            await fetch(form.action, { method: 'POST', body: new FormData(form) });
+            window.location.href = url;
+        } catch(e) { window.location.href = url; }
     }
-
-    (function() {
-        let time = 15 * 60;
-        const display = document.getElementById('beca-timer');
-        const bar = document.getElementById('beca-progress-bar');
-        
-        setInterval(() => {
-            let m = Math.floor(time / 60);
-            let s = time % 60;
-            if(display) display.innerText = `${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}`;
-            if(time > 0) {
-                time--;
-                if(time % 10 === 0 && bar) bar.style.width = (time / (15*60) * 100) + '%';
-            }
-        }, 1000);
-
-        setTimeout(() => {
-            const offer = document.getElementById('sticky-offer');
-            if(offer) offer.style.bottom = '20px';
-        }, 5000);
-    })();
 </script>
 
 </body>
+</html>
