@@ -29,7 +29,8 @@
         .c-card { background: white; border-radius: 15px; overflow: hidden; border: 1px solid #eee; transition: 0.3s; display: flex; flex-direction: column; }
         .c-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
         .c-img { width: 100%; height: 200px; object-fit: cover; }
-        .c-info { padding: 20px; text-align: center; flex-grow: 1; }
+        .c-info { padding: 20px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .c-info p { font-size: 12px; margin-bottom: 15px; color: #666; font-style: italic; }
         .c-price { color: var(--rojo); font-weight: 800; font-size: 20px; display: block; margin: 10px 0; }
         .c-btn { background: var(--azul); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 700; width: 100%; text-transform: uppercase; }
 
@@ -47,7 +48,8 @@
         #beca-result { text-align: center; display: none; margin-top: 20px; }
         .timer { font-size: 35px; font-weight: 900; color: var(--azul); margin: 15px 0; }
         
-        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 25px; z-index: 2000; text-decoration: none; }
+        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 10px 20px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; z-index: 2000; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .wa-float i { font-size: 22px; margin-right: 8px; }
         footer { background: var(--oscuro); color: white; text-align: center; padding: 40px; }
     </style>
 </head>
@@ -56,7 +58,7 @@
     <div class="promo-bar">Formación Continua: Inscripciones abiertas 2026</div>
 
     <header>
-        <img src="Logo CorFiterapia _Trasparente.png" class="nav-logo-img">
+        <img src="Logo CorFiterapia _Trasparente.png" class="nav-logo-img" alt="CorFiterapia">
         <nav>
             <a href="#cursos">Cursos</a>
             <a href="#identidad">Identidad</a>
@@ -75,9 +77,10 @@
         <div class="courses-grid">
             
             <div class="c-card">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500" class="c-img">
+                <img src="https://images.unsplash.com/photo-1582719202047-76d3432ee323?auto=format&fit=crop&w=500" class="c-img" alt="Fisioterapeuta estudiando con fonendoscopio">
                 <div class="c-info">
                     <h4>Diplomado en Farmacología aplicada a la Fisioterapia</h4>
+                    <p>Nota: Aunque el fisioterapeuta no prescribe medicamentos, trabaja con pacientes medicados y debe conocer los efectos de los fármacos para ajustar sus técnicas y terapias de forma segura.</p>
                     <span class="c-price">$1.850.000 COP</span>
                     <button class="c-btn" onclick="abrirRegistro('https://mpago.li/2YNW5Ay', 'Farmacología', false)">Inscribirme ahora</button>
                 </div>
@@ -87,6 +90,7 @@
                 <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
                     <h4>Diplomado Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
+                    <p>Diplomado en Rehabilitacion Cardiopulmonar en el adulto Mayor.</p>
                     <span class="c-price">$1.539.500 COP</span>
                     <button class="c-btn" style="background:var(--verde)" onclick="abrirRegistro('https://go.hotmart.com/P104788227O?dp=1', 'Rehab Cardiopulmonar', true)">Postular a Beca</button>
                 </div>
@@ -95,7 +99,8 @@
             <div class="c-card">
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
-                    <h4>Curso Prevención de lesiones musculoesqueleticas y riesgo ergonómico</h4>
+                    <h4>Prevención de lesiones y riesgo ergonómico</h4>
+                    <p>Análisis del movimiento y diseño de entornos saludables para evitar patologías musculoesqueléticas laborales.</p>
                     <span class="c-price">$250.000 COP</span>
                     <button class="c-btn" onclick="abrirRegistro('https://mpago.li/2FQAbTv', 'Prevención', false)">Inscribirme ahora</button>
                 </div>
@@ -105,6 +110,7 @@
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
                     <h4>Diplomado de prescripción del ejercicio físico</h4>
+                    <p>Dosificación científica del ejercicio como herramienta terapéutica en diferentes poblaciones clínicas.</p>
                     <span class="c-price">$1.200.000 COP</span>
                     <button class="c-btn" onclick="abrirRegistro('https://mpago.li/11GiaS8', 'Prescripción', false)">Inscribirme ahora</button>
                 </div>
@@ -142,18 +148,18 @@
     <section id="identidad">
         <div class="st-title"><h2>Nuestra Identidad</h2></div>
         <div class="identity-grid">
-            <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Brindar formación continua de alta calidad para transformar la práctica profesional.</p></div>
-            <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser la plataforma líder en actualización para fisioterapeutas en Latinoamérica.</p></div>
-            <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia, Ética, Compromiso y Rigor Científico.</p></div>
+            <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Brindar formación clínica de alta calidad para transformar la práctica profesional de los terapeutas.</p></div>
+            <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser la plataforma líder en actualización científica para fisioterapeutas en Latinoamérica.</p></div>
+            <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia técnica, integridad ética, compromiso social y rigor científico.</p></div>
         </div>
     </section>
 
     <section id="testimonios" style="background:white;">
         <div class="st-title"><h2>Testimonios</h2></div>
         <div class="test-grid">
-            <div class="t-card">"El diplomado en farmacología me dio herramientas que no vi en la universidad. Muy práctico." - Ana M.</div>
-            <div class="t-card">"La metodología online es excelente, pude estudiar a mi ritmo sin descuidar el consultorio." - Carlos R.</div>
-            <div class="t-card">"Contenido actualizado y docentes de alto nivel. Recomendado 100%." - Lucía P.</div>
+            <div class="t-card">"El diplomado en farmacología me dio herramientas que no vi en la universidad. Ahora entiendo mejor cómo los fármacos afectan la movilidad de mis pacientes." - Ana M.</div>
+            <div class="t-card">"La metodología online es excelente. Pude aplicar lo aprendido en rehabilitación cardiopulmonar con mis pacientes adultos mayores de inmediato." - Carlos R.</div>
+            <div class="t-card">"CorFiterapia ofrece contenido actualizado con docentes que realmente saben de clínica. 100% recomendado." - Lucía P.</div>
         </div>
     </section>
 
@@ -161,7 +167,9 @@
         <p>© 2026 CorFiterapia | Movimiento que transforma salud</p>
     </footer>
 
-    <a href="https://wa.me/573054513754" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/573054513754" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i> Más información
+    </a>
 
     <script>
         let cursoActual = "";
@@ -177,7 +185,6 @@
             document.getElementById('seccion-inscripcion').style.display = 'block';
             document.getElementById('form-title').innerText = tieneBeca ? "Postulación a Beca: " + nombre : "Inscripción: " + nombre;
             
-            // Resetear vistas
             document.getElementById('inscripcionForm').style.display = 'block';
             document.getElementById('beca-result').style.display = 'none';
             
@@ -188,17 +195,14 @@
             const form = document.getElementById('inscripcionForm');
             if(!form.checkValidity()) { alert("Por favor completa todos los campos"); return; }
 
-            // Enviar a Formspree (Segundo plano)
             fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'} });
 
             if(esBeca) {
-                // Mostrar simulador de beca
                 form.style.display = 'none';
                 document.getElementById('beca-result').style.display = 'block';
                 document.getElementById('link-pago').href = linkActual;
                 iniciarTimer();
             } else {
-                // Redirigir directo al pago
                 window.location.href = linkActual;
             }
         }
