@@ -10,7 +10,7 @@
         :root { --azul: #0a3d62; --rojo: #b71c1c; --verde: #27ae60; --gris: #f4f7f9; --oscuro: #0a192f; --shadow: 0 15px 35px rgba(0,0,0,0.1); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; color: #333; scroll-behavior: smooth; line-height: 1.6; padding-top: 40px; }
-        
+       
         /* Barras y Navegación */
         .promo-bar { background: var(--azul); color: white; text-align: center; padding: 10px; font-size: 13px; position: fixed; top: 0; width: 100%; z-index: 1100; font-weight: 600; }
         header { background: white; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 40px; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
@@ -60,7 +60,7 @@
         .btn-form { background: var(--rojo); color: white; border: none; padding: 15px; width: 100%; border-radius: 30px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
         #beca-result { text-align: center; display: none; margin-top: 20px; }
         .timer { font-size: 35px; font-weight: 900; color: var(--azul); margin: 15px 0; }
-        
+       
         /* Floating Elements */
         .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; z-index: 2000; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .wa-float i { font-size: 22px; margin-right: 8px; }
@@ -96,7 +96,7 @@
     <section id="cursos">
         <div class="st-title"><h2>Oferta Académica</h2></div>
         <div class="courses-grid">
-            
+           
             <div class="c-card">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800" class="c-img" alt="Farmacología Clínica">
                 <div class="c-info">
@@ -111,7 +111,7 @@
                 <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img" alt="Rehabilitación">
                 <div class="c-info">
                     <h4>Diplomado Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
-                    <p>Evaluación integral y Protocolos para el manejo de pacientes con compromiso cardiopulmonar.</p>
+                    <p>Manejo integral del paciente Adulto Mayor con patologias cardiopulmonares.</p>
                     <span class="c-price">$1.539.500 COP</span>
                     <button class="c-btn" style="background:var(--verde)" onclick="abrirRegistro('https://go.hotmart.com/P104788227O?dp=1', 'Rehab Cardiopulmonar', true)">Postular a Beca</button>
                 </div>
@@ -157,13 +157,24 @@
                 <button type="button" class="btn-form" onclick="procesarEnvio()">Continuar ahora</button>
             </form>
 
-            <div id="beca-result">
-                <h2 style="color:var(--verde)">¡BECA DEL 50% ASIGNADA!</h2>
-                <p>Usa el cupon de descuento <strong>BECA50</strong> en la pasarela de pago.</p>
-                <div class="timer" id="timer">15:00</div>
-                <a id="link-pago" href="#" class="btn-form" style="text-decoration:none; display:block; background:var(--verde); text-align:center;">Pagar ahora con descuento</a>
-            </div>
-        </div>
+           <div id="beca-result" style="display:none; text-align:center; padding: 20px; border: 2px solid var(--verde); border-radius: 15px; background: #f0fff4;">
+    <h2 style="color:var(--verde); margin-bottom:10px;">¡BECA DEL 50% ASIGNADA!</h2>
+    <p style="font-size:14px; color:#444;">Copia tu cupón y pégalo en la pasarela de pago de Hotmart:</p>
+    
+    <div style="background: white; border: 2px dashed var(--verde); padding: 10px; margin: 15px auto; width: fit-content; border-radius: 8px;">
+        <span id="cupón-texto" style="font-size: 24px; font-weight: 900; color: var(--oscuro); letter-spacing: 2px;">BECA50</span>
+    </div>
+
+    <p style="font-size:12px; margin-bottom:15px;">El descuento se aplicará al digitar el código en el campo <strong>"¿Tienes un cupón de descuento?"</strong></p>
+    
+    <div class="timer" id="timer" style="font-size: 30px; margin-bottom: 20px;">15:00</div>
+
+    <div style="margin-top:20px;">
+        <a onclick="return false;" href="https://pay.hotmart.com/P104788227O?checkoutMode=2" class="hotmart-fb hotmart__button-checkout">
+            <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Pagar con Beca" style="max-width: 250px;">
+        </a>
+    </div>
+</div>
     </section>
 
     <section id="identidad">
@@ -178,7 +189,7 @@
     <section id="testimonios" style="background:white;">
         <div class="st-title"><h2>Testimonios</h2></div>
         <div class="test-grid">
-            <div class="t-card">"El diplomado en farmacología me dio herramientas que no vi en la universidad. Ahora entiendo mejor como los farmacos pueden influir en la prescripcion del ejercicio fisico." - Ana M.</div>
+            <div class="t-card">"El diplomado en farmacología me dio herramientas que no vi en la universidad. Ahora entiendo mejor cómo los fármacos afectan a mis pacientes." - Ana M.</div>
             <div class="t-card">"La metodología online es excelente. Pude aplicar lo aprendido en rehabilitación de inmediato." - Carlos R.</div>
             <div class="t-card">"CorFiterapia ofrece contenido actualizado con docentes que realmente saben de clínica. 100% recomendado." - Lucía P.</div>
         </div>
@@ -195,7 +206,7 @@
     <script>
         // Lógica del Temporizador Persistente (Sticky)
         function startStickyTimer() {
-            let time = 600; 
+            let time = 600;
             const display = document.getElementById('sticky-timer');
             const countdown = setInterval(() => {
                 let minutes = Math.floor(time / 60);
@@ -209,8 +220,8 @@
         }
 
         // Mostrar anuncio a los 3 segundos
-        setTimeout(() => { 
-            document.getElementById('urgency-ad').style.display = 'block'; 
+        setTimeout(() => {
+            document.getElementById('urgency-ad').style.display = 'block';
             startStickyTimer();
         }, 3000);
 
@@ -234,14 +245,14 @@
             const form = document.getElementById('inscripcionForm');
             if(!form.checkValidity()) { alert("Por favor completa todos los campos"); return; }
             fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'} });
-            
+           
             if(esBeca) {
                 form.style.display = 'none';
                 document.getElementById('beca-result').style.display = 'block';
                 document.getElementById('link-pago').href = linkActual;
                 iniciarTimerSecundario();
-            } else { 
-                window.location.href = linkActual; 
+            } else {
+                window.location.href = linkActual;
             }
         }
 
@@ -255,5 +266,38 @@
             }, 1000);
         }
     </script>
+    function procesarEnvio() {
+    const form = document.getElementById('inscripcionForm');
+    
+    if(!form.checkValidity()) { 
+        alert("Por favor completa tus datos para aplicar la beca."); 
+        return; 
+    }
+
+    // Enviamos los datos a Formspree
+    fetch(form.action, { 
+        method: 'POST', 
+        body: new FormData(form), 
+        headers: {'Accept': 'application/json'} 
+    });
+    
+    if(esBeca) {
+        // Ocultamos el registro y mostramos la zona de cupón y el widget
+        document.getElementById('registro-paso-1').style.display = 'none';
+        document.getElementById('beca-result').style.display = 'block';
+        
+        // Iniciamos el contador de urgencia
+        iniciarTimerSecundario();
+        
+        // Opcional: Alerta visual para que no olviden el cupón
+        setTimeout(() => {
+            alert("¡Importante! No olvides escribir el código BECA50 en la pasarela de Hotmart para activar tu descuento.");
+        }, 500);
+
+    } else {
+        // Otros cursos (Mercado Pago)
+        window.location.href = linkActual;
+    }
+}
 </body>
 </html>
