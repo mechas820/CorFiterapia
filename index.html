@@ -3,323 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CorFiterapia | Movimiento que transforma salud</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>CorFiterapia | Formación Continua en Salud</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <style>
-        :root {
-            --azul: #0a3d62;
-            --rojo: #b71c1c;
-            --verde: #27ae60;
-            --blanco: #ffffff;
-            --gris-claro: #f4f7f9;
-            --oscuro: #0a192f;
-            --shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
+        :root { --azul: #0a3d62; --rojo: #b71c1c; --verde: #27ae60; --gris: #f4f7f9; --oscuro: #0a192f; --shadow: 0 15px 35px rgba(0,0,0,0.1); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; color: #333; scroll-behavior: smooth; line-height: 1.6; background: #fff; padding-top: 40px; }
-
-        .promo-bar {
-            background: var(--azul);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 13px;
-            font-weight: 600;
-            position: fixed;
-            top: 0; width: 100%;
-            z-index: 1100;
-            display: flex; justify-content: center; align-items: center; gap: 15px;
-        }
-        .promo-bar a {
-            color: white;
-            background: var(--rojo);
-            text-decoration: none;
-            padding: 5px 15px;
-            border-radius: 5px;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 12px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            position: fixed; width: 100%; top: 40px; z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-        }
+        body { font-family: 'Montserrat', sans-serif; color: #333; scroll-behavior: smooth; line-height: 1.6; padding-top: 40px; }
         
-        .nav-logo-img { height: 60px; width: auto; }
-        nav a { text-decoration: none; color: var(--azul); font-weight: 700; margin-left: 20px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        nav a:hover { color: var(--rojo); }
+        .promo-bar { background: var(--azul); color: white; text-align: center; padding: 10px; font-size: 13px; position: fixed; top: 0; width: 100%; z-index: 1100; font-weight: 600; }
+        
+        header { background: white; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 40px; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+        .nav-logo-img { height: 55px; }
+        nav a { text-decoration: none; color: var(--azul); font-weight: 700; margin-left: 20px; font-size: 11px; text-transform: uppercase; }
 
-        .hero {
-            height: 75vh;
-            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            text-align: center; padding: 0 5%;
-        }
-        .hero-logo-main { max-width: 450px; width: 80%; margin-bottom: 20px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); }
-        .hero h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 5vw, 40px); color: var(--azul); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
-        .hero p { font-weight: 600; color: var(--rojo); letter-spacing: 2px; text-transform: uppercase; font-size: 14px; }
+        .hero { height: 60vh; background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80'); background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .hero h2 { font-family: 'Playfair Display', serif; font-size: 35px; color: var(--azul); }
 
-        section { padding: 80px 8%; }
-        .st-title { text-align: center; margin-bottom: 50px; }
-        .st-title h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 45px); color: var(--azul); position: relative; padding-bottom: 20px; }
-        .st-title h2::after { content: ''; width: 60px; height: 5px; background: var(--rojo); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        section { padding: 60px 8%; }
+        .st-title { text-align: center; margin-bottom: 40px; }
+        .st-title h2 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 32px; position: relative; padding-bottom: 15px; }
+        .st-title h2::after { content: ''; width: 50px; height: 4px; background: var(--rojo); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .c-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #f0f0f0; transition: 0.4s; display: flex; flex-direction: column; height: 100%; position: relative; }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .c-card { background: white; border-radius: 15px; overflow: hidden; border: 1px solid #eee; transition: 0.3s; display: flex; flex-direction: column; }
         .c-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-        .c-tag { position: absolute; top: 15px; right: 15px; background: var(--rojo); color: white; padding: 5px 15px; border-radius: 50px; font-size: 10px; font-weight: 800; text-transform: uppercase; z-index: 10; }
-        .c-img { width: 100%; height: 220px; object-fit: cover; }
-        .c-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; align-items: center;}
-        .c-info h4 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 18px; margin-bottom: 15px; min-height: 3em; text-align: center;}
-        .c-price { color: var(--rojo); font-weight: 800; font-size: 22px; margin-bottom: 15px; display: block; text-align: center;}
-        .c-btn { background: var(--azul); color: white; border: none; padding: 15px; border-radius: 12px; cursor: pointer; font-weight: 700; text-transform: uppercase; transition: 0.3s; width: 100%; }
-        .c-btn:hover { background: var(--rojo); }
+        .c-img { width: 100%; height: 200px; object-fit: cover; }
+        .c-info { padding: 20px; text-align: center; flex-grow: 1; }
+        .c-price { color: var(--rojo); font-weight: 800; font-size: 20px; display: block; margin: 10px 0; }
+        .c-btn { background: var(--azul); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 700; width: 100%; text-transform: uppercase; }
 
-        .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .i-card { background: white; padding: 40px 30px; border-radius: 25px; text-align: center; border: 1px solid #eef2f6; }
-        .i-card i { font-size: 45px; color: var(--rojo); margin-bottom: 20px; }
+        .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .i-card { background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .i-card i { font-size: 40px; color: var(--rojo); margin-bottom: 15px; }
 
-        .registration-box { max-width: 850px; margin: 0 auto; background: white; padding: 40px; border-radius: 24px; box-shadow: var(--shadow); }
-        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
-        input, select { padding: 15px; border: 1px solid #ddd; border-radius: 10px; width: 100%; font-family: 'Montserrat'; }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .t-card { background: var(--gris); padding: 25px; border-radius: 15px; font-style: italic; border-left: 4px solid var(--rojo); }
 
-        .reg-submit-btn { display: block; width: fit-content; margin: 0 auto; background: var(--rojo); color: white; border: none; padding: 18px 45px; border-radius: 50px; cursor: pointer; font-weight: 800; text-transform: uppercase; transition: 0.4s; box-shadow: 0 10px 20px rgba(183, 28, 28, 0.2); }
+        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); display: none; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Montserrat'; }
+        .btn-form { background: var(--rojo); color: white; border: none; padding: 15px; width: 100%; border-radius: 30px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
 
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 2000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        footer { background: var(--oscuro); color: white; text-align: center; padding: 50px; }
-        .footer-logo { height: 60px; filter: brightness(0) invert(1); margin-bottom: 20px; }
-
-        /* Estilo para centrar el botón de Hotmart Widget */
-        .hotmart-widget-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        @media (max-width: 600px) {
-            header { top: 60px; }
-            body { padding-top: 60px; }
-            .promo-bar { font-size: 11px; padding: 12px; }
-        }
+        #beca-result { text-align: center; display: none; margin-top: 20px; }
+        .timer { font-size: 35px; font-weight: 900; color: var(--azul); margin: 15px 0; }
+        
+        .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 25px; z-index: 2000; text-decoration: none; }
+        footer { background: var(--oscuro); color: white; text-align: center; padding: 40px; }
     </style>
 </head>
 <body>
 
-    <div class="promo-bar">
-        <i class="fas fa-university"></i> 
-        <span>Formación Continua: Inscripciones abiertas 2026.</span>
-        <a href="#cursos">Ver Programas</a>
-    </div>
-
-    <a href="https://wa.me/573054513754?text=Hola%20Corfiterapia%20deseo%20conocer%20mas%20informacion%20de%20los%20cursos%20y%20diplomados" class="wa-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <div class="promo-bar">Formación Continua: Inscripciones abiertas 2026</div>
 
     <header>
-        <div class="logo-box" style="display:flex; align-items:center; gap:10px;">
-            <img src="Logo CorFiterapia _Trasparente.png" class="nav-logo-img" alt="Logo">
-            <div style="line-height:1.2;">
-                <span style="font-weight:800; color:var(--azul); font-size:14px;">CORFITERAPIA</span><br>
-                <span style="font-size:7px; color:var(--rojo); font-weight:600; text-transform: uppercase;">Movimiento que transforma salud</span>
-            </div>
-        </div>
+        <img src="Logo CorFiterapia _Trasparente.png" class="nav-logo-img">
         <nav>
-            <a href="#inicio">Inicio</a>
             <a href="#cursos">Cursos</a>
             <a href="#identidad">Identidad</a>
-            <a href="#postulacion">Becas</a>
+            <a href="#testimonios">Testimonios</a>
         </nav>
     </header>
 
-    <section class="hero" id="inicio">
-        <img src="Logo CorFiterapia _Trasparente.png" class="hero-logo-main">
+    <section class="hero">
+        <img src="Logo CorFiterapia _Trasparente.png" style="max-width:300px; margin-bottom:20px;">
         <h2>Formación Continua de Calidad</h2>
-        <p>Movimiento que transforma salud</p>
+        <p style="color:var(--rojo); font-weight:800; letter-spacing:2px;">MOVIMIENTO QUE TRANSFORMA SALUD</p>
     </section>
 
     <section id="cursos">
-        <div class="st-title"><h2>Oferta Académica 2026</h2></div>
+        <div class="st-title"><h2>Oferta Académica</h2></div>
         <div class="courses-grid">
             
             <div class="c-card">
-                <div class="c-tag">Alta Demanda</div>
-                <img src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?auto=format&fit=crop&w=500&q=80" class="c-img" alt="Fisioterapeuta con fonendoscopio en uniforme de salud sin rostro">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
                     <h4>Diplomado en Farmacología aplicada a la Fisioterapia</h4>
                     <span class="c-price">$1.850.000 COP</span>
-                    <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2YNW5Ay', 'Farmacología')">Inscribirme</button>
+                    <button class="c-btn" onclick="abrirRegistro('https://mpago.li/2YNW5Ay', 'Farmacología', false)">Inscribirme ahora</button>
                 </div>
             </div>
 
             <div class="c-card">
-                <div class="c-tag">Beca disponible</div>
                 <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
-                    <h4>Diplomado Rehabilitación Cardiopulmonar</h4>
+                    <h4>Diplomado Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
                     <span class="c-price">$1.539.500 COP</span>
-                    
-                    <div class="hotmart-widget-container">
-                        <script type="text/javascript">
-                            function importHotmart(){
-                                var imported = document.createElement('script');
-                                imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
-                                document.head.appendChild(imported);
-                                var link = document.createElement('link');
-                                link.rel = 'stylesheet';
-                                link.type = 'text/css';
-                                link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
-                                document.head.appendChild(link);       
-                            }
-                            importHotmart();
-                        </script>
-                        <a onclick="return false;" href="https://pay.hotmart.com/P104788227O?checkoutMode=2" class="hotmart-fb hotmart__button-checkout">
-                            <img src='https://static.hotmart.com/img/btn-buy-green.png' alt="Botón Comprar ahora Hotmart">
-                        </a>
-                    </div>
-                    </div>
+                    <button class="c-btn" style="background:var(--verde)" onclick="abrirRegistro('https://go.hotmart.com/P104788227O?dp=1', 'Rehab Cardiopulmonar', true)">Postular a Beca</button>
+                </div>
             </div>
 
             <div class="c-card">
-                <div class="c-tag">Últimos cupos</div>
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
-                    <h4>Curso de prevención de lesiones musculoesqueléticas y riesgo ergonomico</h4>
+                    <h4>Curso Prevención de lesiones musculoesqueleticas y riesgo ergonómico</h4>
                     <span class="c-price">$250.000 COP</span>
-                    <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2FQAbTv', 'Prevención Lesiones')">Inscribirme</button>
+                    <button class="c-btn" onclick="abrirRegistro('https://mpago.li/2FQAbTv', 'Prevención', false)">Inscribirme ahora</button>
                 </div>
             </div>
 
             <div class="c-card">
-                <div class="c-tag">Cupos limitados</div>
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
-                    <h4>Diplomado de prescripción del ejercicio fisico</h4>
+                    <h4>Diplomado de prescripción del ejercicio físico</h4>
                     <span class="c-price">$1.200.000 COP</span>
-                    <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/11GiaS8', 'Prescripción Ejercicio')">Inscribirme</button>
+                    <button class="c-btn" onclick="abrirRegistro('https://mpago.li/11GiaS8', 'Prescripción', false)">Inscribirme ahora</button>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section id="identidad" style="background: var(--gris-claro);">
+    <section id="seccion-inscripcion" style="background:var(--azul); display:none;">
+        <div class="form-container" id="form-box" style="display:block;">
+            <h3 id="form-title" style="text-align:center; margin-bottom:20px;">Registro de Inscripción</h3>
+            <form id="inscripcionForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
+                <input type="text" name="Nombre" placeholder="Nombre Completo" required>
+                <input type="text" name="Documento" placeholder="Cédula/ID" required>
+                <input type="email" name="Email" placeholder="Correo Electrónico" required>
+                <select name="Perfil" required>
+                    <option value="">Selecciona tu perfil</option>
+                    <option value="Fisioterapeuta">Fisioterapeuta</option>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="SST">SST</option>
+                </select>
+                <input type="hidden" name="Curso" id="input-curso">
+                <button type="button" class="btn-form" onclick="procesarEnvio()">Continuar ahora</button>
+            </form>
+
+            <div id="beca-result">
+                <h2 style="color:var(--verde)">¡BECA DEL 50% ASIGNADA!</h2>
+                <p>Usa el código <strong>BECA50</strong> en la pasarela de pago.</p>
+                <div class="timer" id="timer">15:00</div>
+                <a id="link-pago" href="#" class="btn-form" style="text-decoration:none; display:block; background:var(--verde); text-align:center;">Pagar ahora con descuento</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="identidad">
         <div class="st-title"><h2>Nuestra Identidad</h2></div>
         <div class="identity-grid">
-            <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Transformar la salud mediante formación continua de alta calidad.</p></div>
-            <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser referentes latinoamericanos en capacitación profesional.</p></div>
-            <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia técnica, integridad ética y compromiso.</p></div>
+            <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Brindar formación continua de alta calidad para transformar la práctica profesional.</p></div>
+            <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser la plataforma líder en actualización para fisioterapeutas en Latinoamérica.</p></div>
+            <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia, Ética, Compromiso y Rigor Científico.</p></div>
         </div>
     </section>
 
-    <section id="postulacion" style="background: var(--azul); color: white;">
-        <div class="st-title"><h2 style="color: white;">Admisiones y Becas</h2></div>
-        <div class="registration-box" style="color: #333;">
-            <h3 style="text-align:center; margin-bottom:20px; font-family:'Playfair Display';">Registro de Estudiante</h3>
-            <p style="text-align: center; color: var(--rojo); font-weight: 700; margin-bottom: 25px;">Completa tus datos para proceder con la inscripción oficial.</p>
-            
-            <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
-                <div class="form-grid">
-                    <input type="text" name="Nombre" id="nombre_est" placeholder="Nombres y Apellidos" required>
-                    <input type="text" name="Documento" id="doc_est" placeholder="Documento de Identidad" required>
-                    <input type="email" name="Email" id="email_est" placeholder="Correo Electrónico" required>
-                    <select name="Perfil" id="perfil_est" required>
-                        <option value="">Selecciona tu perfil</option>
-                        <option value="Fisioterapeuta">Fisioterapeuta</option>
-                        <option value="Estudiante">Estudiante</option>
-                        <option value="SST">SST</option>
-                    </select>
-                </div>
-                <input type="hidden" name="Curso_Interes" id="hidden_curso" value="Ninguno">
-                <button type="button" class="reg-submit-btn" onclick="validarRegistro()">Validar Datos y Aplicar Beca</button>
-            </form>
-        </div>
-
-        <div id="seccion-validando" style="max-width: 850px; margin: 30px auto; background: white; padding: 40px; border-radius: 24px; text-align: center; display: none; color: #333;">
-            <div id="simulador-carga">
-                <h3>Verificando disponibilidad de cupos...</h3>
-                <div style="width: 100%; height: 15px; background: #eee; border-radius: 10px; margin: 20px 0; overflow: hidden;">
-                    <div id="barra-validacion" style="width: 0%; height: 100%; background: var(--rojo); transition: width 0.5s;"></div>
-                </div>
-            </div>
-            <div id="resultado-exito" style="display: none;">
-                <h2 style="color: var(--verde);">¡BECA ASIGNADA!</h2>
-                <p>Para aplicar el descuento, diligencie la palabra <strong>BECA50</strong> en la pasarela de pago.</p>
-                <p>Tienes 15 minutos para completar tu registro:</p>
-                <div id="beca-timer" style="font-size: 40px; font-weight: 900; color: var(--azul); margin: 20px 0;">15:00</div>
-                <a id="btn-pago-final" href="https://go.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" target="_blank" style="display: inline-block; padding: 18px 40px; background: var(--verde); color: white; text-decoration: none; font-weight: 800; border-radius: 50px;">IR A PAGAR CON BECA</a>
-            </div>
+    <section id="testimonios" style="background:white;">
+        <div class="st-title"><h2>Testimonios</h2></div>
+        <div class="test-grid">
+            <div class="t-card">"El diplomado en farmacología me dio herramientas que no vi en la universidad. Muy práctico." - Ana M.</div>
+            <div class="t-card">"La metodología online es excelente, pude estudiar a mi ritmo sin descuidar el consultorio." - Carlos R.</div>
+            <div class="t-card">"Contenido actualizado y docentes de alto nivel. Recomendado 100%." - Lucía P.</div>
         </div>
     </section>
 
     <footer>
-        <img src="Logo CorFiterapia _Trasparente.png" class="footer-logo">
-        <p>MOVIMIENTO QUE TRANSFORMA SALUD</p>
-        <p>© 2026 CorFiterapia - Todos los derechos reservados</p>
+        <p>© 2026 CorFiterapia | Movimiento que transforma salud</p>
     </footer>
 
+    <a href="https://wa.me/573054513754" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
     <script>
-        async function procesoInscripcion(url, cursoNombre) {
-            const nombre = document.getElementById('nombre_est').value;
-            const email = document.getElementById('email_est').value;
+        let cursoActual = "";
+        let linkActual = "";
+        let esBeca = false;
 
-            if(!nombre || !email) {
-                alert("⚠️ Por registro académico, completa primero el formulario de admisión al final de la página.");
-                window.scrollTo({top: document.getElementById('postulacion').offsetTop - 100, behavior: 'smooth'});
-                return;
-            }
-
-            document.getElementById('hidden_curso').value = cursoNombre;
-            const form = document.getElementById('mainForm');
-            fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'} });
-            window.location.href = url;
-        }
-
-        function validarRegistro() {
-            const n = document.getElementById('nombre_est').value;
-            const e = document.getElementById('email_est').value;
-            if(!n || !e) { alert("⚠️ Completa los campos del formulario."); return; }
-
-            document.getElementById('seccion-validando').style.display = 'block';
-            window.scrollTo({top: document.getElementById('seccion-validando').offsetTop - 100, behavior: 'smooth'});
+        function abrirRegistro(link, nombre, tieneBeca) {
+            cursoActual = nombre;
+            linkActual = link;
+            esBeca = tieneBeca;
             
-            let barra = document.getElementById('barra-validacion');
-            let ancho = 0;
-            let intervalo = setInterval(() => {
-                ancho += 10;
-                barra.style.width = ancho + "%";
-                if(ancho >= 100) {
-                    clearInterval(intervalo);
-                    mostrarExito();
-                }
-            }, 200);
+            document.getElementById('input-curso').value = nombre;
+            document.getElementById('seccion-inscripcion').style.display = 'block';
+            document.getElementById('form-title').innerText = tieneBeca ? "Postulación a Beca: " + nombre : "Inscripción: " + nombre;
+            
+            // Resetear vistas
+            document.getElementById('inscripcionForm').style.display = 'block';
+            document.getElementById('beca-result').style.display = 'none';
+            
+            window.scrollTo({top: document.getElementById('seccion-inscripcion').offsetTop - 50, behavior: 'smooth'});
         }
 
-        function mostrarExito() {
-            document.getElementById('simulador-carga').style.display = 'none';
-            document.getElementById('resultado-exito').style.display = 'block';
-            iniciarContador();
-            const form = document.getElementById('mainForm');
+        function procesarEnvio() {
+            const form = document.getElementById('inscripcionForm');
+            if(!form.checkValidity()) { alert("Por favor completa todos los campos"); return; }
+
+            // Enviar a Formspree (Segundo plano)
             fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'} });
+
+            if(esBeca) {
+                // Mostrar simulador de beca
+                form.style.display = 'none';
+                document.getElementById('beca-result').style.display = 'block';
+                document.getElementById('link-pago').href = linkActual;
+                iniciarTimer();
+            } else {
+                // Redirigir directo al pago
+                window.location.href = linkActual;
+            }
         }
 
-        function iniciarContador() {
-            let time = 15 * 60;
-            let display = document.getElementById('beca-timer');
-            setInterval(() => {
-                let m = Math.floor(time / 60);
-                let s = time % 60;
-                display.innerText = `${m}:${s < 10 ? '0'+s : s}`;
-                if(time > 0) time--;
+        function iniciarTimer() {
+            let duration = 15 * 60;
+            let display = document.getElementById('timer');
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) timer = 0;
             }, 1000);
         }
     </script>
