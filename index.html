@@ -348,9 +348,74 @@
         }, 1000);
     })();
 </script>
-                COMPRAR AHORA
-            </a>
+               <div style="text-align: center; margin: 30px 0;">
+    <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" 
+       target="_blank"
+       class="btn-highlight"
+       style="display: inline-block; width: 100%; max-width: 350px; padding: 25px; background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%); color: white; text-decoration: none; font-weight: 900; font-size: 20px; text-transform: uppercase; letter-spacing: 2px; border-radius: 15px; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(39,174,96,0.5); border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s ease; cursor: pointer; font-family: 'Montserrat', sans-serif;">
+        
+        <span class="btn-shine"></span>
+        
+        <i class="fas fa-shopping-cart" style="margin-right: 12px;"></i>
+        COMPRE AHORA
+    </a>
+    
+    <p style="font-size: 11px; color: #64748b; margin-top: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+        <i class="fas fa-lock"></i> Inscripción Segura e Inmediata
+    </p>
+</div>
 
+<style>
+    /* Efecto de Respiración (Latido) */
+    .btn-highlight {
+        animation: pulse-animation 2s infinite;
+    }
+
+    @keyframes pulse-animation {
+        0% { transform: scale(1); box-shadow: 0 10px 40px rgba(39,174,96,0.5); }
+        50% { transform: scale(1.05); box-shadow: 0 15px 50px rgba(39,174,96,0.7); }
+        100% { transform: scale(1); box-shadow: 0 10px 40px rgba(39,174,96,0.5); }
+    }
+
+    /* Brillo Metálico que pasa solo */
+    .btn-shine {
+        position: absolute;
+        top: 0; left: -100%;
+        width: 60%; height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+        transition: all 0s;
+        animation: shine-logic 3.5s infinite;
+    }
+
+    @keyframes shine-logic {
+        0% { left: -100%; }
+        20% { left: 150%; }
+        100% { left: 150%; }
+    }
+
+    .btn-highlight:hover {
+        background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+        animation: none; /* Se detiene al poner el mouse para facilitar el clic */
+        transform: translateY(-3px);
+    }
+</style> COMPRAR AHORA
+            </a>
+<div class="secure-checkout-container" style="text-align: center; margin-top: 15px; font-family: 'Montserrat', sans-serif;">
+    
+    <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 8px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Visa_2021.svg" 
+             alt="Visa" 
+             style="height: 18px; width: auto; object-fit: contain;">
+             
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" 
+             alt="Mastercard" 
+             style="height: 25px; width: auto; object-fit: contain;">
+    </div>
+    
+    <p style="font-size: 13px; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+        <i class="fas fa-lock" style="margin-right: 5px;"></i> Pasarela de pago segura
+    </p>
+</div>
             <div style="margin-top: 30px; border-top: 1px solid #e2e8f0; width: 100%; padding-top: 20px;">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" style="height: 12px; margin: 0 5px; opacity: 0.6;">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" style="height: 18px; margin: 0 5px; opacity: 0.6;">
