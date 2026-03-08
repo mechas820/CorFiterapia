@@ -211,7 +211,8 @@
             }, 1000);
         }
     </script>
-    function iniciarUrgencia() {
+  <script>
+        function iniciarUrgencia() {
             let segundos = 600; 
             const display = document.getElementById('reloj-urgencia');
             
@@ -219,7 +220,7 @@
                 let m = Math.floor(segundos / 60);
                 let s = segundos % 60;
                 
-                if(display) { // Verificación de seguridad
+                if(display) {
                     display.innerHTML = `${m}:${s < 10 ? '0' + s : s}`;
                 }
                 
@@ -232,7 +233,10 @@
             }, 1000);
         }
 
-        iniciarUrgencia(); // Esto hace que empiece a correr apenas cargue la web
+        iniciarUrgencia();
+    </script>
+</body>
+</html>
     </script>
 </body>
 </body>
