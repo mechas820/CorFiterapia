@@ -211,28 +211,5 @@
             }, 1000);
         }
     </script>
-        function iniciarUrgencia() {
-            let segundos = 600;
-            const display = document.getElementById('reloj-urgencia');
-           
-            const cuentaAtras = setInterval(() => {
-                let m = Math.floor(segundos / 60);
-                let s = segundos % 60;
-               
-                if(display) {
-                    display.innerHTML = `${m}:${s < 10 ? '0' + s : s}`;
-                }
-               
-                if (segundos <= 0) {
-                    clearInterval(cuentaAtras);
-                    if(display) display.innerHTML = "¡ÚLTIMOS CUPOS!";
-                } else {
-                    segundos--;
-                }
-            }, 1000);
-        }
-
-        iniciarUrgencia();
-    </script>
 </body>
 </html>
