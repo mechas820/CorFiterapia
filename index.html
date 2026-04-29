@@ -70,107 +70,67 @@
         <p style="color:var(--rojo); font-weight:800; letter-spacing:2px;">MOVIMIENTO QUE TRANSFORMA SALUD</p>
     </section>
 <section id="modulo-webinar" style="background-color: #ffffff; padding: 60px 5%;">
-        <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 40px; overflow: hidden; box-shadow: 0 30px 60px rgba(10, 61, 98, 0.15); border: 1px solid #edf2f7;">
-            
-            <div style="padding: 40px 40px 20px 40px; text-align: center;">
-                <span style="background: #fff0f0; color: var(--rojo); padding: 6px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 20px; border: 1px solid rgba(183, 28, 28, 0.2); animation: pulse 2s infinite;">
-                    <i class="fas fa-circle" style="font-size: 8px; vertical-align: middle; margin-right: 5px;"></i> Estreno Exclusivo
-                </span>
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: var(--azul); margin-bottom: 10px;">Webinar 29 de abril</h2>
-                <div style="width: 50px; height: 3px; background: var(--rojo); margin: 15px auto;"></div>
-                <p style="color: #666; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">Fisioterapia en el Adulto Mayor</p>
+    <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 40px; overflow: hidden; box-shadow: 0 30px 60px rgba(10,61,98,0.15); border: 1px solid #edf2f7;">
+        
+        <div style="padding: 40px 40px 20px; text-align: center;">
+            <span style="background: #fff0f0; color: #b71c1c; padding: 6px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 20px; border: 1px solid rgba(183, 28, 28, 0.2);">
+                ● Estreno Exclusivo
+            </span>
+            <h2 style="font-size: 30px; color: var(--azul); margin-bottom: 10px;">Webinar 29 de abril</h2>
+            <p style="color: #666; font-weight: 600; text-transform: uppercase; font-size: 13px;">Fisioterapia en el Adulto Mayor</p>
+        </div>
+
+        <div style="padding: 0 40px 40px;">
+            <div id="acceso-webinar" style="background: linear-gradient(135deg, #0a192f 0%, #162a4a 100%); border-radius: 30px; padding: 60px 20px; text-align: center;">
+                <i class="fas fa-key" style="font-size: 35px; color: #4ade80; margin-bottom: 20px;"></i>
+                <h3 style="color: white; margin-bottom: 20px;">Contenido Privado</h3>
+                <div style="max-width: 300px; margin: 0 auto;">
+                    <input type="password" id="pass-webinar" placeholder="Introduce la clave" 
+                        style="width: 100%; padding: 15px; border-radius: 12px; border: none; text-align: center; font-size: 16px; margin-bottom: 15px;">
+                    <button onclick="verificarClave()" style="background: var(--verde); color: white; border: none; padding: 16px; border-radius: 12px; width: 100%; font-weight: 800; cursor: pointer; text-transform: uppercase;">
+                        Desbloquear Clase
+                    </button>
+                    <p id="error-msg" style="color: #ffbaba; font-size: 12px; margin-top: 15px; display: none;">⚠️ Clave incorrecta</p>
+                </div>
             </div>
 
-            <div style="padding: 0 40px 40px 40px;">
-                
-                <div id="acceso-webinar" style="background: linear-gradient(135deg, #0a192f 0%, #162a4a 100%); border-radius: 30px; padding: 60px 30px; text-align: center; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.03); border-radius: 50%;"></div>
-                    
-                    <div style="position: relative; z-index: 1;">
-                        <div style="background: rgba(74, 222, 128, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
-                            <i class="fas fa-shield-alt" style="font-size: 35px; color: #4ade80;"></i>
-                        </div>
-                        <h3 style="color: white; font-size: 22px; margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">Área de Alumnos</h3>
-                        <p style="color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 30px; max-width: 400px; margin-left: auto; margin-right: auto;">
-                            Introduce tu credencial de acceso para desbloquear la transmisión del webinar.
+            <div id="video-container" style="display: none; border-radius: 25px; overflow: hidden; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.3); margin-bottom: 30px;">
+                <div style="padding:56.25% 0 0 0; position:relative;">
+                    <iframe src="https://player.vimeo.com/video/1187525777?title=0&byline=0&portrait=0" 
+                        style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen"></iframe>
+                </div>
+            </div>
+
+            <div id="info-docente" style="display: none; background-color: #f8fafc; border-radius: 25px; padding: 30px; border: 1px solid #edf2f7;">
+                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 25px;">
+                    <img src="FOTO MERCEDES2.jpg" alt="Mercedes Mendoza" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                    <div style="flex: 1; min-width: 250px;">
+                        <span style="color: var(--verde); font-weight: 800; font-size: 12px; text-transform: uppercase;">Docente de CorFiterapia</span>
+                        <h3 style="margin: 5px 0 10px 0; font-size: 24px; color: var(--azul);">Mercedes Mendoza</h3>
+                        <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">
+                            <b>Fisioterapeuta con más de 20 años de experiencia</b>, especialista en rehabilitación cardiopulmonar, especialista en salud y seguridad en el trabajo, Phd (c) Actividad física y Deporte.
                         </p>
-                        
-                        <div style="max-width: 320px; margin: 0 auto;">
-                            <input type="password" id="pass-webinar" placeholder="Clave de acceso" 
-                                style="width: 100%; padding: 18px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); text-align: center; font-size: 16px; margin-bottom: 15px; color: white; outline: none; transition: 0.3s;">
-                            
-                            <button onclick="verificarClave()" style="background: var(--verde); color: white; border: none; padding: 18px 30px; border-radius: 15px; font-weight: 700; cursor: pointer; text-transform: uppercase; font-size: 13px; width: 100%; box-shadow: 0 15px 30px rgba(39, 174, 96, 0.2); transition: 0.4s;">
-                                Desbloquear Sesión <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
-                            </button>
-                            <p id="error-msg" style="color: #ffbaba; font-size: 12px; margin-top: 15px; display: none; font-weight: 600;">
-                                <i class="fas fa-exclamation-circle"></i> Clave incorrecta. Verifica tu correo.
-                            </p>
-                        </div>
                     </div>
                 </div>
-
-                <div id="video-container" style="display: none; border-radius: 25px; overflow: hidden; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-                    <div style="padding:56.25% 0 0 0; position:relative;">
-                        <iframe id="vimeo-player" src="https://player.vimeo.com/video/1187525777?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" 
-                            frameborder="0" 
-                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-                            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                            title="Webinar CorFiterapia">
-                        </iframe>
-                    </div>
-                </div>
-
-            </div>
-
-            <div style="background: #f8fafc; padding: 20px; text-align: center; border-top: 1px solid #edf2f7;">
-                <p style="font-size: 13px; color: #94a3b8; font-weight: 600;">
-                    <i class="fas fa-info-circle"></i> Acceso exclusivo para la comunidad CorFiterapia 2026
-                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <style>
-        #pass-webinar:focus { background: rgba(255,255,255,0.1) !important; border-color: var(--verde) !important; }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
+<script>
+    function verificarClave() {
+        const clave = document.getElementById('pass-webinar').value;
+        if (clave.toUpperCase() === "CORFITERAPIA2026") {
+            // Mostrar video e info, ocultar bloqueo
+            document.getElementById('acceso-webinar').style.display = 'none';
+            document.getElementById('video-container').style.display = 'block';
+            document.getElementById('info-docente').style.display = 'block';
+        } else {
+            // Mostrar error
+            document.getElementById('error-msg').style.display = 'block';
         }
-    </style>
-
-    <script>
-        function verificarClave() {
-            const claveCorrecta = "CORFITERAPIA2026"; 
-            const inputClave = document.getElementById('pass-webinar').value;
-            const errorMsg = document.getElementById('error-msg');
-
-            if (inputClave.toUpperCase() === claveCorrecta) {
-                document.getElementById('acceso-webinar').style.display = 'none';
-                const videoCont = document.getElementById('video-container');
-                videoCont.style.display = 'block';
-                
-                window.scrollTo({
-                    top: videoCont.offsetTop - 120,
-                    behavior: 'smooth'
-                });
-            } else {
-                errorMsg.style.display = 'block';
-                const inputField = document.getElementById('pass-webinar');
-                inputField.style.border = "1px solid #ff4d4d";
-                inputField.style.background = "rgba(255, 77, 77, 0.05)";
-                setTimeout(() => {
-                    errorMsg.style.display = 'none';
-                    inputField.style.border = "1px solid rgba(255,255,255,0.1)";
-                    inputField.style.background = "rgba(255,255,255,0.05)";
-                }, 3000);
-            }
-        }
-
-        document.getElementById('pass-webinar')?.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') verificarClave();
-        });
-    </script>
+    }
+</script>
     <section id="cursos">
         <div class="st-title"><h2>Oferta Académica</h2></div>
         <div class="courses-grid">
